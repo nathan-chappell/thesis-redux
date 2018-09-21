@@ -108,6 +108,13 @@ bool in_system_header(CXCursor c) {
   return clang_Location_isInSystemHeader(clang_getCursorLocation(c));
 }
 
+/*
+ * TODO: fix the hack below.  I found out that not all CallExpr display names
+ * have parenthesis.  I was previously using a ')' to mark the end of a function
+ * call while parsing, but that does not suffice.  What does suffice (at least
+ * for now) is to use '$' to delimit a function name.  This may be fragile, but
+ * it works alright for the time being.
+ */
 CXChildVisitResult visit(CXCursor c, CXCursor parent,
                          CXClientData client_data) {
   CXCursorKind kind = clang_getCursorKind(c);
