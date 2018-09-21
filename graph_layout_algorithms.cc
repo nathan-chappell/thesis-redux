@@ -21,7 +21,10 @@ using GridMap = unordered_map<NodeBase *, Grid>;
  */
 void init_stack(stack<NodeBase *> &node_stack, const View &view,
                 GridMap &gridMap) {
-  auto kv = view.name_to_node->find("main()");
+  auto kv = find_if(view.name_to_node->begin(), view.name_to_node->end(), 
+      [](const unordered_map<Fullname, NodeBase*>::value_type &kv) {
+        return kv.first == "main()" || kv.first == "main(int, char **)";
+      });
   if (kv == view.name_to_node->end()) {
     cout << "couldn't find node main()" << endl;
     return;
@@ -37,7 +40,8 @@ bool refresh_stack(stack<NodeBase *> &node_stack, const View &view,
                    GridMap &gridMap, int &max_row) {
   for (auto &&kv : view.viewData) {
     auto it = gridMap.find(kv.first);
-    if (it == gridMap.end()) {
+    //not visited, has outgoing edges
+    if (it == gridMap.end() && kv.first->out_degree()) {
       node_stack.push(kv.first);
       gridMap[kv.first] = Grid(max_row++, 0);
       return true;

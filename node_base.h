@@ -23,9 +23,9 @@ struct Neighborhood {
 class NodeBase {
 public:
   Neighborhood neighborhood;
-  size_t degree() const {
-    return neighborhood.outgoing.size() + neighborhood.incoming.size();
-  }
+  size_t in_degree() const { return neighborhood.incoming.size(); }
+  size_t out_degree() const { return neighborhood.outgoing.size(); }
+  size_t degree() const { return in_degree() + out_degree(); }
   bool isolated() const { return !degree(); }
   virtual ~NodeBase() = 0;
 };

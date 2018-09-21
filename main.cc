@@ -17,9 +17,12 @@ using PLayout = Glib::RefPtr<Pango::Layout>;
 using namespace std;
 
 string get_unqualified_name(const Fullname &fullname) {
+  /*
   size_t last_colon = fullname.find_last_of(':');
   return last_colon == string::npos ? fullname
                                     : fullname.substr(last_colon + 1);
+                                    */
+  return fullname;
 }
 
 void initialize_view(const Graph &graph, View &view, PLayout &layout) {

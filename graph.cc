@@ -67,7 +67,7 @@ const string &offset_ex = "(\\d*)\\s*";
 const string &location_ex = file_ex + line_ex + column_ex + offset_ex;
 const string &calls_ex = "\\s*calls\\s*";
 
-const string &fn_name_ex = "\\s*(.*\\))";
+const string &fn_name_ex = "\\s*\\$(.*)\\$";
 
 const regex caller_ex(fn_name_ex + location_ex + location_ex);
 const regex callee_ex(calls_ex + fn_name_ex + location_ex + location_ex);
@@ -76,12 +76,14 @@ Graph parseCallGraphFromFile(const std::string &filename) {
   Graph graph;
   smatch m;
   string line;
+  size_t line_no = 0;
   Fullname caller;
   Fullname callee;
   SourceRange range;
   ifstream file(filename);
 
   while (file.good()) {
+    ++line_no;
     getline(file, line);
     if (line.empty()) {
       // skip empty line
@@ -103,7 +105,7 @@ Graph parseCallGraphFromFile(const std::string &filename) {
       auto node_p = graph.try_createNode(caller);
       node_p.first->range = range;
     } else {
-      cout << "error parsing: " << line << endl;
+      cout << "error parsing line[" << line_no << "]: " << line << endl;
       return graph;
     }
   }
