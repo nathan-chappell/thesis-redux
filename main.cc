@@ -1,6 +1,7 @@
 // main.cc
 
 #include "drawingarea_zoom_drag.h"
+#include "geometry.h"
 #include "graph.h"
 #include "graph_layout_algorithms.h"
 #include "view.h"
@@ -11,88 +12,86 @@
 #include <algorithm>
 #include <functional>
 #include <iostream>
+#include <regex>
+#include <unordered_set>
 
 using PLayout = Glib::RefPtr<Pango::Layout>;
+using SubView = std::unordered_set<NodeBase *>;
 
 using namespace std;
 
-string get_unqualified_name(const Fullname &fullname) {
-  /*
-  size_t last_colon = fullname.find_last_of(':');
-  return last_colon == string::npos ? fullname
-                                    : fullname.substr(last_colon + 1);
-                                    */
-  return fullname;
+const string qualified_re = "(?:\\w*::)+";
+
+string remove_qualifiers(const Fullname &fullname) {
+  return regex_replace(fullname, regex(qualified_re), "");
 }
 
 void initialize_view(const Graph &graph, View &view, PLayout &layout) {
-
   for (auto &&node : graph.nodes) {
-    string text = get_unqualified_name(node->fullname);
+    string text = remove_qualifiers(node->fullname);
     view.viewData[node].text = text;
     layout->set_text(text);
     Pango::Rectangle r = layout->get_pixel_ink_extents();
-    view.viewData[node].node_extents = C(2 * view.node_margin + r.get_width(),
-                                         2 * view.node_margin + r.get_height());
-    view.viewData[node].position = make_shared<C>();
+    Extent extent(2 * view.node_margin + r.get_width(),
+                  2 * view.node_margin + r.get_height());
+    view.viewData[node].box = make_shared<Rectangle>(Point(), extent);
   }
 }
 
 void draw_node(const NodeViewData &node, CContext c, PLayout layout,
                const double &margin) {
-  c->rectangle(node.position->real(), node.position->imag(),
-               node.node_extents.real(), node.node_extents.imag());
+  c->rectangle(node.box->position.x, node.box->position.y, node.box->extent.x,
+               node.box->extent.y);
   c->stroke();
-  c->move_to(node.position->real() + margin / 2.0,
-             node.position->imag() + margin / 2.0);
+  c->move_to(node.box->position.x + margin / 2.0,
+             node.box->position.y + margin / 2.0);
   layout->set_text(node.text);
   layout->show_in_cairo_context(c);
 }
 
-C get_right_middle(const NodeViewData &nodeViewData) {
-  return *nodeViewData.position + C(nodeViewData.node_extents.real(),
-                                    nodeViewData.node_extents.imag() / 2.0);
-}
-
-C get_left_middle(const NodeViewData &nodeViewData) {
-  return *nodeViewData.position +
-         C(0.0, nodeViewData.node_extents.imag() / 2.0);
-}
-
 void draw_edge(const NodeViewData &tail, const NodeViewData &head, CContext c) {
-  C from = get_right_middle(tail);
-  C to = get_left_middle(head);
-  c->move_to(from.real(), from.imag());
-  c->line_to(to.real(), to.imag());
+  Point from = tail.box->Right().MidPoint();
+  Point to = head.box->Left().MidPoint();
+  c->move_to(from.x, from.y);
+  c->line_to(to.x, to.y);
   c->stroke();
 }
 
-bool draw_view(View &view, CContext c, PLayout layout) {
+void calculate_subview(View &view, SubView &subView,
+                       const Rectangle &view_box) {
+  subView.clear();
   for (auto &&kv : view.viewData) {
-    draw_node(kv.second, c, layout, view.node_margin);
+    if (view_box.Intersects(*kv.second.box)) {
+      subView.insert(kv.first);
+    }
   }
-  for (auto &&kv : view.viewData) {
-    for (auto edge : kv.first->neighborhood.outgoing) {
-      auto tail_kv_it = view.viewData.find(edge->tail);
-      auto head_kv_it = view.viewData.find(edge->head);
-      if (tail_kv_it == view.viewData.end() ||
-          head_kv_it == view.viewData.end()) {
-        cout << "failed to draw edge" << *edge << endl;
+}
+
+bool draw_view(const View &view, const SubView &subView, CContext c,
+               PLayout layout) {
+  unordered_set<EdgeBase *> drawn_edges;
+  for (auto &&node : subView) {
+    auto &&kv = view.viewData.find(node);
+    if (kv == view.viewData.end()) {
+      continue;
+    }
+    draw_node(kv->second, c, layout, view.node_margin);
+    // still missing edges... need a "visible edges" part of the subview...
+    // better yet, subview should just be a collection of edges...
+    for (auto edge : kv->first->neighborhood.outgoing) {
+      if (!drawn_edges.count(edge)) {
+        auto tail_kv_it = view.viewData.find(edge->tail);
+        auto head_kv_it = view.viewData.find(edge->head);
+        if (tail_kv_it == view.viewData.end() ||
+            head_kv_it == view.viewData.end()) {
+          cout << "failed to draw edge" << *edge << endl;
+        }
+        draw_edge(tail_kv_it->second, head_kv_it->second, c);
+        drawn_edges.insert(edge);
       }
-      draw_edge(tail_kv_it->second, head_kv_it->second, c);
     }
   }
   return false;
-}
-
-bool contains_point(const NodeViewData &nodeViewData, double x, double y,
-                    const DrawingArea_ZoomDrag &drawingArea_ZoomDrag) {
-  C ul = *nodeViewData.position;
-  C lr = *nodeViewData.position + nodeViewData.node_extents;
-  C click = drawingArea_ZoomDrag.user_to_image(C(x, y));
-  // remember, y increases as you go down the screen
-  return ul.real() <= click.real() && click.real() <= lr.real() &&
-         ul.imag() <= click.imag() && click.imag() <= lr.imag();
 }
 
 int usage() {
@@ -102,14 +101,51 @@ int usage() {
   return 1;
 }
 
+Extent get_extent(const Gtk::Widget &widget) {
+  return Extent(widget.get_width(), widget.get_height());
+}
+
 int main(int argc, char *argv[]) {
   if (argc < 2) {
     return usage();
   }
+  /*
+   * Getting the underlying graph.
+   * TODO Persistance and multiple views (view views in a view tree)
+   */
   Graph graph = parseCallGraphFromFile(argv[1]);
-  dump_call_graph(graph);
+  // dump_call_graph(graph); //Useful for debug type of stuff...
 
+  /*
+   * The view holds the information necessary to display the graph as the user
+   * desires.
+   * TODO Make the attributes of the View interactive (i.e. add node expansion
+   * and filtering)
+   * TODO Keyboard navigation of the graph (hjkl)
+   * TODO Multiple node selection
+   * TODO Hover causes the qualified name to appear
+   * TODO Double Click shows the source code
+   * TODO Right Click context menu (lock position, change color/ shape)
+   * TODO Different layout algorithms (center nodes on children, treemap,
+   * nondeterministic cluster)
+   * TODO Relevant edge info => implies parsing more interesting graphs =>
+   * building more useful interface to clang
+   */
   View view(&graph.name_to_node);
+  /*
+   * SubView is a subset of the full View.  It is intended to prevent having to
+   * process the entire graph for visualization all the time in order to improve
+   * interactivity.
+   *
+   * TODO To be "correct," the subview should be generated by edges, not
+   * vertices.
+   * TODO Make the SubView cache a slightly larger than necessary area,
+   * reprocess upon certain "triggers" (i.e. don't recalculate it on every
+   * single interaction that occurs).
+   * TODO Recalculate the SubView in a different thread.
+   * TODO Pre-emptively recalculate the SubView.
+   */
+  SubView subView;
 
   Glib::RefPtr<Gtk::Application> app = Gtk::Application::create();
   Gtk::Window window;
@@ -121,19 +157,29 @@ int main(int argc, char *argv[]) {
   initialize_view(graph, view, layout);
   prune_isolated_nodes(view);
   get_initialViewFullGraph(view);
-  drawingArea_ZoomDrag.zoomed_draw = [&view, layout](CContext c) {
-    return draw_view(view, c, layout);
+  drawingArea_ZoomDrag.zoomed_draw = [&view, &layout, &drawingArea_ZoomDrag,
+                                      &subView](CContext c) {
+    if (drawingArea_ZoomDrag.changed()) {
+      Rectangle view_box(Point(0, 0),
+                         Point(move(get_extent(drawingArea_ZoomDrag))));
+      drawingArea_ZoomDrag.user_to_image(view_box);
+      calculate_subview(view, subView, view_box);
+    }
+    return draw_view(view, subView, c, layout);
   };
 
   drawingArea_ZoomDrag.set_drag =
-      [&view, &drawingArea_ZoomDrag](GdkEventButton *e) -> shared_ptr<C> {
-    auto kv_it = find_if(
-        view.viewData.begin(), view.viewData.end(),
-        [e, &drawingArea_ZoomDrag](const ViewData::value_type &kv) {
-          return contains_point(kv.second, e->x, e->y, drawingArea_ZoomDrag);
-        });
+      [&view,
+       &drawingArea_ZoomDrag](GdkEventButton *e) -> shared_ptr<Rectangle> {
+    Point click(e->x, e->y);
+    drawingArea_ZoomDrag.user_to_image(click);
+    auto kv_it =
+        find_if(view.viewData.begin(), view.viewData.end(),
+                [click, &drawingArea_ZoomDrag](const ViewData::value_type &kv) {
+                  return kv.second.box->Contains(click);
+                });
     if (kv_it != view.viewData.end()) {
-      return kv_it->second.position;
+      return kv_it->second.box;
     }
     return nullptr;
   };

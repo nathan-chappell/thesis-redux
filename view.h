@@ -4,6 +4,7 @@
 // header only file!
 
 #include "node_base.h"
+#include "geometry.h"
 
 #include <complex>
 #include <memory>
@@ -12,16 +13,12 @@
 
 struct NodeViewData;
 
-using C = std::complex<double>;
 using ViewData = std::unordered_map<NodeBase *, NodeViewData>;
 
 struct NodeViewData {
-  std::shared_ptr<C> position;
-  C node_extents; // provide height/width of a bounding box.
+  std::shared_ptr<Rectangle> box;
   std::string text;
   // add other attributes later... color, is_hidden, et cetera
-
-  //NodeViewData() : position{std::make_shared<C>()} {}
 };
 
 struct View {

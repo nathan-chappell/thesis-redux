@@ -1,5 +1,7 @@
 // drawingarea_zoom_drag.h
 
+#include "geometry.h"
+
 #include <gtkmm-3.0/gtkmm/drawingarea.h>
 
 #include <complex>
@@ -7,9 +9,8 @@
 #include <memory>
 //#include <iostream>
 
-using C = std::complex<double>;
-
 using CContext = const Cairo::RefPtr<Cairo::Context> &;
+using DragTarget = std::shared_ptr<Rectangle>;
 
 /*
  * DrawingArea_ZoomDrag is a drawing area which handles some zooming and
@@ -19,8 +20,9 @@ using CContext = const Cairo::RefPtr<Cairo::Context> &;
 class DrawingArea_ZoomDrag : public Gtk::DrawingArea {
   Cairo::Matrix m;
   bool drag_;
-  C last_pos_;
-  std::shared_ptr<C> what_to_drag_;
+  bool change_since_last_draw_;
+  Point last_pos_;
+  DragTarget what_to_drag_;
 
 public:
   /*
@@ -31,13 +33,24 @@ public:
   /*
    * This call back sets the field what_to_drag.
    */
-  std::function<std::shared_ptr<C>(GdkEventButton *)> set_drag;
+  std::function<DragTarget(GdkEventButton *)> set_drag;
+
+  /*
+   * Transform a coordinate from the user space to the image space (i.e. take a
+   * click and tell where it is in reference to what you are drawing
+   */
+  void user_to_image(Point&) const;
+  void user_to_image_scale(Extent&) const;
+  void user_to_image(Rectangle&) const;
+  /*
+   * Used to inform the user if the matrix has changed since the last draw
+   */
+  bool changed() const;
 
   DrawingArea_ZoomDrag();
-  DrawingArea_ZoomDrag(std::function<bool(CContext)> zoomed_draw,
-                       std::function<std::shared_ptr<C>(GdkEventButton *)> set_drag);
-
-  C user_to_image(const C &) const;
+  DrawingArea_ZoomDrag(
+      std::function<bool(CContext)> zoomed_draw,
+      std::function<DragTarget(GdkEventButton *)> set_drag);
 
 protected:
   bool on_button_press_event(GdkEventButton *) override;
@@ -47,8 +60,11 @@ protected:
   bool on_scroll_event(GdkEventScroll *e) override;
 
 private:
-  void translate_matrix(C);
-  void translate_item(C *item, C translate);
+  void translate_matrix(Point);
+  //translates item by translate scaled by the matrices current scale factor
+  void translate_item(Point& item, Point translate);
+  void set_changed() { change_since_last_draw_ = true; }
+  void unset_changed() { change_since_last_draw_ = false; }
 };
 
 std::ostream &operator<<(std::ostream &o, const Cairo::Matrix &m);

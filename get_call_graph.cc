@@ -123,7 +123,8 @@ CXChildVisitResult visit(CXCursor c, CXCursor parent,
   if ((kind == CXCursor_Constructor || kind == CXCursor_ConversionFunction ||
        kind == CXCursor_CXXMethod || kind == CXCursor_Destructor ||
        kind == CXCursor_FunctionDecl || kind == CXCursor_FunctionTemplate) &&
-      !in_system_header(c)) {
+      //!in_system_header(c)) {
+      clang_Location_isFromMainFile(clang_getCursorLocation(c))) {
     cout << string(2 * indent, ' ');
     cout << "$";
     printFullName(c);

@@ -13,7 +13,13 @@
 
 using namespace std;
 
-using Grid = std::complex<double>;
+struct Grid {
+  int row;
+  int column;
+  Grid(int row, int column) : row(row), column(column) {}
+  Grid() : row(0), column(0) {}
+};
+
 using GridMap = unordered_map<NodeBase *, Grid>;
 
 /*
@@ -65,7 +71,7 @@ pair<int, int> set_grid_dfs(const View &view, GridMap &gridMap) {
   while (!node_stack.empty() ||
          refresh_stack(node_stack, view, gridMap, max_row)) {
     const auto &outgoing = node_stack.top()->neighborhood.outgoing;
-    int next_column = gridMap[node_stack.top()].imag() + 1;
+    int next_column = gridMap[node_stack.top()].column + 1;
     auto next =
         find_if(outgoing.begin(), outgoing.end(), [&gridMap](EdgeBase *edge) {
           // if a node is not in the gridMap, it hasn't been visited
@@ -93,10 +99,10 @@ void get_row_column_dimensions(const View &view, const GridMap &gridMap,
                                vector<double> &column_width) {
   for (auto &&kv : view.viewData) {
     // set max col/row...
-    const double &node_height = kv.second.node_extents.imag();
-    const double &node_width = kv.second.node_extents.real();
-    const int &row = gridMap.find(kv.first)->second.real();
-    const int &column = gridMap.find(kv.first)->second.imag();
+    const double &node_height = kv.second.box->extent.y;
+    const double &node_width = kv.second.box->extent.x;
+    const int &row = gridMap.find(kv.first)->second.row;
+    const int &column = gridMap.find(kv.first)->second.column;
     row_height[row] = max<double>(row_height[row], node_height);
     column_width[column] = max<double>(column_width[column], node_width);
   }
@@ -109,8 +115,8 @@ void set_initial_positions(View &view, const GridMap &gridMap,
                            const vector<double> &row_height,
                            const vector<double> &column_width) {
   for (auto &kv : view.viewData) {
-    const int &row = gridMap.find(kv.first)->second.real();
-    const int &column = gridMap.find(kv.first)->second.imag();
+    const int &row = gridMap.find(kv.first)->second.row;
+    const int &column = gridMap.find(kv.first)->second.column;
     double row_pos = 0;
     double column_pos = 0;
     if (row != 0) {
@@ -130,7 +136,8 @@ void set_initial_positions(View &view, const GridMap &gridMap,
      * second, this is because with position we go from the "row, column"
      * semantics of the grid to the "x,y" semantics of cartesian coordinates
      */
-    kv.second.position = make_shared<C>(column_pos, row_pos);
+    kv.second.box->position.x = column_pos;
+    kv.second.box->position.y = row_pos;
   }
 }
 

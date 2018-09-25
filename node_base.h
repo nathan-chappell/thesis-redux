@@ -1,6 +1,8 @@
 // node_base.h
 #pragma once
 
+// header only file!
+
 /*
  * This file will hold some common defintions, forward definitions, and some
  * interfaces.  The original intent of this file is to give the layout
