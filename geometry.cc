@@ -4,6 +4,7 @@
 
 #include <algorithm>
 #include <cmath>
+#include <iomanip>
 #include <limits>
 
 using namespace std;
@@ -71,9 +72,13 @@ std::ostream &operator<<(std::ostream &o, const Point &p) {
   return o;
 }
 
-std::istream &operator>>(std::istream &i, Point &p) {
-  i >> p.x;
-  i >> p.y;
+std::istream &check_char(std::istream &i, char c) {
+  i >> ws;
+  if (i.peek() == c) {
+    i.get();
+  } else {
+    i.setstate(ios_base::failbit);
+  }
   return i;
 }
 
@@ -121,16 +126,11 @@ std::ostream &operator<<(std::ostream &o, const Line &line) {
   return o;
 }
 
-std::istream &operator>>(std::istream &i, Line &line) {
-  i >> line.start;
-  i >> line.direction;
-  return i;
-}
-
 bool in_box(const Point &position, const Extent &extent, const Point &p) {
-  return in_interval(position.x - accuracy_buffer, position.x + extent.x + accuracy_buffer,
-                     p.x) &&
-         in_interval(position.y - accuracy_buffer, position.y + extent.y + accuracy_buffer, p.y);
+  return in_interval(position.x - accuracy_buffer,
+                     position.x + extent.x + accuracy_buffer, p.x) &&
+         in_interval(position.y - accuracy_buffer,
+                     position.y + extent.y + accuracy_buffer, p.y);
 }
 
 /// LineSegment
@@ -143,7 +143,7 @@ Point LineSegment::Intersection(const LineSegment &line) const {
   return Line(*this).Intersection(Line(line));
 }
 
-Point LineSegment::MidPoint() const { return (u + v)/2.0; }
+Point LineSegment::MidPoint() const { return (u + v) / 2.0; }
 
 bool LineSegment::Intersects(const Line &line) const {
   Point intersection = Line(*this).Intersection(line);
@@ -176,22 +176,18 @@ std::ostream &operator<<(std::ostream &o, const LineSegment &lineSegment) {
   return o;
 }
 
-std::istream &operator>>(std::istream &i, LineSegment &lineSegment) {
-  i >> lineSegment.u;
-  i >> lineSegment.v;
-  return i;
-}
-
 /// Rectangle
 
 LineSegment Rectangle::Left() const {
   return LineSegment(position, position + Point(0, extent.y));
 }
 LineSegment Rectangle::Right() const {
-  return LineSegment(position + Point(extent.x, 0), position + Point(extent.x, extent.y));
+  return LineSegment(position + Point(extent.x, 0),
+                     position + Point(extent.x, extent.y));
 }
 LineSegment Rectangle::Bottom() const {
-  return LineSegment(position + Point(0, extent.y), position + Point(extent.x, extent.y));
+  return LineSegment(position + Point(0, extent.y),
+                     position + Point(extent.x, extent.y));
 }
 LineSegment Rectangle::Top() const {
   return LineSegment(position, position + Point(extent.x, 0));
@@ -224,7 +220,9 @@ std::list<Point> Rectangle::Intersection(const LineSegment &lineSegment) const {
   return result;
 }
 
-bool Rectangle::Contains(const Point &p) const { return in_box(position, extent, p); }
+bool Rectangle::Contains(const Point &p) const {
+  return in_box(position, extent, p);
+}
 
 bool Rectangle::Contains(const LineSegment &lineSegment) const {
   return Contains(lineSegment.u) && Contains(lineSegment.v);
@@ -238,6 +236,11 @@ bool Rectangle::Contains(const Rectangle &rectangle) const {
 bool Rectangle::Intersects(const Line &line) const {
   return Left().Intersects(line) || Right().Intersects(line) ||
          Bottom().Intersects(line) || Top().Intersects(line);
+}
+
+bool Rectangle::Intersects(const LineSegment &lineSegment) const {
+  return Left().Intersects(lineSegment) || Right().Intersects(lineSegment) ||
+         Bottom().Intersects(lineSegment) || Top().Intersects(lineSegment);
 }
 
 bool Rectangle::Intersects(const Rectangle &rectangle) const {
@@ -255,10 +258,4 @@ bool Rectangle::Intersects(const Rectangle &rectangle) const {
 std::ostream &operator<<(std::ostream &o, const Rectangle &rectangle) {
   o << "{" << rectangle.position << ", " << rectangle.extent << "}";
   return o;
-}
-
-std::istream &operator>>(std::istream &i, Rectangle &rectangle) {
-  i >> rectangle.position;
-  i >> rectangle.extent;
-  return i;
 }

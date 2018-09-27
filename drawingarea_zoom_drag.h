@@ -1,4 +1,5 @@
 // drawingarea_zoom_drag.h
+#pragma once
 
 #include "geometry.h"
 
@@ -11,6 +12,7 @@
 
 using CContext = const Cairo::RefPtr<Cairo::Context> &;
 using DragTarget = std::shared_ptr<Rectangle>;
+using PLayout = Glib::RefPtr<Pango::Layout>;
 
 /*
  * DrawingArea_ZoomDrag is a drawing area which handles some zooming and
@@ -32,8 +34,12 @@ public:
   std::function<bool(CContext)> zoomed_draw;
   /*
    * This call back sets the field what_to_drag.
+   *
+   * Deprecated.  The callback will be set in main, more information about the node is needed
    */
-  std::function<DragTarget(GdkEventButton *)> set_drag;
+  //std::function<DragTarget(GdkEventButton *)> set_drag;
+  void set_dragTarget(DragTarget);
+  void clear_dragTarget();
 
   /*
    * Transform a coordinate from the user space to the image space (i.e. take a
@@ -49,8 +55,8 @@ public:
 
   DrawingArea_ZoomDrag();
   DrawingArea_ZoomDrag(
-      std::function<bool(CContext)> zoomed_draw,
-      std::function<DragTarget(GdkEventButton *)> set_drag);
+      std::function<bool(CContext)> zoomed_draw/*,
+      std::function<DragTarget(GdkEventButton *)> set_drag*/);
 
 protected:
   bool on_button_press_event(GdkEventButton *) override;

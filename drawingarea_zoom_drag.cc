@@ -34,18 +34,15 @@ ostream &operator<<(ostream &o, const Cairo::Matrix &m) {
 DrawingArea_ZoomDrag::DrawingArea_ZoomDrag()
     : m{Cairo::identity_matrix()}, drag_(false), change_since_last_draw_(true),
       last_pos_(0, 0),
-      what_to_drag_(nullptr), zoomed_draw{[](CContext) { return false; }},
-      set_drag{[](GdkEventButton *) { return make_shared<Rectangle>(); }} {
+      what_to_drag_(nullptr), zoomed_draw{[](CContext) { return false; }} {
   add_events(Gdk::SCROLL_MASK | Gdk::BUTTON_PRESS_MASK |
              Gdk::BUTTON_RELEASE_MASK | Gdk::POINTER_MOTION_MASK);
 }
 
 DrawingArea_ZoomDrag::DrawingArea_ZoomDrag(
-    std::function<bool(CContext)> zoomed_draw,
-    std::function<DragTarget(GdkEventButton *)> set_drag)
+    std::function<bool(CContext)> zoomed_draw)
     : m{Cairo::identity_matrix()}, drag_(false), change_since_last_draw_(true),
-      last_pos_(0, 0),
-      what_to_drag_(nullptr), zoomed_draw{zoomed_draw}, set_drag{set_drag} {
+      last_pos_(0, 0), what_to_drag_(nullptr), zoomed_draw{zoomed_draw} {
   add_events(Gdk::SCROLL_MASK | Gdk::BUTTON_PRESS_MASK |
              Gdk::BUTTON_RELEASE_MASK | Gdk::POINTER_MOTION_MASK);
 }
@@ -55,7 +52,6 @@ bool DrawingArea_ZoomDrag::on_button_press_event(GdkEventButton *e) {
   //<< e->button << endl;
   if (e->button == 1) { // left click
     drag_ = true;
-    what_to_drag_ = set_drag(e);
     last_pos_ = Point(e->x, e->y);
   } else if (e->button == 2) { // middle click
     m = Cairo::identity_matrix();
@@ -119,6 +115,12 @@ bool DrawingArea_ZoomDrag::on_scroll_event(GdkEventScroll *e) {
   return false;
 }
 
+void DrawingArea_ZoomDrag::set_dragTarget(DragTarget dragTarget) {
+  what_to_drag_ = dragTarget;
+}
+
+void DrawingArea_ZoomDrag::clear_dragTarget() { what_to_drag_.reset(); }
+
 void DrawingArea_ZoomDrag::user_to_image(Point &p) const {
   Cairo::Matrix inv = m;
   inv.invert();
@@ -126,7 +128,7 @@ void DrawingArea_ZoomDrag::user_to_image(Point &p) const {
 }
 
 void DrawingArea_ZoomDrag::user_to_image_scale(Extent &e) const {
-  double scale = 1/get_scale_from_matrix(m);
+  double scale = 1 / get_scale_from_matrix(m);
   e *= scale;
 }
 
@@ -137,7 +139,7 @@ void DrawingArea_ZoomDrag::user_to_image(Rectangle &rectangle) const {
 
 bool DrawingArea_ZoomDrag::changed() const { return change_since_last_draw_; }
 
-void DrawingArea_ZoomDrag::translate_item(Point& item, Point translate) {
+void DrawingArea_ZoomDrag::translate_item(Point &item, Point translate) {
   translate /= get_scale_from_matrix(m);
   item += translate;
 }

@@ -41,5 +41,5 @@ public:
 
 std::ostream &operator<<(std::ostream &, const SourceLocation &);
 std::ostream &operator<<(std::ostream &, const SourceRange &);
-std::ostream &operator<<(std::ostream &, const NodeBase &);
-std::ostream &operator<<(std::ostream &, const EdgeBase &);
+std::ostream &operator<<(std::ostream &, const Node &);
+std::ostream &operator<<(std::ostream &, const Edge &);

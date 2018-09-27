@@ -3,22 +3,25 @@
 #include "graph.h"
 #include "node.h"
 
+#include <algorithm>
 #include <cassert>
 #include <fstream>
 #include <regex>
+
+//#define DIAGNOSTIC cout << __FILE__ << ":" << __LINE__ << " "
 
 using namespace std;
 
 void dump_call_graph(const Graph &graph, ostream &o) {
   for (auto &&node : graph.nodes) {
-    o << *node << endl;
+    o << dynamic_cast<const Node &>(*node) << endl;
     for (auto &&edge : node->neighborhood.outgoing) {
       o << "  calls " << dynamic_cast<Node *>(edge->head)->fullname
-        << dynamic_cast<const Edge*>(edge)->range << endl;
+        << dynamic_cast<const Edge *>(edge)->range << endl;
     }
     for (auto &&edge : node->neighborhood.incoming) {
       o << "  is called from " << dynamic_cast<Node *>(edge->tail)->fullname
-        << dynamic_cast<const Edge*>(edge)->range << endl;
+        << dynamic_cast<const Edge *>(edge)->range << endl;
     }
   }
 }
@@ -29,7 +32,7 @@ void dump_call_graph(const Graph &graph, ostream &o) {
 pair<Node *, bool> Graph::try_createNode(const Fullname &fullname) {
   auto &&kv = name_to_node.find(fullname);
   if (kv != name_to_node.end()) {
-    return {dynamic_cast<Node*>(kv->second), false};
+    return {dynamic_cast<Node *>(kv->second), false};
   }
   Node *node = new Node{fullname};
   nodes.push_back(node);
@@ -44,7 +47,7 @@ pair<Edge *, bool> Graph::try_createEdge(Node *tail, Node *head) {
   assert(tail && head && __func__);
   auto kv = name_to_edge.find(tail->fullname + "," + head->fullname);
   if (kv != name_to_edge.end()) {
-    return {dynamic_cast<Edge*>(kv->second), false};
+    return {dynamic_cast<Edge *>(kv->second), false};
   }
   Edge *edge = new Edge(tail, head);
   edges.push_back(edge);
@@ -119,4 +122,17 @@ Graph::~Graph() {
   for (auto &&edge : edges) {
     delete edge;
   }
+}
+
+vector<NodeBase *> Graph::get_roots() const {
+  vector<NodeBase *> result;
+  copy_if(nodes.begin(), nodes.end(), back_inserter(result),
+          [](const NodeBase *node) {
+            if (node->in_degree() == 0) {
+              cout << "found root: " << dynamic_cast<const Node &>(*node) << " "
+                   << (unsigned long long)node << endl;
+            }
+            return node->in_degree() == 0;
+          });
+  return result;
 }

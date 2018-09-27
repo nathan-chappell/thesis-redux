@@ -1,35 +1,11 @@
-$NodeBase::in_degree()$ ./node_base.h 26 3 503  ./node_base.h 26 68 568
-  calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 26 37 537  ./node_base.h 26 65 565
-$NodeBase::out_degree()$ ./node_base.h 27 3 571  ./node_base.h 27 69 637
-  calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 27 38 606  ./node_base.h 27 66 634
-$NodeBase::degree()$ ./node_base.h 28 3 640  ./node_base.h 28 63 700
-  calls $NodeBase::in_degree()$ ./node_base.h 28 34 671  ./node_base.h 28 45 682
-  calls $NodeBase::out_degree()$ ./node_base.h 28 48 685  ./node_base.h 28 60 697
-$NodeBase::isolated()$ ./node_base.h 29 3 703  ./node_base.h 29 46 746
-  calls $NodeBase::degree()$ ./node_base.h 29 35 735  ./node_base.h 29 43 743
-$NodeBase::~NodeBase()$ ./node_base.h 30 3 749  ./node_base.h 30 26 772
-$EdgeBase::EdgeBase(NodeBase *, NodeBase *)$ ./node_base.h 37 3 841  ./node_base.h 37 71 909
-$EdgeBase::~EdgeBase()$ ./node_base.h 38 3 912  ./node_base.h 38 26 935
-$NodeBase::~NodeBase()$ ./node_base.h 45 1 1083  ./node_base.h 45 32 1114
-$EdgeBase::~EdgeBase()$ ./node_base.h 46 1 1115  ./node_base.h 46 32 1146
-$SourceLocation::SourceLocation()$ ./node.h 16 3 183  ./node.h 16 54 234
-$SourceLocation::SourceLocation(const std::string &, size_t, size_t, size_t)$ ./node.h 17 3 237  ./node.h 19 74 414
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 19 9 349  ./node.h 19 27 367
-$Node::Node(Fullname)$ ./node.h 31 3 573  ./node.h 31 50 620
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 31 29 599  ./node.h 31 47 617
-$Node::~Node()$ ./node.h 32 3 623  ./node.h 32 13 633
-$Edge::Edge(Node *, Node *)$ ./node.h 38 3 700  ./node.h 38 57 754
-  calls $EdgeBase::EdgeBase(NodeBase *, NodeBase *)$ ./node.h 38 34 731  ./node.h 38 54 751
-$Edge::~Edge()$ ./node.h 39 3 757  ./node.h 39 13 767
-$operator<<(std::ostream &, const SourceLocation &)$ ./node.h 42 1 772  ./node.h 42 65 836
-$operator<<(std::ostream &, const SourceRange &)$ ./node.h 43 1 838  ./node.h 43 62 899
-$operator<<(std::ostream &, const NodeBase &)$ ./node.h 44 1 901  ./node.h 44 59 959
-$operator<<(std::ostream &, const EdgeBase &)$ ./node.h 45 1 961  ./node.h 45 59 1019
-$Graph::try_createNode(const Fullname &)$ ./graph.h 22 3 516  ./graph.h 22 59 572
-$Graph::try_createEdge(Node *, Node *)$ ./graph.h 23 3 576  ./graph.h 23 65 638
-$Graph::~Graph()$ ./graph.h 25 3 643  ./graph.h 25 11 651
-$dump_call_graph(const Graph &, std::ostream &)$ ./graph.h 28 1 657  ./graph.h 28 70 726
-$parseCallGraphFromFile(const std::string &)$ ./graph.h 29 1 728  ./graph.h 29 58 785
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 28 37 559  ./node_base.h 28 65 587
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 29 38 628  ./node_base.h 29 66 656
+calls $NodeBase::in_degree()$ ./node_base.h 30 34 693  ./node_base.h 30 45 704
+calls $NodeBase::out_degree()$ ./node_base.h 30 48 707  ./node_base.h 30 60 719
+calls $NodeBase::degree()$ ./node_base.h 31 35 757  ./node_base.h 31 43 765
+calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 19 9 349  ./node.h 19 27 367
+calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 31 29 599  ./node.h 31 47 617
+calls $EdgeBase::EdgeBase(NodeBase *, NodeBase *)$ ./node.h 38 34 731  ./node.h 38 54 751
 $dump_call_graph(const Graph &, std::ostream &)$ graph.cc 12 1 129  graph.cc 24 2 632
   calls $__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator*()$ graph.cc 13 20 203  graph.cc 13 21 204
   calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph.cc 14 5 224  graph.cc 14 23 242
@@ -147,215 +123,160 @@ $parseCallGraphFromFile(const std::string &)$ graph.cc 75 1 2310  graph.cc 113 2
 $Graph::~Graph()$ graph.cc 115 1 3378  graph.cc 122 2 3499
   calls $__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator*()$ graph.cc 116 20 3415  graph.cc 116 21 3416
   calls $__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator*()$ graph.cc 119 20 3466  graph.cc 119 21 3467
-$DrawingArea_ZoomDrag::DrawingArea_ZoomDrag()$ ./drawingarea_zoom_drag.h 36 3 802  ./drawingarea_zoom_drag.h 36 25 824
-$DrawingArea_ZoomDrag::DrawingArea_ZoomDrag(std::function<bool (CContext)>, std::function<std::shared_ptr<C> (GdkEventButton *)>)$ ./drawingarea_zoom_drag.h 37 3 828  ./drawingarea_zoom_drag.h 38 85 976
-$DrawingArea_ZoomDrag::user_to_image(const C &)$ ./drawingarea_zoom_drag.h 40 3 981  ./drawingarea_zoom_drag.h 40 35 1013
-$DrawingArea_ZoomDrag::on_button_press_event(GdkEventButton *)$ ./drawingarea_zoom_drag.h 43 3 1029  ./drawingarea_zoom_drag.h 43 56 1082
-$DrawingArea_ZoomDrag::on_button_release_event(GdkEventButton *)$ ./drawingarea_zoom_drag.h 44 3 1086  ./drawingarea_zoom_drag.h 44 58 1141
-$DrawingArea_ZoomDrag::on_motion_notify_event(GdkEventMotion *)$ ./drawingarea_zoom_drag.h 45 3 1145  ./drawingarea_zoom_drag.h 45 57 1199
-$DrawingArea_ZoomDrag::on_draw(CContext)$ ./drawingarea_zoom_drag.h 46 3 1203  ./drawingarea_zoom_drag.h 46 34 1234
-$DrawingArea_ZoomDrag::on_scroll_event(GdkEventScroll *)$ ./drawingarea_zoom_drag.h 47 3 1238  ./drawingarea_zoom_drag.h 47 51 1286
-$DrawingArea_ZoomDrag::translate_matrix(C)$ ./drawingarea_zoom_drag.h 50 3 1300  ./drawingarea_zoom_drag.h 50 27 1324
-$DrawingArea_ZoomDrag::translate_item(C *, C)$ ./drawingarea_zoom_drag.h 51 3 1328  ./drawingarea_zoom_drag.h 51 44 1369
-$operator<<(std::ostream &, const Cairo::Matrix &)$ ./drawingarea_zoom_drag.h 54 1 1375  ./drawingarea_zoom_drag.h 54 66 1440
-$NodeBase::in_degree()$ ./node_base.h 26 3 503  ./node_base.h 26 68 568
-  calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 26 37 537  ./node_base.h 26 65 565
-$NodeBase::out_degree()$ ./node_base.h 27 3 571  ./node_base.h 27 69 637
-  calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 27 38 606  ./node_base.h 27 66 634
-$NodeBase::degree()$ ./node_base.h 28 3 640  ./node_base.h 28 63 700
-  calls $NodeBase::in_degree()$ ./node_base.h 28 34 671  ./node_base.h 28 45 682
-  calls $NodeBase::out_degree()$ ./node_base.h 28 48 685  ./node_base.h 28 60 697
-$NodeBase::isolated()$ ./node_base.h 29 3 703  ./node_base.h 29 46 746
-  calls $NodeBase::degree()$ ./node_base.h 29 35 735  ./node_base.h 29 43 743
-$NodeBase::~NodeBase()$ ./node_base.h 30 3 749  ./node_base.h 30 26 772
-$EdgeBase::EdgeBase(NodeBase *, NodeBase *)$ ./node_base.h 37 3 841  ./node_base.h 37 71 909
-$EdgeBase::~EdgeBase()$ ./node_base.h 38 3 912  ./node_base.h 38 26 935
-$NodeBase::~NodeBase()$ ./node_base.h 45 1 1083  ./node_base.h 45 32 1114
-$EdgeBase::~EdgeBase()$ ./node_base.h 46 1 1115  ./node_base.h 46 32 1146
-$SourceLocation::SourceLocation()$ ./node.h 16 3 183  ./node.h 16 54 234
-$SourceLocation::SourceLocation(const std::string &, size_t, size_t, size_t)$ ./node.h 17 3 237  ./node.h 19 74 414
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 19 9 349  ./node.h 19 27 367
-$Node::Node(Fullname)$ ./node.h 31 3 573  ./node.h 31 50 620
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 31 29 599  ./node.h 31 47 617
-$Node::~Node()$ ./node.h 32 3 623  ./node.h 32 13 633
-$Edge::Edge(Node *, Node *)$ ./node.h 38 3 700  ./node.h 38 57 754
-  calls $EdgeBase::EdgeBase(NodeBase *, NodeBase *)$ ./node.h 38 34 731  ./node.h 38 54 751
-$Edge::~Edge()$ ./node.h 39 3 757  ./node.h 39 13 767
-$operator<<(std::ostream &, const SourceLocation &)$ ./node.h 42 1 772  ./node.h 42 65 836
-$operator<<(std::ostream &, const SourceRange &)$ ./node.h 43 1 838  ./node.h 43 62 899
-$operator<<(std::ostream &, const NodeBase &)$ ./node.h 44 1 901  ./node.h 44 59 959
-$operator<<(std::ostream &, const EdgeBase &)$ ./node.h 45 1 961  ./node.h 45 59 1019
-$Graph::try_createNode(const Fullname &)$ ./graph.h 22 3 516  ./graph.h 22 59 572
-$Graph::try_createEdge(Node *, Node *)$ ./graph.h 23 3 576  ./graph.h 23 65 638
-$Graph::~Graph()$ ./graph.h 25 3 643  ./graph.h 25 11 651
-$dump_call_graph(const Graph &, std::ostream &)$ ./graph.h 28 1 657  ./graph.h 28 70 726
-$parseCallGraphFromFile(const std::string &)$ ./graph.h 29 1 728  ./graph.h 29 58 785
-$View::View(std::unordered_map<Fullname, NodeBase *> *)$ ./view.h 38 3 797  ./view.h 40 32 963
-$get_initialViewFullGraph(View &)$ ./graph_layout_algorithms.h 13 1 331  ./graph_layout_algorithms.h 13 38 368
-$prune_isolated_nodes(View &)$ ./view_filters.h 6 1 50  ./view_filters.h 6 38 87
-$get_unqualified_name(const Fullname &)$ main.cc 19 1 310  main.cc 26 2 598
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ main.cc 25 10 587  main.cc 25 18 595
-$initialize_view(const Graph &, View &, PLayout &)$ main.cc 28 1 600  main.cc 39 2 1106
-  calls $__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator*()$ main.cc 30 20 692  main.cc 30 21 693
-  calls $get_unqualified_name(const Fullname &)$ main.cc 31 19 727  main.cc 31 55 763
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::operator=(const basic_string<_CharT, _Traits, _Alloc> &)$ main.cc 32 5 769  main.cc 32 36 800
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](std::unordered_map::key_type &&)$ main.cc 32 5 769  main.cc 32 24 788
-  calls $Pango::Layout::set_text(const Glib::ustring &)$ main.cc 33 5 806  main.cc 33 27 828
-  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 33 5 806  main.cc 33 11 812
-  calls $Glib::ustring::ustring(const std::string &)$ main.cc 33 22 823  main.cc 33 26 827
-  calls $Pango::Layout::get_pixel_ink_extents()$ main.cc 34 26 855  main.cc 34 57 886
-  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 34 26 855  main.cc 34 32 861
-  calls $std::complex<double>::operator=(std::complex<double> &&)$ main.cc 35 5 892  main.cc 36 80 1046
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](std::unordered_map::key_type &&)$ main.cc 35 5 892  main.cc 35 24 911
-  calls $std::complex<double>::complex(double, double)$ main.cc 35 40 927  main.cc 36 80 1046
-  calls $Pango::Rectangle::get_width()$ main.cc 35 65 952  main.cc 35 78 965
-  calls $Pango::Rectangle::get_height()$ main.cc 36 65 1031  main.cc 36 79 1045
-  calls $std::shared_ptr<_Tp>::operator=(shared_ptr<_Tp> &&)$ main.cc 37 5 1052  main.cc 37 52 1099
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](std::unordered_map::key_type &&)$ main.cc 37 5 1052  main.cc 37 24 1071
-  calls $std::make_shared(_Args &&...)$ main.cc 37 36 1083  main.cc 37 52 1099
-$draw_node(const NodeViewData &, CContext, PLayout, const double &)$ main.cc 41 1 1108  main.cc 50 2 1531
-  calls $Cairo::Context::rectangle(double, double, double, double)$ main.cc 43 3 1218  main.cc 44 67 1343
-  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 43 3 1218  main.cc 43 4 1219
-  calls $std::complex<double>::real()$ main.cc 43 16 1231  main.cc 43 37 1252
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ main.cc 43 16 1231  main.cc 43 29 1244
-  calls $std::complex<double>::imag()$ main.cc 43 39 1254  main.cc 43 60 1275
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ main.cc 43 39 1254  main.cc 43 52 1267
-  calls $std::complex<double>::real()$ main.cc 44 16 1292  main.cc 44 40 1316
-  calls $std::complex<double>::imag()$ main.cc 44 42 1318  main.cc 44 66 1342
-  calls $Cairo::Context::stroke()$ main.cc 45 3 1347  main.cc 45 14 1358
-  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 45 3 1347  main.cc 45 4 1348
-  calls $Cairo::Context::move_to(double, double)$ main.cc 46 3 1362  main.cc 47 51 1461
-  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 46 3 1362  main.cc 46 4 1363
-  calls $std::complex<double>::real()$ main.cc 46 14 1373  main.cc 46 35 1394
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ main.cc 46 14 1373  main.cc 46 27 1386
-  calls $std::complex<double>::imag()$ main.cc 47 14 1424  main.cc 47 35 1445
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ main.cc 47 14 1424  main.cc 47 27 1437
-  calls $Pango::Layout::set_text(const Glib::ustring &)$ main.cc 48 3 1465  main.cc 48 30 1492
-  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 48 3 1465  main.cc 48 9 1471
-  calls $Glib::ustring::ustring(const std::string &)$ main.cc 48 20 1482  main.cc 48 29 1491
-  calls $Pango::Layout::show_in_cairo_context(const Cairo::RefPtr<Cairo::Context> &)$ main.cc 49 3 1496  main.cc 49 35 1528
-  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 49 3 1496  main.cc 49 9 1502
-$get_right_middle(const NodeViewData &)$ main.cc 52 1 1533  main.cc 55 2 1736
-  calls $std::operator+(const complex<_Tp> &, const complex<_Tp> &)$ main.cc 53 10 1597  main.cc 54 76 1733
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator*()$ main.cc 53 10 1597  main.cc 53 32 1619
-  calls $std::complex<double>::complex(double, double)$ main.cc 53 35 1622  main.cc 54 76 1733
-  calls $std::complex<double>::real()$ main.cc 53 37 1624  main.cc 53 69 1656
-  calls $std::complex<double>::imag()$ main.cc 54 37 1694  main.cc 54 69 1726
-$get_left_middle(const NodeViewData &)$ main.cc 57 1 1738  main.cc 60 2 1884
-  calls $std::operator+(const complex<_Tp> &, const complex<_Tp> &)$ main.cc 58 10 1801  main.cc 59 56 1881
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator*()$ main.cc 58 10 1801  main.cc 58 32 1823
-  calls $std::complex<double>::complex(double, double)$ main.cc 59 10 1835  main.cc 59 56 1881
-  calls $std::complex<double>::imag()$ main.cc 59 17 1842  main.cc 59 49 1874
-$draw_edge(const NodeViewData &, const NodeViewData &, CContext)$ main.cc 62 1 1886  main.cc 68 2 2126
-  calls $get_right_middle(const NodeViewData &)$ main.cc 63 12 1978  main.cc 63 34 2000
-  calls $get_left_middle(const NodeViewData &)$ main.cc 64 10 2011  main.cc 64 31 2032
-  calls $Cairo::Context::move_to(double, double)$ main.cc 65 3 2036  main.cc 65 39 2072
-  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 65 3 2036  main.cc 65 4 2037
-  calls $std::complex<double>::real()$ main.cc 65 14 2047  main.cc 65 25 2058
-  calls $std::complex<double>::imag()$ main.cc 65 27 2060  main.cc 65 38 2071
-  calls $Cairo::Context::line_to(double, double)$ main.cc 66 3 2076  main.cc 66 35 2108
-  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 66 3 2076  main.cc 66 4 2077
-  calls $std::complex<double>::real()$ main.cc 66 14 2087  main.cc 66 23 2096
-  calls $std::complex<double>::imag()$ main.cc 66 25 2098  main.cc 66 34 2107
-  calls $Cairo::Context::stroke()$ main.cc 67 3 2112  main.cc 67 14 2123
-  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 67 3 2112  main.cc 67 4 2113
-$draw_view(View &, CContext, PLayout)$ main.cc 70 1 2128  main.cc 86 2 2729
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator*()$ main.cc 71 18 2202  main.cc 71 19 2203
-  calls $draw_node(const NodeViewData &, CContext, PLayout, const double &)$ main.cc 72 5 2225  main.cc 72 54 2274
-  calls $Glib::RefPtr<T_CppObject>::RefPtr<T_CppObject>(const RefPtr<T_CppObject> &)$ main.cc 72 29 2249  main.cc 72 35 2255
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator*()$ main.cc 74 18 2297  main.cc 74 19 2298
-  calls $std::_List_iterator<_Tp>::operator*()$ main.cc 75 20 2335  main.cc 75 21 2336
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const std::unordered_map::key_type &)$ main.cc 76 25 2396  main.cc 76 55 2426
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const std::unordered_map::key_type &)$ main.cc 77 25 2452  main.cc 77 55 2482
-  calls $std::__detail::operator==(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ main.cc 78 11 2494  main.cc 78 44 2527
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ main.cc 78 25 2508  main.cc 78 44 2527
-  calls $std::__detail::operator==(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ main.cc 79 11 2541  main.cc 79 44 2574
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ main.cc 79 25 2555  main.cc 79 44 2574
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ main.cc 80 9 2586  main.cc 80 55 2632
-  calls $operator<<(std::ostream &, const EdgeBase &)$ main.cc 80 9 2586  main.cc 80 47 2624
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ main.cc 80 9 2586  main.cc 80 38 2615
-  calls $draw_edge(const NodeViewData &, const NodeViewData &, CContext)$ main.cc 82 7 2648  main.cc 82 59 2700
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ main.cc 82 17 2658  main.cc 82 27 2668
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ main.cc 82 37 2678  main.cc 82 47 2688
-$contains_point(const NodeViewData &, double, double, const DrawingArea_ZoomDrag &)$ main.cc 88 1 2731  main.cc 96 2 3214
-  calls $std::complex<double>::complex(const std::complex<double> &)$ main.cc 90 10 2886  main.cc 90 32 2908
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator*()$ main.cc 90 10 2886  main.cc 90 32 2908
-  calls $std::operator+(const complex<_Tp> &, const complex<_Tp> &)$ main.cc 91 10 2919  main.cc 91 60 2969
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator*()$ main.cc 91 10 2919  main.cc 91 32 2941
-  calls $DrawingArea_ZoomDrag::user_to_image(const C &)$ main.cc 92 13 2983  main.cc 92 56 3026
-  calls $std::complex<double>::complex(double, double)$ main.cc 92 48 3018  main.cc 92 55 3025
-  calls $std::complex<double>::real()$ main.cc 94 10 3090  main.cc 94 19 3099
-  calls $std::complex<double>::real()$ main.cc 94 23 3103  main.cc 94 35 3115
-  calls $std::complex<double>::real()$ main.cc 94 39 3119  main.cc 94 51 3131
-  calls $std::complex<double>::real()$ main.cc 94 55 3135  main.cc 94 64 3144
-  calls $std::complex<double>::imag()$ main.cc 95 10 3157  main.cc 95 19 3166
-  calls $std::complex<double>::imag()$ main.cc 95 23 3170  main.cc 95 35 3182
-  calls $std::complex<double>::imag()$ main.cc 95 39 3186  main.cc 95 51 3198
-  calls $std::complex<double>::imag()$ main.cc 95 55 3202  main.cc 95 64 3211
-$usage()$ main.cc 98 1 3216  main.cc 103 2 3384
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ main.cc 99 3 3232  main.cc 99 46 3275
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ main.cc 99 3 3232  main.cc 99 38 3267
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ main.cc 100 3 3279  main.cc 101 15 3369
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ main.cc 100 3 3279  main.cc 100 78 3354
-$main(int, char **)$ main.cc 105 1 3386  main.cc 145 2 4586
-  calls $usage()$ main.cc 107 12 3450  main.cc 107 19 3457
-  calls $parseCallGraphFromFile(const std::string &)$ main.cc 109 17 3479  main.cc 109 48 3510
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ main.cc 109 40 3502  main.cc 109 47 3509
-  calls $dump_call_graph(const Graph &, std::ostream &)$ main.cc 110 3 3514  main.cc 110 25 3536
-  calls $View::View(std::unordered_map<Fullname, NodeBase *> *)$ main.cc 112 8 3546  main.cc 112 33 3571
-  calls $Gtk::Application::create(const Glib::ustring &, Gio::ApplicationFlags)$ main.cc 114 40 3613  main.cc 114 66 3639
-  calls $Gtk::Window::Window(Gtk::WindowType)$ main.cc 115 15 3655  main.cc 115 21 3661
-  calls $DrawingArea_ZoomDrag::DrawingArea_ZoomDrag()$ main.cc 116 24 3686  main.cc 116 44 3706
-  calls $Gtk::Container::add(Gtk::Widget &)$ main.cc 117 3 3710  main.cc 117 35 3742
-  calls $Pango::Layout::create(const Glib::RefPtr<Context> &)$ main.cc 119 7 3769  main.cc 119 70 3832
-  calls $Gtk::Widget::get_pango_context()$ main.cc 119 29 3791  main.cc 119 69 3831
-  calls $initialize_view(const Graph &, View &, PLayout &)$ main.cc 121 3 3837  main.cc 121 39 3873
-  calls $prune_isolated_nodes(View &)$ main.cc 122 3 3877  main.cc 122 29 3903
-  calls $get_initialViewFullGraph(View &)$ main.cc 123 3 3907  main.cc 123 33 3937
-  calls $std::function<bool (const Cairo::RefPtr<Cairo::Context> &)>::operator=(_Functor &&)$ main.cc 124 3 3941  main.cc 126 4 4048
-  calls $draw_view(View &, CContext, PLayout)$ main.cc 125 12 4017  main.cc 125 38 4043
-  calls $Glib::RefPtr<T_CppObject>::RefPtr<T_CppObject>(const RefPtr<T_CppObject> &)$ main.cc 125 31 4036  main.cc 125 37 4042
-  calls $std::function<std::shared_ptr<std::complex<double> > (_GdkEventButton *)>::operator=(_Functor &&)$ main.cc 128 3 4053  main.cc 139 4 4503
-  calls $std::find_if(_InputIterator, _InputIterator, _Predicate)$ main.cc 130 18 4177  main.cc 134 11 4395
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::begin()$ main.cc 131 9 4194  main.cc 131 30 4215
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ main.cc 131 32 4217  main.cc 131 51 4236
-  calls $contains_point(const NodeViewData &, double, double, const DrawingArea_ZoomDrag &)$ main.cc 133 18 4324  main.cc 133 77 4383
-  calls $std::__detail::operator!=(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ main.cc 135 9 4405  main.cc 135 37 4433
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ main.cc 135 18 4414  main.cc 135 37 4433
-  calls $std::shared_ptr<_Tp>::shared_ptr<_Tp>(const shared_ptr<_Tp> &)$ main.cc 136 14 4450  main.cc 136 36 4472
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ main.cc 136 14 4450  main.cc 136 19 4455
-  calls $std::shared_ptr<_Tp>::shared_ptr<_Tp>(std::nullptr_t)$ main.cc 138 12 4491  main.cc 138 19 4498
-  calls $Gtk::Window::set_default_size(int, int)$ main.cc 141 3 4508  main.cc 141 36 4541
-  calls $Gtk::Widget::show_all()$ main.cc 142 3 4545  main.cc 142 20 4562
-  calls $Gtk::Application::run(Gtk::Window &)$ main.cc 144 3 4567  main.cc 144 19 4583
-  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 144 3 4567  main.cc 144 6 4570
-$NodeBase::in_degree()$ ./node_base.h 26 3 503  ./node_base.h 26 68 568
-  calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 26 37 537  ./node_base.h 26 65 565
-$NodeBase::out_degree()$ ./node_base.h 27 3 571  ./node_base.h 27 69 637
-  calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 27 38 606  ./node_base.h 27 66 634
-$NodeBase::degree()$ ./node_base.h 28 3 640  ./node_base.h 28 63 700
-  calls $NodeBase::in_degree()$ ./node_base.h 28 34 671  ./node_base.h 28 45 682
-  calls $NodeBase::out_degree()$ ./node_base.h 28 48 685  ./node_base.h 28 60 697
-$NodeBase::isolated()$ ./node_base.h 29 3 703  ./node_base.h 29 46 746
-  calls $NodeBase::degree()$ ./node_base.h 29 35 735  ./node_base.h 29 43 743
-$NodeBase::~NodeBase()$ ./node_base.h 30 3 749  ./node_base.h 30 26 772
-$EdgeBase::EdgeBase(NodeBase *, NodeBase *)$ ./node_base.h 37 3 841  ./node_base.h 37 71 909
-$EdgeBase::~EdgeBase()$ ./node_base.h 38 3 912  ./node_base.h 38 26 935
-$NodeBase::~NodeBase()$ ./node_base.h 45 1 1083  ./node_base.h 45 32 1114
-$EdgeBase::~EdgeBase()$ ./node_base.h 46 1 1115  ./node_base.h 46 32 1146
-$SourceLocation::SourceLocation()$ ./node.h 16 3 183  ./node.h 16 54 234
-$SourceLocation::SourceLocation(const std::string &, size_t, size_t, size_t)$ ./node.h 17 3 237  ./node.h 19 74 414
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 19 9 349  ./node.h 19 27 367
-$Node::Node(Fullname)$ ./node.h 31 3 573  ./node.h 31 50 620
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 31 29 599  ./node.h 31 47 617
-$Node::~Node()$ ./node.h 32 3 623  ./node.h 32 13 633
-$Edge::Edge(Node *, Node *)$ ./node.h 38 3 700  ./node.h 38 57 754
-  calls $EdgeBase::EdgeBase(NodeBase *, NodeBase *)$ ./node.h 38 34 731  ./node.h 38 54 751
-$Edge::~Edge()$ ./node.h 39 3 757  ./node.h 39 13 767
-$operator<<(std::ostream &, const SourceLocation &)$ ./node.h 42 1 772  ./node.h 42 65 836
-$operator<<(std::ostream &, const SourceRange &)$ ./node.h 43 1 838  ./node.h 43 62 899
-$operator<<(std::ostream &, const NodeBase &)$ ./node.h 44 1 901  ./node.h 44 59 959
-$operator<<(std::ostream &, const EdgeBase &)$ ./node.h 45 1 961  ./node.h 45 59 1019
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 28 37 559  ./node_base.h 28 65 587
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 29 38 628  ./node_base.h 29 66 656
+calls $NodeBase::in_degree()$ ./node_base.h 30 34 693  ./node_base.h 30 45 704
+calls $NodeBase::out_degree()$ ./node_base.h 30 48 707  ./node_base.h 30 60 719
+calls $NodeBase::degree()$ ./node_base.h 31 35 757  ./node_base.h 31 43 765
+calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 19 9 349  ./node.h 19 27 367
+calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 31 29 599  ./node.h 31 47 617
+calls $EdgeBase::EdgeBase(NodeBase *, NodeBase *)$ ./node.h 38 34 731  ./node.h 38 54 751
+calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ main.cc 20 29 355  main.cc 20 42 368
+$remove_qualifiers(const Fullname &)$ main.cc 22 1 371  main.cc 24 2 484
+  calls $std::regex_replace(const basic_string<_Ch_type, _St, _Sa> &, const basic_regex<_Ch_type, _Rx_traits> &, const _Ch_type *, regex_constants::match_flag_type)$ main.cc 23 10 433  main.cc 23 58 481
+  calls $std::__cxx11::basic_regex<char, std::__cxx11::regex_traits<char> >::basic_regex(const std::basic_string<char, _Ch_traits, _Ch_alloc> &, std::__cxx11::basic_regex::flag_type)$ main.cc 23 34 457  main.cc 23 53 476
+$initialize_view(const Graph &, View &, PLayout &)$ main.cc 26 1 486  main.cc 37 2 989
+  calls $__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator*()$ main.cc 28 20 578  main.cc 28 21 579
+  calls $remove_qualifiers(const Fullname &)$ main.cc 29 19 613  main.cc 29 52 646
+  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::operator=(const basic_string<_CharT, _Traits, _Alloc> &)$ main.cc 30 5 652  main.cc 30 36 683
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](std::unordered_map::key_type &&)$ main.cc 30 5 652  main.cc 30 24 671
+  calls $Pango::Layout::set_text(const Glib::ustring &)$ main.cc 31 5 689  main.cc 31 27 711
+  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 31 5 689  main.cc 31 11 695
+  calls $Glib::ustring::ustring(const std::string &)$ main.cc 31 22 706  main.cc 31 26 710
+  calls $Pango::Layout::get_pixel_ink_extents()$ main.cc 32 26 738  main.cc 32 57 769
+  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 32 26 738  main.cc 32 32 744
+  calls $std::complex<double>::operator=(std::complex<double> &&)$ main.cc 33 5 775  main.cc 34 80 929
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](std::unordered_map::key_type &&)$ main.cc 33 5 775  main.cc 33 24 794
+  calls $std::complex<double>::complex(double, double)$ main.cc 33 40 810  main.cc 34 80 929
+  calls $Pango::Rectangle::get_width()$ main.cc 33 65 835  main.cc 33 78 848
+  calls $Pango::Rectangle::get_height()$ main.cc 34 65 914  main.cc 34 79 928
+  calls $std::shared_ptr<_Tp>::operator=(shared_ptr<_Tp> &&)$ main.cc 35 5 935  main.cc 35 52 982
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](std::unordered_map::key_type &&)$ main.cc 35 5 935  main.cc 35 24 954
+  calls $std::make_shared(_Args &&...)$ main.cc 35 36 966  main.cc 35 52 982
+$draw_node(const NodeViewData &, CContext, PLayout, const double &)$ main.cc 39 1 991  main.cc 48 2 1414
+  calls $Cairo::Context::rectangle(double, double, double, double)$ main.cc 41 3 1101  main.cc 42 67 1226
+  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 41 3 1101  main.cc 41 4 1102
+  calls $std::complex<double>::real()$ main.cc 41 16 1114  main.cc 41 37 1135
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ main.cc 41 16 1114  main.cc 41 29 1127
+  calls $std::complex<double>::imag()$ main.cc 41 39 1137  main.cc 41 60 1158
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ main.cc 41 39 1137  main.cc 41 52 1150
+  calls $std::complex<double>::real()$ main.cc 42 16 1175  main.cc 42 40 1199
+  calls $std::complex<double>::imag()$ main.cc 42 42 1201  main.cc 42 66 1225
+  calls $Cairo::Context::stroke()$ main.cc 43 3 1230  main.cc 43 14 1241
+  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 43 3 1230  main.cc 43 4 1231
+  calls $Cairo::Context::move_to(double, double)$ main.cc 44 3 1245  main.cc 45 51 1344
+  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 44 3 1245  main.cc 44 4 1246
+  calls $std::complex<double>::real()$ main.cc 44 14 1256  main.cc 44 35 1277
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ main.cc 44 14 1256  main.cc 44 27 1269
+  calls $std::complex<double>::imag()$ main.cc 45 14 1307  main.cc 45 35 1328
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ main.cc 45 14 1307  main.cc 45 27 1320
+  calls $Pango::Layout::set_text(const Glib::ustring &)$ main.cc 46 3 1348  main.cc 46 30 1375
+  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 46 3 1348  main.cc 46 9 1354
+  calls $Glib::ustring::ustring(const std::string &)$ main.cc 46 20 1365  main.cc 46 29 1374
+  calls $Pango::Layout::show_in_cairo_context(const Cairo::RefPtr<Cairo::Context> &)$ main.cc 47 3 1379  main.cc 47 35 1411
+  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 47 3 1379  main.cc 47 9 1385
+$get_right_middle(const NodeViewData &)$ main.cc 50 1 1416  main.cc 53 2 1619
+  calls $std::operator+(const complex<_Tp> &, const complex<_Tp> &)$ main.cc 51 10 1480  main.cc 52 76 1616
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator*()$ main.cc 51 10 1480  main.cc 51 32 1502
+  calls $std::complex<double>::complex(double, double)$ main.cc 51 35 1505  main.cc 52 76 1616
+  calls $std::complex<double>::real()$ main.cc 51 37 1507  main.cc 51 69 1539
+  calls $std::complex<double>::imag()$ main.cc 52 37 1577  main.cc 52 69 1609
+$get_left_middle(const NodeViewData &)$ main.cc 55 1 1621  main.cc 58 2 1767
+  calls $std::operator+(const complex<_Tp> &, const complex<_Tp> &)$ main.cc 56 10 1684  main.cc 57 56 1764
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator*()$ main.cc 56 10 1684  main.cc 56 32 1706
+  calls $std::complex<double>::complex(double, double)$ main.cc 57 10 1718  main.cc 57 56 1764
+  calls $std::complex<double>::imag()$ main.cc 57 17 1725  main.cc 57 49 1757
+$draw_edge(const NodeViewData &, const NodeViewData &, CContext)$ main.cc 60 1 1769  main.cc 66 2 2009
+  calls $get_right_middle(const NodeViewData &)$ main.cc 61 12 1861  main.cc 61 34 1883
+  calls $get_left_middle(const NodeViewData &)$ main.cc 62 10 1894  main.cc 62 31 1915
+  calls $Cairo::Context::move_to(double, double)$ main.cc 63 3 1919  main.cc 63 39 1955
+  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 63 3 1919  main.cc 63 4 1920
+  calls $std::complex<double>::real()$ main.cc 63 14 1930  main.cc 63 25 1941
+  calls $std::complex<double>::imag()$ main.cc 63 27 1943  main.cc 63 38 1954
+  calls $Cairo::Context::line_to(double, double)$ main.cc 64 3 1959  main.cc 64 35 1991
+  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 64 3 1959  main.cc 64 4 1960
+  calls $std::complex<double>::real()$ main.cc 64 14 1970  main.cc 64 23 1979
+  calls $std::complex<double>::imag()$ main.cc 64 25 1981  main.cc 64 34 1990
+  calls $Cairo::Context::stroke()$ main.cc 65 3 1995  main.cc 65 14 2006
+  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 65 3 1995  main.cc 65 4 1996
+$draw_view(View &, CContext, PLayout)$ main.cc 68 1 2011  main.cc 84 2 2612
+  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator*()$ main.cc 69 18 2085  main.cc 69 19 2086
+  calls $draw_node(const NodeViewData &, CContext, PLayout, const double &)$ main.cc 70 5 2108  main.cc 70 54 2157
+  calls $Glib::RefPtr<T_CppObject>::RefPtr<T_CppObject>(const RefPtr<T_CppObject> &)$ main.cc 70 29 2132  main.cc 70 35 2138
+  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator*()$ main.cc 72 18 2180  main.cc 72 19 2181
+  calls $std::_List_iterator<_Tp>::operator*()$ main.cc 73 20 2218  main.cc 73 21 2219
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const std::unordered_map::key_type &)$ main.cc 74 25 2279  main.cc 74 55 2309
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const std::unordered_map::key_type &)$ main.cc 75 25 2335  main.cc 75 55 2365
+  calls $std::__detail::operator==(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ main.cc 76 11 2377  main.cc 76 44 2410
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ main.cc 76 25 2391  main.cc 76 44 2410
+  calls $std::__detail::operator==(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ main.cc 77 11 2424  main.cc 77 44 2457
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ main.cc 77 25 2438  main.cc 77 44 2457
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ main.cc 78 9 2469  main.cc 78 55 2515
+  calls $operator<<(std::ostream &, const EdgeBase &)$ main.cc 78 9 2469  main.cc 78 47 2507
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ main.cc 78 9 2469  main.cc 78 38 2498
+  calls $draw_edge(const NodeViewData &, const NodeViewData &, CContext)$ main.cc 80 7 2531  main.cc 80 59 2583
+  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ main.cc 80 17 2541  main.cc 80 27 2551
+  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ main.cc 80 37 2561  main.cc 80 47 2571
+$contains_point(const NodeViewData &, double, double, const DrawingArea_ZoomDrag &)$ main.cc 86 1 2614  main.cc 94 2 3097
+  calls $std::complex<double>::complex(const std::complex<double> &)$ main.cc 88 10 2769  main.cc 88 32 2791
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator*()$ main.cc 88 10 2769  main.cc 88 32 2791
+  calls $std::operator+(const complex<_Tp> &, const complex<_Tp> &)$ main.cc 89 10 2802  main.cc 89 60 2852
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator*()$ main.cc 89 10 2802  main.cc 89 32 2824
+  calls $DrawingArea_ZoomDrag::user_to_image(const C &)$ main.cc 90 13 2866  main.cc 90 56 2909
+  calls $std::complex<double>::complex(double, double)$ main.cc 90 48 2901  main.cc 90 55 2908
+  calls $std::complex<double>::real()$ main.cc 92 10 2973  main.cc 92 19 2982
+  calls $std::complex<double>::real()$ main.cc 92 23 2986  main.cc 92 35 2998
+  calls $std::complex<double>::real()$ main.cc 92 39 3002  main.cc 92 51 3014
+  calls $std::complex<double>::real()$ main.cc 92 55 3018  main.cc 92 64 3027
+  calls $std::complex<double>::imag()$ main.cc 93 10 3040  main.cc 93 19 3049
+  calls $std::complex<double>::imag()$ main.cc 93 23 3053  main.cc 93 35 3065
+  calls $std::complex<double>::imag()$ main.cc 93 39 3069  main.cc 93 51 3081
+  calls $std::complex<double>::imag()$ main.cc 93 55 3085  main.cc 93 64 3094
+$usage()$ main.cc 96 1 3099  main.cc 101 2 3267
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ main.cc 97 3 3115  main.cc 97 46 3158
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ main.cc 97 3 3115  main.cc 97 38 3150
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ main.cc 98 3 3162  main.cc 99 15 3252
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ main.cc 98 3 3162  main.cc 98 78 3237
+$main(int, char **)$ main.cc 103 1 3269  main.cc 143 2 4469
+  calls $usage()$ main.cc 105 12 3333  main.cc 105 19 3340
+  calls $parseCallGraphFromFile(const std::string &)$ main.cc 107 17 3362  main.cc 107 48 3393
+  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ main.cc 107 40 3385  main.cc 107 47 3392
+  calls $dump_call_graph(const Graph &, std::ostream &)$ main.cc 108 3 3397  main.cc 108 25 3419
+  calls $View::View(std::unordered_map<Fullname, NodeBase *> *)$ main.cc 110 8 3429  main.cc 110 33 3454
+  calls $Gtk::Application::create(const Glib::ustring &, Gio::ApplicationFlags)$ main.cc 112 40 3496  main.cc 112 66 3522
+  calls $Gtk::Window::Window(Gtk::WindowType)$ main.cc 113 15 3538  main.cc 113 21 3544
+  calls $DrawingArea_ZoomDrag::DrawingArea_ZoomDrag()$ main.cc 114 24 3569  main.cc 114 44 3589
+  calls $Gtk::Container::add(Gtk::Widget &)$ main.cc 115 3 3593  main.cc 115 35 3625
+  calls $Pango::Layout::create(const Glib::RefPtr<Context> &)$ main.cc 117 7 3652  main.cc 117 70 3715
+  calls $Gtk::Widget::get_pango_context()$ main.cc 117 29 3674  main.cc 117 69 3714
+  calls $initialize_view(const Graph &, View &, PLayout &)$ main.cc 119 3 3720  main.cc 119 39 3756
+  calls $prune_isolated_nodes(View &)$ main.cc 120 3 3760  main.cc 120 29 3786
+  calls $get_initialViewFullGraph(View &)$ main.cc 121 3 3790  main.cc 121 33 3820
+  calls $std::function<bool (const Cairo::RefPtr<Cairo::Context> &)>::operator=(_Functor &&)$ main.cc 122 3 3824  main.cc 124 4 3931
+  calls $draw_view(View &, CContext, PLayout)$ main.cc 123 12 3900  main.cc 123 38 3926
+  calls $Glib::RefPtr<T_CppObject>::RefPtr<T_CppObject>(const RefPtr<T_CppObject> &)$ main.cc 123 31 3919  main.cc 123 37 3925
+  calls $std::function<std::shared_ptr<std::complex<double> > (_GdkEventButton *)>::operator=(_Functor &&)$ main.cc 126 3 3936  main.cc 137 4 4386
+  calls $std::find_if(_InputIterator, _InputIterator, _Predicate)$ main.cc 128 18 4060  main.cc 132 11 4278
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::begin()$ main.cc 129 9 4077  main.cc 129 30 4098
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ main.cc 129 32 4100  main.cc 129 51 4119
+  calls $contains_point(const NodeViewData &, double, double, const DrawingArea_ZoomDrag &)$ main.cc 131 18 4207  main.cc 131 77 4266
+  calls $std::__detail::operator!=(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ main.cc 133 9 4288  main.cc 133 37 4316
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ main.cc 133 18 4297  main.cc 133 37 4316
+  calls $std::shared_ptr<_Tp>::shared_ptr<_Tp>(const shared_ptr<_Tp> &)$ main.cc 134 14 4333  main.cc 134 36 4355
+  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ main.cc 134 14 4333  main.cc 134 19 4338
+  calls $std::shared_ptr<_Tp>::shared_ptr<_Tp>(std::nullptr_t)$ main.cc 136 12 4374  main.cc 136 19 4381
+  calls $Gtk::Window::set_default_size(int, int)$ main.cc 139 3 4391  main.cc 139 36 4424
+  calls $Gtk::Widget::show_all()$ main.cc 140 3 4428  main.cc 140 20 4445
+  calls $Gtk::Application::run(Gtk::Window &)$ main.cc 142 3 4450  main.cc 142 19 4466
+  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 142 3 4450  main.cc 142 6 4453
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 28 37 559  ./node_base.h 28 65 587
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 29 38 628  ./node_base.h 29 66 656
+calls $NodeBase::in_degree()$ ./node_base.h 30 34 693  ./node_base.h 30 45 704
+calls $NodeBase::out_degree()$ ./node_base.h 30 48 707  ./node_base.h 30 60 719
+calls $NodeBase::degree()$ ./node_base.h 31 35 757  ./node_base.h 31 43 765
+calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 19 9 349  ./node.h 19 27 367
+calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 31 29 599  ./node.h 31 47 617
+calls $EdgeBase::EdgeBase(NodeBase *, NodeBase *)$ ./node.h 38 34 731  ./node.h 38 54 751
 $operator<<(std::ostream &, const SourceLocation &)$ node.cc 7 1 61  node.cc 11 2 276
   calls $std::basic_ostream<_CharT, _Traits>::operator<<(unsigned long)$ node.cc 8 3 135  node.cc 9 61 261
   calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 8 3 135  node.cc 9 36 236
@@ -378,22 +299,11 @@ $operator<<(std::ostream &, const EdgeBase &)$ node.cc 24 1 587  node.cc 30 2 88
   calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ node.cc 28 3 801  node.cc 28 50 848
   calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 28 3 801  node.cc 28 32 830
   calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ node.cc 28 3 801  node.cc 28 22 820
-$NodeBase::in_degree()$ ./node_base.h 26 3 503  ./node_base.h 26 68 568
-  calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 26 37 537  ./node_base.h 26 65 565
-$NodeBase::out_degree()$ ./node_base.h 27 3 571  ./node_base.h 27 69 637
-  calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 27 38 606  ./node_base.h 27 66 634
-$NodeBase::degree()$ ./node_base.h 28 3 640  ./node_base.h 28 63 700
-  calls $NodeBase::in_degree()$ ./node_base.h 28 34 671  ./node_base.h 28 45 682
-  calls $NodeBase::out_degree()$ ./node_base.h 28 48 685  ./node_base.h 28 60 697
-$NodeBase::isolated()$ ./node_base.h 29 3 703  ./node_base.h 29 46 746
-  calls $NodeBase::degree()$ ./node_base.h 29 35 735  ./node_base.h 29 43 743
-$NodeBase::~NodeBase()$ ./node_base.h 30 3 749  ./node_base.h 30 26 772
-$EdgeBase::EdgeBase(NodeBase *, NodeBase *)$ ./node_base.h 37 3 841  ./node_base.h 37 71 909
-$EdgeBase::~EdgeBase()$ ./node_base.h 38 3 912  ./node_base.h 38 26 935
-$NodeBase::~NodeBase()$ ./node_base.h 45 1 1083  ./node_base.h 45 32 1114
-$EdgeBase::~EdgeBase()$ ./node_base.h 46 1 1115  ./node_base.h 46 32 1146
-$View::View(std::unordered_map<Fullname, NodeBase *> *)$ ./view.h 38 3 797  ./view.h 40 32 963
-$get_initialViewFullGraph(View &)$ ./graph_layout_algorithms.h 13 1 331  ./graph_layout_algorithms.h 13 38 368
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 28 37 559  ./node_base.h 28 65 587
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 29 38 628  ./node_base.h 29 66 656
+calls $NodeBase::in_degree()$ ./node_base.h 30 34 693  ./node_base.h 30 45 704
+calls $NodeBase::out_degree()$ ./node_base.h 30 48 707  ./node_base.h 30 60 719
+calls $NodeBase::degree()$ ./node_base.h 31 35 757  ./node_base.h 31 43 765
 $init_stack(stack<NodeBase *> &, const View &, GridMap &)$ graph_layout_algorithms.cc 22 1 358  graph_layout_algorithms.cc 34 2 859
   calls $std::find_if(_InputIterator, _InputIterator, _Predicate)$ graph_layout_algorithms.cc 24 13 471  graph_layout_algorithms.cc 27 9 684
   calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::begin()$ graph_layout_algorithms.cc 24 21 479  graph_layout_algorithms.cc 24 47 505
@@ -495,17 +405,6 @@ $get_initialViewFullGraph(View &)$ graph_layout_algorithms.cc 140 1 4539  graph_
   calls $std::vector<_Tp, _Alloc>::resize(std::vector::size_type)$ graph_layout_algorithms.cc 147 3 4872  graph_layout_algorithms.cc 147 49 4918
   calls $get_row_column_dimensions(const View &, const GridMap &, vector<double> &, vector<double> &)$ graph_layout_algorithms.cc 148 3 4922  graph_layout_algorithms.cc 148 69 4988
   calls $set_initial_positions(View &, const GridMap &, const vector<double> &, const vector<double> &)$ graph_layout_algorithms.cc 149 3 4992  graph_layout_algorithms.cc 149 65 5054
-$DrawingArea_ZoomDrag::DrawingArea_ZoomDrag()$ ./drawingarea_zoom_drag.h 36 3 802  ./drawingarea_zoom_drag.h 36 25 824
-$DrawingArea_ZoomDrag::DrawingArea_ZoomDrag(std::function<bool (CContext)>, std::function<std::shared_ptr<C> (GdkEventButton *)>)$ ./drawingarea_zoom_drag.h 37 3 828  ./drawingarea_zoom_drag.h 38 85 976
-$DrawingArea_ZoomDrag::user_to_image(const C &)$ ./drawingarea_zoom_drag.h 40 3 981  ./drawingarea_zoom_drag.h 40 35 1013
-$DrawingArea_ZoomDrag::on_button_press_event(GdkEventButton *)$ ./drawingarea_zoom_drag.h 43 3 1029  ./drawingarea_zoom_drag.h 43 56 1082
-$DrawingArea_ZoomDrag::on_button_release_event(GdkEventButton *)$ ./drawingarea_zoom_drag.h 44 3 1086  ./drawingarea_zoom_drag.h 44 58 1141
-$DrawingArea_ZoomDrag::on_motion_notify_event(GdkEventMotion *)$ ./drawingarea_zoom_drag.h 45 3 1145  ./drawingarea_zoom_drag.h 45 57 1199
-$DrawingArea_ZoomDrag::on_draw(CContext)$ ./drawingarea_zoom_drag.h 46 3 1203  ./drawingarea_zoom_drag.h 46 34 1234
-$DrawingArea_ZoomDrag::on_scroll_event(GdkEventScroll *)$ ./drawingarea_zoom_drag.h 47 3 1238  ./drawingarea_zoom_drag.h 47 51 1286
-$DrawingArea_ZoomDrag::translate_matrix(C)$ ./drawingarea_zoom_drag.h 50 3 1300  ./drawingarea_zoom_drag.h 50 27 1324
-$DrawingArea_ZoomDrag::translate_item(C *, C)$ ./drawingarea_zoom_drag.h 51 3 1328  ./drawingarea_zoom_drag.h 51 44 1369
-$operator<<(std::ostream &, const Cairo::Matrix &)$ ./drawingarea_zoom_drag.h 54 1 1375  ./drawingarea_zoom_drag.h 54 66 1440
 $get_scale_from_matrix(const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 12 1 195  drawingarea_zoom_drag.cc 17 2 337
   calls $Cairo::Matrix::transform_distance(double &, double &)$ drawingarea_zoom_drag.cc 15 3 289  drawingarea_zoom_drag.cc 15 34 320
 $get_matrix_transform(const Cairo::Matrix &, double, double)$ drawingarea_zoom_drag.cc 19 1 339  drawingarea_zoom_drag.cc 22 2 454
@@ -610,22 +509,11 @@ $DrawingArea_ZoomDrag::translate_matrix(C)$ drawingarea_zoom_drag.cc 129 1 3602 
   calls $Cairo::Matrix::translate(double, double)$ drawingarea_zoom_drag.cc 131 3 3688  drawingarea_zoom_drag.cc 131 34 3719
   calls $std::complex<double>::real()$ drawingarea_zoom_drag.cc 131 15 3700  drawingarea_zoom_drag.cc 131 23 3708
   calls $std::complex<double>::imag()$ drawingarea_zoom_drag.cc 131 25 3710  drawingarea_zoom_drag.cc 131 33 3718
-$NodeBase::in_degree()$ ./node_base.h 26 3 503  ./node_base.h 26 68 568
-  calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 26 37 537  ./node_base.h 26 65 565
-$NodeBase::out_degree()$ ./node_base.h 27 3 571  ./node_base.h 27 69 637
-  calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 27 38 606  ./node_base.h 27 66 634
-$NodeBase::degree()$ ./node_base.h 28 3 640  ./node_base.h 28 63 700
-  calls $NodeBase::in_degree()$ ./node_base.h 28 34 671  ./node_base.h 28 45 682
-  calls $NodeBase::out_degree()$ ./node_base.h 28 48 685  ./node_base.h 28 60 697
-$NodeBase::isolated()$ ./node_base.h 29 3 703  ./node_base.h 29 46 746
-  calls $NodeBase::degree()$ ./node_base.h 29 35 735  ./node_base.h 29 43 743
-$NodeBase::~NodeBase()$ ./node_base.h 30 3 749  ./node_base.h 30 26 772
-$EdgeBase::EdgeBase(NodeBase *, NodeBase *)$ ./node_base.h 37 3 841  ./node_base.h 37 71 909
-$EdgeBase::~EdgeBase()$ ./node_base.h 38 3 912  ./node_base.h 38 26 935
-$NodeBase::~NodeBase()$ ./node_base.h 45 1 1083  ./node_base.h 45 32 1114
-$EdgeBase::~EdgeBase()$ ./node_base.h 46 1 1115  ./node_base.h 46 32 1146
-$View::View(std::unordered_map<Fullname, NodeBase *> *)$ ./view.h 38 3 797  ./view.h 40 32 963
-$prune_isolated_nodes(View &)$ ./view_filters.h 6 1 50  ./view_filters.h 6 38 87
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 28 37 559  ./node_base.h 28 65 587
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 29 38 628  ./node_base.h 29 66 656
+calls $NodeBase::in_degree()$ ./node_base.h 30 34 693  ./node_base.h 30 45 704
+calls $NodeBase::out_degree()$ ./node_base.h 30 48 707  ./node_base.h 30 60 719
+calls $NodeBase::degree()$ ./node_base.h 31 35 757  ./node_base.h 31 43 765
 $prune_isolated_nodes(View &)$ view_filters.cc 5 1 46  view_filters.cc 14 2 326
   calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::begin()$ view_filters.cc 6 18 103  view_filters.cc 6 39 124
   calls $std::__detail::operator!=(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ view_filters.cc 6 41 126  view_filters.cc 6 66 151

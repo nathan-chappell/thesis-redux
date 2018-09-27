@@ -22,6 +22,9 @@ struct Graph {
   std::pair<Node *, bool> try_createNode(const Fullname &);
   std::pair<Edge *, bool> try_createEdge(Node *tail, Node *head);
 
+  //gets nodes with in_degree == 0
+  std::vector<NodeBase *> get_roots() const; 
+
   ~Graph();
 };
 

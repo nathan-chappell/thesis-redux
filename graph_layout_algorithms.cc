@@ -3,7 +3,6 @@
 #include "graph_layout_algorithms.h"
 
 #include <algorithm>
-#include <complex>
 #include <numeric>
 #include <stack>
 #include <unordered_map>
@@ -24,6 +23,8 @@ using GridMap = unordered_map<NodeBase *, Grid>;
 
 /*
  * Root is assumed to be "main()"
+ *
+ * (Deprecated, View now has explicit roots)
  */
 void init_stack(stack<NodeBase *> &node_stack, const View &view,
                 GridMap &gridMap) {
@@ -44,12 +45,12 @@ void init_stack(stack<NodeBase *> &node_stack, const View &view,
  */
 bool refresh_stack(stack<NodeBase *> &node_stack, const View &view,
                    GridMap &gridMap, int &max_row) {
-  for (auto &&kv : view.viewData) {
-    auto it = gridMap.find(kv.first);
-    //not visited, has outgoing edges
-    if (it == gridMap.end() && kv.first->out_degree()) {
-      node_stack.push(kv.first);
-      gridMap[kv.first] = Grid(max_row++, 0);
+  for (auto &&node : view.roots) {
+    //not visited
+    if (!gridMap.count(node)) {
+      node_stack.push(node);
+      gridMap[node] = Grid(max_row++, 0);
+      cout << "pushing root: " << view.viewData.at(node).text << endl;
       return true;
     }
   }
@@ -66,16 +67,16 @@ pair<int, int> set_grid_dfs(const View &view, GridMap &gridMap) {
   int max_row = 0;
   int max_column = 0;
 
-  init_stack(node_stack, view, gridMap);
+  //init_stack(node_stack, view, gridMap);
 
   while (!node_stack.empty() ||
          refresh_stack(node_stack, view, gridMap, max_row)) {
     const auto &outgoing = node_stack.top()->neighborhood.outgoing;
     int next_column = gridMap[node_stack.top()].column + 1;
     auto next =
-        find_if(outgoing.begin(), outgoing.end(), [&gridMap](EdgeBase *edge) {
+        find_if(outgoing.begin(), outgoing.end(), [&view,&gridMap](EdgeBase *edge) {
           // if a node is not in the gridMap, it hasn't been visited
-          return !gridMap.count(edge->head);
+          return view.logicalSubView.count(edge->head) && !gridMap.count(edge->head);
         });
     if (next == outgoing.end()) {
       node_stack.pop();
@@ -97,12 +98,12 @@ pair<int, int> set_grid_dfs(const View &view, GridMap &gridMap) {
 void get_row_column_dimensions(const View &view, const GridMap &gridMap,
                                vector<double> &row_height,
                                vector<double> &column_width) {
-  for (auto &&kv : view.viewData) {
+  for (auto &&node : view.logicalSubView) {
     // set max col/row...
-    const double &node_height = kv.second.box->extent.y;
-    const double &node_width = kv.second.box->extent.x;
-    const int &row = gridMap.find(kv.first)->second.row;
-    const int &column = gridMap.find(kv.first)->second.column;
+    const double &node_height = view.viewData.at(node).box->extent.y;
+    const double &node_width = view.viewData.at(node).box->extent.x;
+    const int &row = gridMap.at(node).row;
+    const int &column = gridMap.at(node).column;
     row_height[row] = max<double>(row_height[row], node_height);
     column_width[column] = max<double>(column_width[column], node_width);
   }
@@ -114,9 +115,9 @@ void get_row_column_dimensions(const View &view, const GridMap &gridMap,
 void set_initial_positions(View &view, const GridMap &gridMap,
                            const vector<double> &row_height,
                            const vector<double> &column_width) {
-  for (auto &kv : view.viewData) {
-    const int &row = gridMap.find(kv.first)->second.row;
-    const int &column = gridMap.find(kv.first)->second.column;
+  for (auto &node : view.logicalSubView) {
+    const int &row = gridMap.at(node).row;
+    const int &column = gridMap.at(node).column;
     double row_pos = 0;
     double column_pos = 0;
     if (row != 0) {
@@ -128,7 +129,7 @@ void set_initial_positions(View &view, const GridMap &gridMap,
       column_pos = accumulate(column_width.begin(),
                               next(column_width.begin(), column), 0.0);
       column_pos += column * view.column_spacing;
-      cout << kv.second.text << ", column: " << column
+      cout << view.viewData.at(node).text << ", column: " << column
            << ", column_pos: " << column_pos << endl;
     }
     /*
@@ -136,8 +137,8 @@ void set_initial_positions(View &view, const GridMap &gridMap,
      * second, this is because with position we go from the "row, column"
      * semantics of the grid to the "x,y" semantics of cartesian coordinates
      */
-    kv.second.box->position.x = column_pos;
-    kv.second.box->position.y = row_pos;
+    view.viewData.at(node).box->position.x = column_pos;
+    view.viewData.at(node).box->position.y = row_pos;
   }
 }
 

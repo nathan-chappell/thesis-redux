@@ -43,7 +43,6 @@ inline double operator*(const Point &p, const Point &q) {
 }
 
 std::ostream &operator<<(std::ostream &o, const Point &p);
-std::istream &operator>>(std::istream &i, Point &p);
 bool operator<(const Point &l, const Point &r);
 
 /// Line
@@ -67,7 +66,6 @@ struct Line {
 };
 
 std::ostream &operator<<(std::ostream &o, const Line &line);
-std::istream &operator>>(std::istream &i, Line &line);
 
 bool in_box(const Point &position, const Extent &extent, const Point &p);
 
@@ -92,7 +90,6 @@ struct LineSegment {
 };
 
 std::ostream &operator<<(std::ostream &o, const LineSegment &lineSegment);
-std::istream &operator>>(std::istream &i, LineSegment &lineSegment);
 
 struct Rectangle {
   Point position; // upper left
@@ -117,9 +114,9 @@ struct Rectangle {
   bool Contains(const LineSegment &lineSegment) const;
   bool Contains(const Rectangle &rectangle) const;
   bool Intersects(const Line &line) const;
+  bool Intersects(const LineSegment &lineSegment) const;
   bool Intersects(const Rectangle &rectangle) const;
 };
 
 std::ostream &operator<<(std::ostream &o, const Rectangle &rectangle);
 
-std::istream &operator>>(std::istream &i, Rectangle &rectangle);

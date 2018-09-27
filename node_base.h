@@ -9,6 +9,7 @@
  * algorithms access to what they need to create views, and no more.
  */
 
+#include <iostream>
 #include <list>
 #include <string>
 
@@ -17,6 +18,9 @@ using Fullname = std::string;
 class NodeBase;
 class EdgeBase;
 
+/*
+ * Tempted to make an iterator for this... (don't do it!)
+ */
 struct Neighborhood {
   std::list<EdgeBase *> outgoing;
   std::list<EdgeBase *> incoming;
@@ -28,7 +32,7 @@ public:
   size_t in_degree() const { return neighborhood.incoming.size(); }
   size_t out_degree() const { return neighborhood.outgoing.size(); }
   size_t degree() const { return in_degree() + out_degree(); }
-  bool isolated() const { return !degree(); }
+  bool is_isolated() const { return !degree(); }
   virtual ~NodeBase() = 0;
 };
 
@@ -37,8 +41,13 @@ public:
   NodeBase *tail;
   NodeBase *head;
   EdgeBase(NodeBase *tail, NodeBase *head) : tail(tail), head(head) {}
-  virtual ~EdgeBase() = 0;
+  // virtual ~EdgeBase() = 0;
+  virtual ~EdgeBase(); // taking pure virtualness off for error throwing!
 };
+
+inline std::ostream& operator<<(std::ostream &o, const EdgeBase &e) {
+  return o << e.tail << " --> " << e.head;
+}
 
 /*
  * Just learned this trick.  Force the Bases to be abstract with purevirtual
