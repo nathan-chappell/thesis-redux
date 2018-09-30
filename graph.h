@@ -18,7 +18,6 @@ struct Graph {
   std::unordered_map<Fullname, NodeBase *> name_to_node;
   std::unordered_map<Fullname, EdgeBase *> name_to_edge;
 
-  // void dump(std::ostream & = std::cout) const;
   std::pair<Node *, bool> try_createNode(const Fullname &);
   std::pair<Edge *, bool> try_createEdge(Node *tail, Node *head);
 

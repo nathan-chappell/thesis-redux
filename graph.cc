@@ -1,5 +1,6 @@
 // graph.cc
 
+#include "myassert.h"
 #include "graph.h"
 #include "node.h"
 
@@ -7,8 +8,6 @@
 #include <cassert>
 #include <fstream>
 #include <regex>
-
-//#define DIAGNOSTIC cout << __FILE__ << ":" << __LINE__ << " "
 
 using namespace std;
 
@@ -108,7 +107,7 @@ Graph parseCallGraphFromFile(const std::string &filename) {
       auto node_p = graph.try_createNode(caller);
       node_p.first->range = range;
     } else {
-      cout << "error parsing line[" << line_no << "]: " << line << endl;
+      DIAGNOSTIC << "error parsing line[" << line_no << "]: " << line << endl;
       return graph;
     }
   }
@@ -129,7 +128,7 @@ vector<NodeBase *> Graph::get_roots() const {
   copy_if(nodes.begin(), nodes.end(), back_inserter(result),
           [](const NodeBase *node) {
             if (node->in_degree() == 0) {
-              cout << "found root: " << dynamic_cast<const Node &>(*node) << " "
+              DIAGNOSTIC << "found root: " << dynamic_cast<const Node &>(*node) << " "
                    << (unsigned long long)node << endl;
             }
             return node->in_degree() == 0;

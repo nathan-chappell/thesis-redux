@@ -11,3 +11,4 @@
  * algorithm to access
  */
 void get_initialViewFullGraph(View &);
+View expand_node(View &view, NodeBase *node);

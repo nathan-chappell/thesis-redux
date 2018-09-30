@@ -4,6 +4,7 @@
 #include "drawingarea_zoom_drag.h" //included for type aliases
 #include "graph.h"
 #include "graph_layout_algorithms.h"
+#include "myassert.h"
 #include "view.h"
 #include "view_filters.h"
 
@@ -15,6 +16,8 @@
 #include <regex>
 #include <string>
 
+using Milliseconds = double;
+
 struct NodeClickInfo {
   Node *node;
   GdkEventButton *e;
@@ -25,16 +28,40 @@ struct NodeClickInfo {
   NodeClickInfo &operator=(NodeClickInfo &&nodeClickInfo);
   NodeClickInfo(NodeClickInfo &&nodeClickInfo);
   NodeClickInfo();
-  NodeClickInfo &operator=(const NodeClickInfo&) = default;
+  NodeClickInfo &operator=(const NodeClickInfo &) = default;
   ~NodeClickInfo();
 
   explicit operator bool() { return node && e; }
 };
 
+struct ViewAnimation {
+  View final_view;
+  View initial_view;
+  View current_view;
+
+  Milliseconds time;
+  Milliseconds final_time;
+  Milliseconds time_period;
+
+  ViewAnimation() : time(0), final_time(0), time_period(0) {} // uninitialized
+  ViewAnimation(const ViewAnimation &) = delete;
+  ViewAnimation(ViewAnimation &&) = default;
+  ViewAnimation &operator=(const ViewAnimation &) = delete;
+  ViewAnimation &operator=(ViewAnimation &&) = default;
+
+  void init(View &&view);
+
+  bool is_valid() const;
+  bool is_finished() const;
+  explicit operator bool() const;
+  ViewAnimation& operator++();
+};
+
 struct MyState {
   NodeClickInfo nodeClick;
   NodeClickInfo node2Click;
-  bool handle_event_click(Node*, GdkEventButton *e);
+  ViewAnimation viewAnimation;
+  bool handle_event_click(Node *, GdkEventButton *e);
   DragTarget get_motion_target() const;
 };
 

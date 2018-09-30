@@ -1,7 +1,6 @@
 // view_filters.cc
 
-//#define DIAGNOSTIC cout << __FILE__ << ":" << __LINE__ << " "
-
+#include "myassert.h"
 #include "view_filters.h"
 
 using namespace std;
@@ -30,28 +29,33 @@ string edge_in_view(const View &view, const EdgeBase *edge) {
 vector<LineSegment> PhysicalNeighborhood(const View &view,
                                          const NodeBase &node) {
   vector<LineSegment> result;
-  transform(node.neighborhood.outgoing.begin(),
-            node.neighborhood.outgoing.end(), back_inserter(result),
-            [&view](const EdgeBase *edge) {
-              return PhysicalEdge(view, *edge);
-            });
-  transform(node.neighborhood.incoming.begin(),
-            node.neighborhood.incoming.end(), back_inserter(result),
-            [&view](const EdgeBase *edge) {
-              return PhysicalEdge(view, *edge);
-            });
+  vector<EdgeBase *> neighborhood;
+  copy_if(node.neighborhood.outgoing.begin(), node.neighborhood.outgoing.end(),
+          back_inserter(neighborhood), [&view](const EdgeBase *edge) {
+            return view.logicalSubView.count(edge->head);
+          });
+  copy_if(node.neighborhood.incoming.begin(), node.neighborhood.incoming.end(),
+          back_inserter(neighborhood), [&view](const EdgeBase *edge) {
+            return view.logicalSubView.count(edge->tail);
+          });
+
+  transform(
+      neighborhood.begin(), neighborhood.end(), back_inserter(result),
+      [&view](const EdgeBase *edge) { return PhysicalEdge(view, *edge); });
   return result;
 }
 
-/*
- * Good opportunity to generalize this...
- */
 void prune_isolated_nodes(View &view) {
-  for (auto kv = view.viewData.begin(); kv != view.viewData.end();
-       kv = find_if(kv, view.viewData.end(), [](const ViewData::value_type &vt) {
-         return vt.first->is_isolated();
-       })) {
-    view.viewData.erase(kv++);
+  auto find_next_isolated = [](const ViewData::value_type &vt) {
+    return vt.first->is_isolated();
+  };
+  for (auto kv = find_if(view.viewData.begin(), view.viewData.end(),
+                         find_next_isolated);
+       kv != view.viewData.end();
+       kv = find_if(kv, view.viewData.end(), find_next_isolated)) {
+    DIAGNOSTIC << "pruning: " << kv->first << endl;
+    //view.viewData.erase(kv++);
+    kv++;
   }
 }
 
@@ -71,7 +75,9 @@ void set_physicalView(View &view, const Rectangle &view_box) {
         return any_of(neighborhood.begin(), neighborhood.end(),
                       [&view_box](const LineSegment &physical_edge) {
                         return view_box.Intersects(physical_edge);
-                      });
+                      }) ||
+               view_box.Intersects(
+                   *view.viewData.at(const_cast<NodeBase *>(node)).box);
       });
 }
 

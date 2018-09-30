@@ -1,5 +1,6 @@
 // graph_layout_algorithms.cc
 
+#include "myassert.h"
 #include "graph_layout_algorithms.h"
 
 #include <algorithm>
@@ -28,10 +29,11 @@ using GridMap = unordered_map<NodeBase *, Grid>;
  */
 void init_stack(stack<NodeBase *> &node_stack, const View &view,
                 GridMap &gridMap) {
-  auto kv = find_if(view.name_to_node->begin(), view.name_to_node->end(), 
-      [](const unordered_map<Fullname, NodeBase*>::value_type &kv) {
-        return kv.first == "main()" || kv.first == "main(int, char **)";
-      });
+  auto kv =
+      find_if(view.name_to_node->begin(), view.name_to_node->end(),
+              [](const unordered_map<Fullname, NodeBase *>::value_type &kv) {
+                return kv.first == "main()" || kv.first == "main(int, char **)";
+              });
   if (kv == view.name_to_node->end()) {
     cout << "couldn't find node main()" << endl;
     return;
@@ -46,11 +48,11 @@ void init_stack(stack<NodeBase *> &node_stack, const View &view,
 bool refresh_stack(stack<NodeBase *> &node_stack, const View &view,
                    GridMap &gridMap, int &max_row) {
   for (auto &&node : view.roots) {
-    //not visited
+    // not visited
     if (!gridMap.count(node)) {
       node_stack.push(node);
       gridMap[node] = Grid(max_row++, 0);
-      cout << "pushing root: " << view.viewData.at(node).text << endl;
+      DIAGNOSTIC << "pushing root: " << view.viewData.at(node).text << endl;
       return true;
     }
   }
@@ -67,17 +69,19 @@ pair<int, int> set_grid_dfs(const View &view, GridMap &gridMap) {
   int max_row = 0;
   int max_column = 0;
 
-  //init_stack(node_stack, view, gridMap);
+  // init_stack(node_stack, view, gridMap);
 
   while (!node_stack.empty() ||
          refresh_stack(node_stack, view, gridMap, max_row)) {
     const auto &outgoing = node_stack.top()->neighborhood.outgoing;
     int next_column = gridMap[node_stack.top()].column + 1;
-    auto next =
-        find_if(outgoing.begin(), outgoing.end(), [&view,&gridMap](EdgeBase *edge) {
-          // if a node is not in the gridMap, it hasn't been visited
-          return view.logicalSubView.count(edge->head) && !gridMap.count(edge->head);
-        });
+    auto next = find_if(outgoing.begin(), outgoing.end(),
+                        [&view, &gridMap](EdgeBase *edge) {
+                          // if a node is not in the gridMap, it hasn't been
+                          // visited
+                          return view.logicalSubView.count(edge->head) &&
+                                 !gridMap.count(edge->head);
+                        });
     if (next == outgoing.end()) {
       node_stack.pop();
     } else {
@@ -121,16 +125,17 @@ void set_initial_positions(View &view, const GridMap &gridMap,
     double row_pos = 0;
     double column_pos = 0;
     if (row != 0) {
-      row_pos = accumulate(row_height.begin(),
-                           next(row_height.begin(), row), 0.0);
+      row_pos =
+          accumulate(row_height.begin(), next(row_height.begin(), row), 0.0);
       row_pos += row * view.row_spacing;
     }
     if (column != 0) {
       column_pos = accumulate(column_width.begin(),
                               next(column_width.begin(), column), 0.0);
       column_pos += column * view.column_spacing;
-      cout << view.viewData.at(node).text << ", column: " << column
-           << ", column_pos: " << column_pos << endl;
+      DIAGNOSTIC << view.viewData.at(node).text << ", row: " << row
+                 << ", row_pos: " << row_pos << ", column: " << column
+                 << ", column_pos: " << column_pos << endl;
     }
     /*
      * Here, notice that column_pos is the first coordinate and row_pos is the
@@ -155,4 +160,18 @@ void get_initialViewFullGraph(View &view) {
   column_width.resize(max_row_column.second + 1);
   get_row_column_dimensions(view, gridMap, row_height, column_width);
   set_initial_positions(view, gridMap, row_height, column_width);
+}
+
+/*
+ * Add node's children to graph and return the new view (new view created for
+ * animation)
+ */
+View expand_node(View &view, NodeBase *node) {
+  DIAGNOSTIC << "expanding node: " << &node << endl;
+  auto box = *view.viewData.at(node).box;
+  for (auto edge : node->neighborhood.outgoing) {
+    view.logicalSubView.insert(edge->head);
+    view.viewData.at(edge->head).box->position = box.position;
+  }
+  return view;
 }

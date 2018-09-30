@@ -14,7 +14,10 @@ ostream &operator<<(ostream &o, const SourceRange &sourceRange) {
 }
 
 ostream &operator<<(ostream &o, const Node &node) {
-  return o << node.fullname << " " << node.range;
+  o << boolalpha;
+  return o << node.fullname << ": " << &node << ": " << node.degree() << ", "
+           << node.is_isolated() << node.range;
+  // return o << node.fullname << ": " << node.range;
 }
 
 ostream &operator<<(ostream &o, const Edge &edge) {

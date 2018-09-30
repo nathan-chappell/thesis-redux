@@ -20,7 +20,7 @@ void NodeClickInfo::clear() {
   e = nullptr;
 }
 
-NodeClickInfo& NodeClickInfo::operator=(NodeClickInfo &&nodeClickInfo) {
+NodeClickInfo &NodeClickInfo::operator=(NodeClickInfo &&nodeClickInfo) {
   node = nodeClickInfo.node;
   e = nodeClickInfo.e;
   nodeClickInfo.clear();
@@ -33,7 +33,7 @@ NodeClickInfo::NodeClickInfo(NodeClickInfo &&nodeClickInfo) {
 NodeClickInfo::NodeClickInfo() : node(nullptr), e(nullptr) {}
 NodeClickInfo::~NodeClickInfo() { clear(); }
 
-bool MyState::handle_event_click(Node* node, GdkEventButton *e) {
+bool MyState::handle_event_click(Node *node, GdkEventButton *e) {
   if (!node) {
     nodeClick.clear();
     node2Click.clear();
@@ -41,11 +41,14 @@ bool MyState::handle_event_click(Node* node, GdkEventButton *e) {
   }
   switch (e->type) {
   case GDK_2BUTTON_PRESS: {
-    cout << "2clicked: " << *node << endl;
+    DIAGNOSTIC << "2clicked: " << *node << endl;
     node2Click = move(nodeClick);
+    /*
+     * handle animation sequence, get a connection for myState.viewAnimation
+     */
   } break;
   case GDK_BUTTON_PRESS: {
-    cout << "clicked: " << *node << endl;
+    DIAGNOSTIC << "clicked: " << *node << endl;
     nodeClick.set(node, e);
   } break;
   default: {
@@ -64,6 +67,8 @@ void initialize_view(const Graph &graph, View &view, PLayout &layout) {
     Extent extent(2 * view.node_margin + r.get_width(),
                   2 * view.node_margin + r.get_height());
     view.viewData[node].box = make_shared<Rectangle>(Point(), extent);
+    DIAGNOSTIC << "initialized: " << text << " : " << node << " : "
+               << *view.viewData[node].box << endl;
   }
   view.roots = (move(graph.get_roots()));
   set_logicalView(view, view.roots);
@@ -138,4 +143,53 @@ Node *find_node(const View &view, const Point &point) {
   return result == view.physicalSubView.nodes.end()
              ? nullptr
              : dynamic_cast<Node *>(*result);
+}
+
+// t \in [0,1]
+Point linear_animate(const Point &start, const Point &end, double cur_t,
+                     double max_t) {
+  return ((max_t - cur_t) * start + (cur_t)*end) / max_t;
+}
+
+bool ViewAnimation::is_finished() const {
+  // if (time_period > 0) return time >= final_time;
+  // return time_period > 0 ? time >= final_time : time <= 0;
+  return time >= final_time;
+}
+
+bool ViewAnimation::is_valid() const { return final_time && time_period; }
+
+ViewAnimation::operator bool() const { return is_valid() && !is_finished(); }
+
+ViewAnimation &ViewAnimation::operator++() {
+  if (!is_valid()) {
+    DIAGNOSTIC << " ViewAnimation no longer valid" << endl;
+    return *this;
+  }
+  for (auto node : final_view.physicalSubView.nodes) {
+    current_view.viewData[node].box->position = linear_animate(
+        initial_view.viewData[node].box->position,
+        final_view.viewData[node].box->position, time, final_time);
+  }
+  time += time_period;
+  return *this;
+};
+
+void ViewAnimation::init(View &&view) {
+  DIAGNOSTIC << "initing animation" << endl;
+  initial_view = move(view);
+  current_view = initial_view;
+  // these views can't all point to the same boxes...
+  for (auto &kv : current_view.viewData) {
+    kv.second.box = make_shared<Rectangle>(*kv.second.box);
+  }
+  final_view = current_view;
+  // these views can't all point to the same boxes...
+  for (auto &kv : final_view.viewData) {
+    kv.second.box = make_shared<Rectangle>(*kv.second.box);
+  }
+  get_initialViewFullGraph(final_view);
+  final_time = 1000;
+  time_period = 20;
+  time = 0;
 }

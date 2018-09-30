@@ -25,9 +25,9 @@ ostream &operator<<(ostream &o, const Cairo::Matrix &m) {
   Point origin = get_matrix_transform(m, 0, 0);
   Point p1 = get_matrix_transform(m, 1, 0);
   Point p2 = get_matrix_transform(m, 0, 1);
-  cout << p1.x << "\t" << p2.x << endl;
-  cout << p1.y << "\t" << p2.y << endl;
-  cout << origin.x << "\t" << origin.y << endl;
+  o << p1.x << "\t" << p2.x << endl;
+  o << p1.y << "\t" << p2.y << endl;
+  o << origin.x << "\t" << origin.y << endl;
   return o;
 }
 

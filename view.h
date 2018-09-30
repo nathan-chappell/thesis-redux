@@ -41,6 +41,7 @@ struct View {
   double row_spacing;
   double column_spacing;
 
+  View() : name_to_node{nullptr} {}
   View(std::unordered_map<Fullname, NodeBase *> *name_to_node)
       : name_to_node(name_to_node), node_margin{10.0}, row_spacing{30.0},
         column_spacing{30.0} {}

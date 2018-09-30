@@ -1,529 +1,674 @@
-calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 28 37 559  ./node_base.h 28 65 587
-calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 29 38 628  ./node_base.h 29 66 656
-calls $NodeBase::in_degree()$ ./node_base.h 30 34 693  ./node_base.h 30 45 704
-calls $NodeBase::out_degree()$ ./node_base.h 30 48 707  ./node_base.h 30 60 719
-calls $NodeBase::degree()$ ./node_base.h 31 35 757  ./node_base.h 31 43 765
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 32 37 644  ./node_base.h 32 65 672
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 33 38 713  ./node_base.h 33 66 741
+calls $NodeBase::in_degree()$ ./node_base.h 34 34 778  ./node_base.h 34 45 789
+calls $NodeBase::out_degree()$ ./node_base.h 34 48 792  ./node_base.h 34 60 804
+calls $NodeBase::degree()$ ./node_base.h 35 38 845  ./node_base.h 35 46 853
+calls $std::basic_ostream<_CharT, _Traits>::operator<<(const void *)$ ./node_base.h 49 10 1207  ./node_base.h 49 42 1239
+calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ ./node_base.h 49 10 1207  ./node_base.h 49 32 1229
+calls $std::basic_ostream<_CharT, _Traits>::operator<<(const void *)$ ./node_base.h 49 10 1207  ./node_base.h 49 21 1218
 calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 19 9 349  ./node.h 19 27 367
 calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 31 29 599  ./node.h 31 47 617
 calls $EdgeBase::EdgeBase(NodeBase *, NodeBase *)$ ./node.h 38 34 731  ./node.h 38 54 751
-$dump_call_graph(const Graph &, std::ostream &)$ graph.cc 12 1 129  graph.cc 24 2 632
-  calls $__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator*()$ graph.cc 13 20 203  graph.cc 13 21 204
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph.cc 14 5 224  graph.cc 14 23 242
-  calls $operator<<(std::ostream &, const NodeBase &)$ graph.cc 14 5 224  graph.cc 14 15 234
-  calls $std::_List_iterator<_Tp>::operator*()$ graph.cc 15 22 265  graph.cc 15 23 266
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph.cc 16 7 304  graph.cc 17 58 423
-  calls $operator<<(std::ostream &, const SourceRange &)$ graph.cc 16 7 304  graph.cc 17 50 415
-  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 16 7 304  graph.cc 16 68 365
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 16 7 304  graph.cc 16 22 319
-  calls $std::_List_iterator<_Tp>::operator*()$ graph.cc 19 22 452  graph.cc 19 23 453
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph.cc 20 7 491  graph.cc 21 58 619
-  calls $operator<<(std::ostream &, const SourceRange &)$ graph.cc 20 7 491  graph.cc 21 50 611
-  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 20 7 491  graph.cc 20 77 561
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 20 7 491  graph.cc 20 31 515
-$Graph::try_createNode(const Fullname &)$ graph.cc 29 1 718  graph.cc 38 2 1044
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const std::unordered_map::key_type &)$ graph.cc 30 15 801  graph.cc 30 42 828
-  calls $std::__detail::operator!=(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ graph.cc 31 7 836  graph.cc 31 31 860
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ graph.cc 31 13 842  graph.cc 31 31 860
-  calls $std::pair<Node *, bool>::pair(_U1 &&, _U2 &&)$ graph.cc 32 12 875  graph.cc 32 52 915
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ graph.cc 32 33 896  graph.cc 32 35 898
-  calls $Node::Node(Fullname)$ graph.cc 34 20 940  graph.cc 34 34 954
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 34 25 945  graph.cc 34 33 953
-  calls $std::vector<_Tp, _Alloc>::push_back(const std::vector::value_type &)$ graph.cc 35 3 958  graph.cc 35 24 979
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](const std::unordered_map::key_type &)$ graph.cc 36 3 983  graph.cc 36 31 1011
-  calls $std::pair<Node *, bool>::pair(_U1 &&, _U2 &&)$ graph.cc 37 10 1029  graph.cc 37 22 1041
-$Graph::try_createEdge(Node *, Node *)$ graph.cc 43 1 1130  graph.cc 54 2 1574
-  calls $::__assert_fail(const char *, const char *, unsigned int, const char *)$ graph.cc 44 3 1199  graph.cc 44 35 1231
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const std::unordered_map::key_type &)$ graph.cc 45 13 1245  graph.cc 45 69 1301
-  calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 45 31 1263  graph.cc 45 68 1300
-  calls $std::operator+(const basic_string<_CharT, _Traits, _Alloc> &, const _CharT *)$ graph.cc 45 31 1263  graph.cc 45 51 1283
-  calls $std::__detail::operator!=(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ graph.cc 46 7 1309  graph.cc 46 31 1333
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ graph.cc 46 13 1315  graph.cc 46 31 1333
-  calls $std::pair<Edge *, bool>::pair(_U1 &&, _U2 &&)$ graph.cc 47 12 1348  graph.cc 47 52 1388
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ graph.cc 47 33 1369  graph.cc 47 35 1371
-  calls $Edge::Edge(Node *, Node *)$ graph.cc 49 20 1413  graph.cc 49 36 1429
-  calls $std::vector<_Tp, _Alloc>::push_back(const std::vector::value_type &)$ graph.cc 50 3 1433  graph.cc 50 24 1454
-  calls $std::__cxx11::list<_Tp, _Alloc>::push_back(std::__cxx11::list::value_type &&)$ graph.cc 51 3 1458  graph.cc 51 46 1501
-  calls $std::__cxx11::list<_Tp, _Alloc>::push_back(std::__cxx11::list::value_type &&)$ graph.cc 52 3 1505  graph.cc 52 46 1548
-  calls $std::pair<Edge *, bool>::pair(_U1 &&, _U2 &&)$ graph.cc 53 10 1559  graph.cc 53 22 1571
-$get_sourceRangeFromMatch(const std::__cxx11::smatch &)$ graph.cc 56 1 1576  graph.cc 60 2 1804
-  calls $SourceLocation::SourceLocation(const std::string &, size_t, size_t, size_t)$ graph.cc 57 26 1657  graph.cc 57 74 1705
-  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 57 27 1658  graph.cc 57 31 1662
-  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 57 27 1658  graph.cc 57 31 1662
-  calls $std::__cxx11::stoull(const std::__cxx11::string &, std::size_t *, int)$ graph.cc 57 33 1664  graph.cc 57 45 1676
-  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 57 40 1671  graph.cc 57 44 1675
-  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 57 40 1671  graph.cc 57 44 1675
-  calls $std::__cxx11::stoull(const std::__cxx11::string &, std::size_t *, int)$ graph.cc 57 47 1678  graph.cc 57 59 1690
-  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 57 54 1685  graph.cc 57 58 1689
-  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 57 54 1685  graph.cc 57 58 1689
-  calls $std::__cxx11::stoull(const std::__cxx11::string &, std::size_t *, int)$ graph.cc 57 61 1692  graph.cc 57 73 1704
-  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 57 68 1699  graph.cc 57 72 1703
-  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 57 68 1699  graph.cc 57 72 1703
-  calls $SourceLocation::SourceLocation(const std::string &, size_t, size_t, size_t)$ graph.cc 58 24 1730  graph.cc 58 72 1778
-  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 58 25 1731  graph.cc 58 29 1735
-  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 58 25 1731  graph.cc 58 29 1735
-  calls $std::__cxx11::stoull(const std::__cxx11::string &, std::size_t *, int)$ graph.cc 58 31 1737  graph.cc 58 43 1749
-  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 58 38 1744  graph.cc 58 42 1748
-  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 58 38 1744  graph.cc 58 42 1748
-  calls $std::__cxx11::stoull(const std::__cxx11::string &, std::size_t *, int)$ graph.cc 58 45 1751  graph.cc 58 57 1763
-  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 58 52 1758  graph.cc 58 56 1762
-  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 58 52 1758  graph.cc 58 56 1762
-  calls $std::__cxx11::stoull(const std::__cxx11::string &, std::size_t *, int)$ graph.cc 58 59 1765  graph.cc 58 71 1777
-  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 58 66 1772  graph.cc 58 70 1776
-  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 58 66 1772  graph.cc 58 70 1776
-calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ graph.cc 63 25 1867  graph.cc 63 50 1892
-calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ graph.cc 64 25 1918  graph.cc 64 37 1930
-calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ graph.cc 65 27 1958  graph.cc 65 39 1970
-calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ graph.cc 66 27 1998  graph.cc 66 39 2010
-calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 67 29 2040  graph.cc 67 70 2081
-calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 67 29 2040  graph.cc 67 58 2069
-calls $std::operator+(const basic_string<_CharT, _Traits, _Alloc> &, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 67 29 2040  graph.cc 67 46 2057
-calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ graph.cc 68 26 2108  graph.cc 68 41 2123
-calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ graph.cc 70 28 2153  graph.cc 70 44 2169
-calls $std::__cxx11::basic_regex<char, std::__cxx11::regex_traits<char> >::basic_regex(const std::basic_string<char, _Ch_traits, _Ch_alloc> &, std::__cxx11::basic_regex::flag_type)$ graph.cc 72 13 2184  graph.cc 72 62 2233
-calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 72 23 2194  graph.cc 72 61 2232
-calls $std::operator+(const basic_string<_CharT, _Traits, _Alloc> &, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 72 23 2194  graph.cc 72 47 2218
-calls $std::__cxx11::basic_regex<char, std::__cxx11::regex_traits<char> >::basic_regex(const std::basic_string<char, _Ch_traits, _Ch_alloc> &, std::__cxx11::basic_regex::flag_type)$ graph.cc 73 13 2247  graph.cc 73 73 2307
-calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 73 23 2257  graph.cc 73 72 2306
-calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 73 23 2257  graph.cc 73 58 2292
-calls $std::operator+(const basic_string<_CharT, _Traits, _Alloc> &, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 73 23 2257  graph.cc 73 44 2278
-$parseCallGraphFromFile(const std::string &)$ graph.cc 75 1 2310  graph.cc 113 2 3376
-  calls $Graph::Graph()$ graph.cc 76 9 2378  graph.cc 76 14 2383
-  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::match_results<type-parameter-0-0, type-parameter-0-1>(const _Alloc &)$ graph.cc 77 10 2394  graph.cc 77 11 2395
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>()$ graph.cc 78 10 2406  graph.cc 78 14 2410
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>()$ graph.cc 80 12 2445  graph.cc 80 18 2451
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>()$ graph.cc 81 12 2464  graph.cc 81 18 2470
-  calls $SourceRange::SourceRange()$ graph.cc 82 15 2486  graph.cc 82 20 2491
-  calls $std::basic_ifstream<_CharT, _Traits>::basic_ifstream<_CharT, _Traits>(const std::string &, ios_base::openmode)$ graph.cc 83 12 2504  graph.cc 83 26 2518
-  calls $std::basic_ios<_CharT, _Traits>::good()$ graph.cc 85 10 2530  graph.cc 85 21 2541
-  calls $std::getline(basic_istream<_CharT, _Traits> &, basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 87 5 2564  graph.cc 87 24 2583
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::empty()$ graph.cc 88 9 2593  graph.cc 88 21 2605
-  calls $std::regex_match(const basic_string<_Ch_type, _Ch_traits, _Ch_alloc> &, match_results<typename basic_string<_Ch_type, _Ch_traits, _Ch_alloc>::const_iterator, _Alloc> &, const basic_regex<_Ch_type, _Rx_traits> &, regex_constants::match_flag_type)$ graph.cc 92 9 2664  graph.cc 92 40 2695
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::operator=(basic_string<_CharT, _Traits, _Alloc> &&)$ graph.cc 94 7 2725  graph.cc 94 20 2738
-  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 94 16 2734  graph.cc 94 20 2738
-  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 94 16 2734  graph.cc 94 20 2738
-  calls $SourceRange::operator=(SourceRange &&)$ graph.cc 95 7 2746  graph.cc 95 42 2781
-  calls $get_sourceRangeFromMatch(const std::__cxx11::smatch &)$ graph.cc 95 15 2754  graph.cc 95 42 2781
-  calls $Graph::try_createNode(const Fullname &)$ graph.cc 96 26 2808  graph.cc 96 54 2836
-  calls $Graph::try_createNode(const Fullname &)$ graph.cc 97 26 2863  graph.cc 97 54 2891
-  calls $Graph::try_createEdge(Node *, Node *)$ graph.cc 99 11 2926  graph.cc 99 69 2984
-  calls $SourceRange::operator=(const SourceRange &)$ graph.cc 100 7 2992  graph.cc 100 37 3022
-  calls $std::regex_match(const basic_string<_Ch_type, _Ch_traits, _Ch_alloc> &, match_results<typename basic_string<_Ch_type, _Ch_traits, _Ch_alloc>::const_iterator, _Alloc> &, const basic_regex<_Ch_type, _Rx_traits> &, regex_constants::match_flag_type)$ graph.cc 101 16 3039  graph.cc 101 47 3070
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::operator=(basic_string<_CharT, _Traits, _Alloc> &&)$ graph.cc 103 7 3100  graph.cc 103 20 3113
-  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 103 16 3109  graph.cc 103 20 3113
-  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 103 16 3109  graph.cc 103 20 3113
-  calls $SourceRange::operator=(SourceRange &&)$ graph.cc 104 7 3121  graph.cc 104 42 3156
-  calls $get_sourceRangeFromMatch(const std::__cxx11::smatch &)$ graph.cc 104 15 3129  graph.cc 104 42 3156
-  calls $Graph::try_createNode(const Fullname &)$ graph.cc 105 21 3178  graph.cc 105 49 3206
-  calls $SourceRange::operator=(const SourceRange &)$ graph.cc 106 7 3214  graph.cc 106 34 3241
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph.cc 108 7 3262  graph.cc 108 72 3327
-  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 108 7 3262  graph.cc 108 64 3319
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 108 7 3262  graph.cc 108 56 3311
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(unsigned long)$ graph.cc 108 7 3262  graph.cc 108 47 3302
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 108 7 3262  graph.cc 108 36 3291
-$Graph::~Graph()$ graph.cc 115 1 3378  graph.cc 122 2 3499
-  calls $__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator*()$ graph.cc 116 20 3415  graph.cc 116 21 3416
-  calls $__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator*()$ graph.cc 119 20 3466  graph.cc 119 21 3467
-calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 28 37 559  ./node_base.h 28 65 587
-calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 29 38 628  ./node_base.h 29 66 656
-calls $NodeBase::in_degree()$ ./node_base.h 30 34 693  ./node_base.h 30 45 704
-calls $NodeBase::out_degree()$ ./node_base.h 30 48 707  ./node_base.h 30 60 719
-calls $NodeBase::degree()$ ./node_base.h 31 35 757  ./node_base.h 31 43 765
+$dump_call_graph(const Graph &, std::ostream &)$ graph.cc 14 1 172  graph.cc 26 2 705
+  calls $__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator*()$ graph.cc 15 20 246  graph.cc 15 21 247
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph.cc 16 5 267  graph.cc 16 51 313
+  calls $operator<<(std::ostream &, const Node &)$ graph.cc 16 5 267  graph.cc 16 43 305
+  calls $std::_List_iterator<_Tp>::operator*()$ graph.cc 17 22 336  graph.cc 17 23 337
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph.cc 18 7 375  graph.cc 19 59 495
+  calls $operator<<(std::ostream &, const SourceRange &)$ graph.cc 18 7 375  graph.cc 19 51 487
+  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 18 7 375  graph.cc 18 68 436
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 18 7 375  graph.cc 18 22 390
+  calls $std::_List_iterator<_Tp>::operator*()$ graph.cc 21 22 524  graph.cc 21 23 525
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph.cc 22 7 563  graph.cc 23 59 692
+  calls $operator<<(std::ostream &, const SourceRange &)$ graph.cc 22 7 563  graph.cc 23 51 684
+  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 22 7 563  graph.cc 22 77 633
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 22 7 563  graph.cc 22 31 587
+$Graph::try_createNode(const Fullname &)$ graph.cc 31 1 791  graph.cc 40 2 1118
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const std::unordered_map::key_type &)$ graph.cc 32 15 874  graph.cc 32 42 901
+  calls $std::__detail::operator!=(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ graph.cc 33 7 909  graph.cc 33 31 933
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ graph.cc 33 13 915  graph.cc 33 31 933
+  calls $std::pair<Node *, bool>::pair(_U1 &&, _U2 &&)$ graph.cc 34 12 948  graph.cc 34 53 989
+  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ graph.cc 34 34 970  graph.cc 34 36 972
+  calls $Node::Node(Fullname)$ graph.cc 36 20 1014  graph.cc 36 34 1028
+  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 36 25 1019  graph.cc 36 33 1027
+  calls $std::vector<_Tp, _Alloc>::push_back(const std::vector::value_type &)$ graph.cc 37 3 1032  graph.cc 37 24 1053
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](const std::unordered_map::key_type &)$ graph.cc 38 3 1057  graph.cc 38 31 1085
+  calls $std::pair<Node *, bool>::pair(_U1 &&, _U2 &&)$ graph.cc 39 10 1103  graph.cc 39 22 1115
+$Graph::try_createEdge(Node *, Node *)$ graph.cc 45 1 1204  graph.cc 56 2 1649
+  calls $::__assert_fail(const char *, const char *, unsigned int, const char *)$ graph.cc 46 3 1273  graph.cc 46 35 1305
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const std::unordered_map::key_type &)$ graph.cc 47 13 1319  graph.cc 47 69 1375
+  calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 47 31 1337  graph.cc 47 68 1374
+  calls $std::operator+(const basic_string<_CharT, _Traits, _Alloc> &, const _CharT *)$ graph.cc 47 31 1337  graph.cc 47 51 1357
+  calls $std::__detail::operator!=(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ graph.cc 48 7 1383  graph.cc 48 31 1407
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ graph.cc 48 13 1389  graph.cc 48 31 1407
+  calls $std::pair<Edge *, bool>::pair(_U1 &&, _U2 &&)$ graph.cc 49 12 1422  graph.cc 49 53 1463
+  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ graph.cc 49 34 1444  graph.cc 49 36 1446
+  calls $Edge::Edge(Node *, Node *)$ graph.cc 51 20 1488  graph.cc 51 36 1504
+  calls $std::vector<_Tp, _Alloc>::push_back(const std::vector::value_type &)$ graph.cc 52 3 1508  graph.cc 52 24 1529
+  calls $std::__cxx11::list<_Tp, _Alloc>::push_back(std::__cxx11::list::value_type &&)$ graph.cc 53 3 1533  graph.cc 53 46 1576
+  calls $std::__cxx11::list<_Tp, _Alloc>::push_back(std::__cxx11::list::value_type &&)$ graph.cc 54 3 1580  graph.cc 54 46 1623
+  calls $std::pair<Edge *, bool>::pair(_U1 &&, _U2 &&)$ graph.cc 55 10 1634  graph.cc 55 22 1646
+$get_sourceRangeFromMatch(const std::__cxx11::smatch &)$ graph.cc 58 1 1651  graph.cc 62 2 1879
+  calls $SourceLocation::SourceLocation(const std::string &, size_t, size_t, size_t)$ graph.cc 59 26 1732  graph.cc 59 74 1780
+  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 59 27 1733  graph.cc 59 31 1737
+  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 59 27 1733  graph.cc 59 31 1737
+  calls $std::__cxx11::stoull(const std::__cxx11::string &, std::size_t *, int)$ graph.cc 59 33 1739  graph.cc 59 45 1751
+  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 59 40 1746  graph.cc 59 44 1750
+  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 59 40 1746  graph.cc 59 44 1750
+  calls $std::__cxx11::stoull(const std::__cxx11::string &, std::size_t *, int)$ graph.cc 59 47 1753  graph.cc 59 59 1765
+  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 59 54 1760  graph.cc 59 58 1764
+  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 59 54 1760  graph.cc 59 58 1764
+  calls $std::__cxx11::stoull(const std::__cxx11::string &, std::size_t *, int)$ graph.cc 59 61 1767  graph.cc 59 73 1779
+  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 59 68 1774  graph.cc 59 72 1778
+  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 59 68 1774  graph.cc 59 72 1778
+  calls $SourceLocation::SourceLocation(const std::string &, size_t, size_t, size_t)$ graph.cc 60 24 1805  graph.cc 60 72 1853
+  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 60 25 1806  graph.cc 60 29 1810
+  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 60 25 1806  graph.cc 60 29 1810
+  calls $std::__cxx11::stoull(const std::__cxx11::string &, std::size_t *, int)$ graph.cc 60 31 1812  graph.cc 60 43 1824
+  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 60 38 1819  graph.cc 60 42 1823
+  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 60 38 1819  graph.cc 60 42 1823
+  calls $std::__cxx11::stoull(const std::__cxx11::string &, std::size_t *, int)$ graph.cc 60 45 1826  graph.cc 60 57 1838
+  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 60 52 1833  graph.cc 60 56 1837
+  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 60 52 1833  graph.cc 60 56 1837
+  calls $std::__cxx11::stoull(const std::__cxx11::string &, std::size_t *, int)$ graph.cc 60 59 1840  graph.cc 60 71 1852
+  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 60 66 1847  graph.cc 60 70 1851
+  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 60 66 1847  graph.cc 60 70 1851
+calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ graph.cc 65 25 1942  graph.cc 65 50 1967
+calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ graph.cc 66 25 1993  graph.cc 66 37 2005
+calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ graph.cc 67 27 2033  graph.cc 67 39 2045
+calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ graph.cc 68 27 2073  graph.cc 68 39 2085
+calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 69 29 2115  graph.cc 69 70 2156
+calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 69 29 2115  graph.cc 69 58 2144
+calls $std::operator+(const basic_string<_CharT, _Traits, _Alloc> &, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 69 29 2115  graph.cc 69 46 2132
+calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ graph.cc 70 26 2183  graph.cc 70 41 2198
+calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ graph.cc 72 28 2228  graph.cc 72 44 2244
+calls $std::__cxx11::basic_regex<char, std::__cxx11::regex_traits<char> >::basic_regex(const std::basic_string<char, _Ch_traits, _Ch_alloc> &, std::__cxx11::basic_regex::flag_type)$ graph.cc 74 13 2259  graph.cc 74 62 2308
+calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 74 23 2269  graph.cc 74 61 2307
+calls $std::operator+(const basic_string<_CharT, _Traits, _Alloc> &, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 74 23 2269  graph.cc 74 47 2293
+calls $std::__cxx11::basic_regex<char, std::__cxx11::regex_traits<char> >::basic_regex(const std::basic_string<char, _Ch_traits, _Ch_alloc> &, std::__cxx11::basic_regex::flag_type)$ graph.cc 75 13 2322  graph.cc 75 73 2382
+calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 75 23 2332  graph.cc 75 72 2381
+calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 75 23 2332  graph.cc 75 58 2367
+calls $std::operator+(const basic_string<_CharT, _Traits, _Alloc> &, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 75 23 2332  graph.cc 75 44 2353
+$parseCallGraphFromFile(const std::string &)$ graph.cc 77 1 2385  graph.cc 115 2 3457
+  calls $Graph::Graph()$ graph.cc 78 9 2453  graph.cc 78 14 2458
+  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::match_results<type-parameter-0-0, type-parameter-0-1>(const _Alloc &)$ graph.cc 79 10 2469  graph.cc 79 11 2470
+  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>()$ graph.cc 80 10 2481  graph.cc 80 14 2485
+  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>()$ graph.cc 82 12 2520  graph.cc 82 18 2526
+  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>()$ graph.cc 83 12 2539  graph.cc 83 18 2545
+  calls $SourceRange::SourceRange()$ graph.cc 84 15 2561  graph.cc 84 20 2566
+  calls $std::basic_ifstream<_CharT, _Traits>::basic_ifstream<_CharT, _Traits>(const std::string &, ios_base::openmode)$ graph.cc 85 12 2579  graph.cc 85 26 2593
+  calls $std::basic_ios<_CharT, _Traits>::good()$ graph.cc 87 10 2605  graph.cc 87 21 2616
+  calls $std::getline(basic_istream<_CharT, _Traits> &, basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 89 5 2639  graph.cc 89 24 2658
+  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::empty()$ graph.cc 90 9 2668  graph.cc 90 21 2680
+  calls $std::regex_match(const basic_string<_Ch_type, _Ch_traits, _Ch_alloc> &, match_results<typename basic_string<_Ch_type, _Ch_traits, _Ch_alloc>::const_iterator, _Alloc> &, const basic_regex<_Ch_type, _Rx_traits> &, regex_constants::match_flag_type)$ graph.cc 94 9 2739  graph.cc 94 40 2770
+  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::operator=(basic_string<_CharT, _Traits, _Alloc> &&)$ graph.cc 96 7 2800  graph.cc 96 20 2813
+  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 96 16 2809  graph.cc 96 20 2813
+  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 96 16 2809  graph.cc 96 20 2813
+  calls $SourceRange::operator=(SourceRange &&)$ graph.cc 97 7 2821  graph.cc 97 42 2856
+  calls $get_sourceRangeFromMatch(const std::__cxx11::smatch &)$ graph.cc 97 15 2829  graph.cc 97 42 2856
+  calls $Graph::try_createNode(const Fullname &)$ graph.cc 98 26 2883  graph.cc 98 54 2911
+  calls $Graph::try_createNode(const Fullname &)$ graph.cc 99 26 2938  graph.cc 99 54 2966
+  calls $Graph::try_createEdge(Node *, Node *)$ graph.cc 101 11 3001  graph.cc 101 69 3059
+  calls $SourceRange::operator=(const SourceRange &)$ graph.cc 102 7 3067  graph.cc 102 37 3097
+  calls $std::regex_match(const basic_string<_Ch_type, _Ch_traits, _Ch_alloc> &, match_results<typename basic_string<_Ch_type, _Ch_traits, _Ch_alloc>::const_iterator, _Alloc> &, const basic_regex<_Ch_type, _Rx_traits> &, regex_constants::match_flag_type)$ graph.cc 103 16 3114  graph.cc 103 47 3145
+  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::operator=(basic_string<_CharT, _Traits, _Alloc> &&)$ graph.cc 105 7 3175  graph.cc 105 20 3188
+  calls $std::__cxx11::sub_match<_BiIter>::operator basic_string<typename iterator_traits<type-parameter-0-0>::value_type, char_traits<typename iterator_traits<type-parameter-0-0>::value_type>, allocator<typename iterator_traits<type-parameter-0-0>::value_type> >()$ graph.cc 105 16 3184  graph.cc 105 20 3188
+  calls $std::__cxx11::match_results<_Bi_iter, _Alloc>::operator[](std::__cxx11::match_results::size_type)$ graph.cc 105 16 3184  graph.cc 105 20 3188
+  calls $SourceRange::operator=(SourceRange &&)$ graph.cc 106 7 3196  graph.cc 106 42 3231
+  calls $get_sourceRangeFromMatch(const std::__cxx11::smatch &)$ graph.cc 106 15 3204  graph.cc 106 42 3231
+  calls $Graph::try_createNode(const Fullname &)$ graph.cc 107 21 3253  graph.cc 107 49 3281
+  calls $SourceRange::operator=(const SourceRange &)$ graph.cc 108 7 3289  graph.cc 108 34 3316
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph.cc 110 7 3337  graph.cc 110 78 3408
+  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ graph.cc 110 7 3337  graph.cc 110 70 3400
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 110 7 3337  graph.cc 110 62 3392
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(unsigned long)$ graph.cc 110 7 3337  graph.cc 110 53 3383
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 110 7 3337  graph.cc 110 42 3372
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 110 7 3337  graph.cc 110 17 3347
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(int)$ graph.cc 110 7 3337  graph.cc 110 17 3347
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 110 7 3337  graph.cc 110 17 3347
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 110 7 3337  graph.cc 110 17 3347
+$Graph::~Graph()$ graph.cc 117 1 3459  graph.cc 124 2 3580
+  calls $__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator*()$ graph.cc 118 20 3496  graph.cc 118 21 3497
+  calls $__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator*()$ graph.cc 121 20 3547  graph.cc 121 21 3548
+$Graph::get_roots()$ graph.cc 126 1 3582  graph.cc 137 2 4029
+  calls $std::vector<_Tp, _Alloc>::vector<_Tp, _Alloc>()$ graph.cc 127 22 3649  graph.cc 127 28 3655
+  calls $std::copy_if(_InputIterator, _InputIterator, _OutputIterator, _Predicate)$ graph.cc 128 3 3659  graph.cc 135 13 4009
+  calls $std::vector<_Tp, _Alloc>::begin()$ graph.cc 128 11 3667  graph.cc 128 24 3680
+  calls $std::vector<_Tp, _Alloc>::end()$ graph.cc 128 26 3682  graph.cc 128 37 3693
+  calls $std::back_inserter(_Container &)$ graph.cc 128 39 3695  graph.cc 128 60 3716
+  calls $NodeBase::in_degree()$ graph.cc 130 17 3771  graph.cc 130 34 3788
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph.cc 131 15 3811  graph.cc 132 55 3938
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(unsigned long long)$ graph.cc 131 15 3811  graph.cc 132 47 3930
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 131 15 3811  graph.cc 131 87 3883
+  calls $operator<<(std::ostream &, const Node &)$ graph.cc 131 15 3811  graph.cc 131 80 3876
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 131 15 3811  graph.cc 131 43 3839
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 131 15 3811  graph.cc 131 25 3821
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(int)$ graph.cc 131 15 3811  graph.cc 131 25 3821
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 131 15 3811  graph.cc 131 25 3821
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph.cc 131 15 3811  graph.cc 131 25 3821
+  calls $NodeBase::in_degree()$ graph.cc 134 20 3973  graph.cc 134 37 3990
+calls $operator==(const Point &, const Point &)$ ./geometry.h 36 67 794  ./geometry.h 36 73 800
+calls $Point::Point(const Point &)$ ./geometry.h 37 58 862  ./geometry.h 37 64 868
+calls $Point::operator+=(const Point &)$ ./geometry.h 37 58 862  ./geometry.h 37 64 868
+calls $Point::Point(const Point &)$ ./geometry.h 38 58 929  ./geometry.h 38 64 935
+calls $Point::operator-=(const Point &)$ ./geometry.h 38 58 929  ./geometry.h 38 64 935
+calls $Point::Point(const Point &)$ ./geometry.h 39 52 990  ./geometry.h 39 58 996
+calls $Point::operator*=(double)$ ./geometry.h 39 52 990  ./geometry.h 39 58 996
+calls $Point::Point(const Point &)$ ./geometry.h 40 52 1051  ./geometry.h 40 58 1057
+calls $Point::operator/=(double)$ ./geometry.h 40 52 1051  ./geometry.h 40 58 1057
+calls $Point::Point(const Point &)$ ./geometry.h 55 9 1407  ./geometry.h 55 21 1419
+calls $Point::Point(const Point &)$ ./geometry.h 55 23 1421  ./geometry.h 55 43 1441
+calls $Point::Point(const Point &)$ ./geometry.h 76 49 2054  ./geometry.h 76 53 2058
+calls $Point::Point(const Point &)$ ./geometry.h 76 55 2060  ./geometry.h 76 59 2064
+calls $Line::Line(const Point &, const Direction &)$ ./geometry.h 81 43 2306  ./geometry.h 81 57 2320
+calls $operator-(Point, const Point &)$ ./geometry.h 81 51 2314  ./geometry.h 81 56 2319
+calls $Point::Point(const Point &)$ ./geometry.h 81 51 2314  ./geometry.h 81 52 2315
+calls $Point::Point(const Point &)$ ./geometry.h 99 60 2861  ./geometry.h 99 78 2879
+calls $Point::Point(const Point &)$ ./geometry.h 99 80 2881  ./geometry.h 99 94 2895
+calls $Point::operator=(Point &&)$ ./geometry.h 103 46 3076  ./geometry.h 103 47 3077
+calls $Point::operator=(Point &&)$ ./geometry.h 103 46 3076  ./geometry.h 103 47 3077
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 32 37 644  ./node_base.h 32 65 672
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 33 38 713  ./node_base.h 33 66 741
+calls $NodeBase::in_degree()$ ./node_base.h 34 34 778  ./node_base.h 34 45 789
+calls $NodeBase::out_degree()$ ./node_base.h 34 48 792  ./node_base.h 34 60 804
+calls $NodeBase::degree()$ ./node_base.h 35 38 845  ./node_base.h 35 46 853
+calls $std::basic_ostream<_CharT, _Traits>::operator<<(const void *)$ ./node_base.h 49 10 1207  ./node_base.h 49 42 1239
+calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ ./node_base.h 49 10 1207  ./node_base.h 49 32 1229
+calls $std::basic_ostream<_CharT, _Traits>::operator<<(const void *)$ ./node_base.h 49 10 1207  ./node_base.h 49 21 1218
 calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 19 9 349  ./node.h 19 27 367
 calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 31 29 599  ./node.h 31 47 617
 calls $EdgeBase::EdgeBase(NodeBase *, NodeBase *)$ ./node.h 38 34 731  ./node.h 38 54 751
-calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ main.cc 20 29 355  main.cc 20 42 368
-$remove_qualifiers(const Fullname &)$ main.cc 22 1 371  main.cc 24 2 484
-  calls $std::regex_replace(const basic_string<_Ch_type, _St, _Sa> &, const basic_regex<_Ch_type, _Rx_traits> &, const _Ch_type *, regex_constants::match_flag_type)$ main.cc 23 10 433  main.cc 23 58 481
-  calls $std::__cxx11::basic_regex<char, std::__cxx11::regex_traits<char> >::basic_regex(const std::basic_string<char, _Ch_traits, _Ch_alloc> &, std::__cxx11::basic_regex::flag_type)$ main.cc 23 34 457  main.cc 23 53 476
-$initialize_view(const Graph &, View &, PLayout &)$ main.cc 26 1 486  main.cc 37 2 989
-  calls $__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator*()$ main.cc 28 20 578  main.cc 28 21 579
-  calls $remove_qualifiers(const Fullname &)$ main.cc 29 19 613  main.cc 29 52 646
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::operator=(const basic_string<_CharT, _Traits, _Alloc> &)$ main.cc 30 5 652  main.cc 30 36 683
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](std::unordered_map::key_type &&)$ main.cc 30 5 652  main.cc 30 24 671
-  calls $Pango::Layout::set_text(const Glib::ustring &)$ main.cc 31 5 689  main.cc 31 27 711
-  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 31 5 689  main.cc 31 11 695
-  calls $Glib::ustring::ustring(const std::string &)$ main.cc 31 22 706  main.cc 31 26 710
-  calls $Pango::Layout::get_pixel_ink_extents()$ main.cc 32 26 738  main.cc 32 57 769
-  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 32 26 738  main.cc 32 32 744
-  calls $std::complex<double>::operator=(std::complex<double> &&)$ main.cc 33 5 775  main.cc 34 80 929
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](std::unordered_map::key_type &&)$ main.cc 33 5 775  main.cc 33 24 794
-  calls $std::complex<double>::complex(double, double)$ main.cc 33 40 810  main.cc 34 80 929
-  calls $Pango::Rectangle::get_width()$ main.cc 33 65 835  main.cc 33 78 848
-  calls $Pango::Rectangle::get_height()$ main.cc 34 65 914  main.cc 34 79 928
-  calls $std::shared_ptr<_Tp>::operator=(shared_ptr<_Tp> &&)$ main.cc 35 5 935  main.cc 35 52 982
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](std::unordered_map::key_type &&)$ main.cc 35 5 935  main.cc 35 24 954
-  calls $std::make_shared(_Args &&...)$ main.cc 35 36 966  main.cc 35 52 982
-$draw_node(const NodeViewData &, CContext, PLayout, const double &)$ main.cc 39 1 991  main.cc 48 2 1414
-  calls $Cairo::Context::rectangle(double, double, double, double)$ main.cc 41 3 1101  main.cc 42 67 1226
-  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 41 3 1101  main.cc 41 4 1102
-  calls $std::complex<double>::real()$ main.cc 41 16 1114  main.cc 41 37 1135
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ main.cc 41 16 1114  main.cc 41 29 1127
-  calls $std::complex<double>::imag()$ main.cc 41 39 1137  main.cc 41 60 1158
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ main.cc 41 39 1137  main.cc 41 52 1150
-  calls $std::complex<double>::real()$ main.cc 42 16 1175  main.cc 42 40 1199
-  calls $std::complex<double>::imag()$ main.cc 42 42 1201  main.cc 42 66 1225
-  calls $Cairo::Context::stroke()$ main.cc 43 3 1230  main.cc 43 14 1241
-  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 43 3 1230  main.cc 43 4 1231
-  calls $Cairo::Context::move_to(double, double)$ main.cc 44 3 1245  main.cc 45 51 1344
-  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 44 3 1245  main.cc 44 4 1246
-  calls $std::complex<double>::real()$ main.cc 44 14 1256  main.cc 44 35 1277
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ main.cc 44 14 1256  main.cc 44 27 1269
-  calls $std::complex<double>::imag()$ main.cc 45 14 1307  main.cc 45 35 1328
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ main.cc 45 14 1307  main.cc 45 27 1320
-  calls $Pango::Layout::set_text(const Glib::ustring &)$ main.cc 46 3 1348  main.cc 46 30 1375
-  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 46 3 1348  main.cc 46 9 1354
-  calls $Glib::ustring::ustring(const std::string &)$ main.cc 46 20 1365  main.cc 46 29 1374
-  calls $Pango::Layout::show_in_cairo_context(const Cairo::RefPtr<Cairo::Context> &)$ main.cc 47 3 1379  main.cc 47 35 1411
-  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 47 3 1379  main.cc 47 9 1385
-$get_right_middle(const NodeViewData &)$ main.cc 50 1 1416  main.cc 53 2 1619
-  calls $std::operator+(const complex<_Tp> &, const complex<_Tp> &)$ main.cc 51 10 1480  main.cc 52 76 1616
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator*()$ main.cc 51 10 1480  main.cc 51 32 1502
-  calls $std::complex<double>::complex(double, double)$ main.cc 51 35 1505  main.cc 52 76 1616
-  calls $std::complex<double>::real()$ main.cc 51 37 1507  main.cc 51 69 1539
-  calls $std::complex<double>::imag()$ main.cc 52 37 1577  main.cc 52 69 1609
-$get_left_middle(const NodeViewData &)$ main.cc 55 1 1621  main.cc 58 2 1767
-  calls $std::operator+(const complex<_Tp> &, const complex<_Tp> &)$ main.cc 56 10 1684  main.cc 57 56 1764
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator*()$ main.cc 56 10 1684  main.cc 56 32 1706
-  calls $std::complex<double>::complex(double, double)$ main.cc 57 10 1718  main.cc 57 56 1764
-  calls $std::complex<double>::imag()$ main.cc 57 17 1725  main.cc 57 49 1757
-$draw_edge(const NodeViewData &, const NodeViewData &, CContext)$ main.cc 60 1 1769  main.cc 66 2 2009
-  calls $get_right_middle(const NodeViewData &)$ main.cc 61 12 1861  main.cc 61 34 1883
-  calls $get_left_middle(const NodeViewData &)$ main.cc 62 10 1894  main.cc 62 31 1915
-  calls $Cairo::Context::move_to(double, double)$ main.cc 63 3 1919  main.cc 63 39 1955
-  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 63 3 1919  main.cc 63 4 1920
-  calls $std::complex<double>::real()$ main.cc 63 14 1930  main.cc 63 25 1941
-  calls $std::complex<double>::imag()$ main.cc 63 27 1943  main.cc 63 38 1954
-  calls $Cairo::Context::line_to(double, double)$ main.cc 64 3 1959  main.cc 64 35 1991
-  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 64 3 1959  main.cc 64 4 1960
-  calls $std::complex<double>::real()$ main.cc 64 14 1970  main.cc 64 23 1979
-  calls $std::complex<double>::imag()$ main.cc 64 25 1981  main.cc 64 34 1990
-  calls $Cairo::Context::stroke()$ main.cc 65 3 1995  main.cc 65 14 2006
-  calls $Cairo::RefPtr<T_CppObject>::operator->()$ main.cc 65 3 1995  main.cc 65 4 1996
-$draw_view(View &, CContext, PLayout)$ main.cc 68 1 2011  main.cc 84 2 2612
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator*()$ main.cc 69 18 2085  main.cc 69 19 2086
-  calls $draw_node(const NodeViewData &, CContext, PLayout, const double &)$ main.cc 70 5 2108  main.cc 70 54 2157
-  calls $Glib::RefPtr<T_CppObject>::RefPtr<T_CppObject>(const RefPtr<T_CppObject> &)$ main.cc 70 29 2132  main.cc 70 35 2138
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator*()$ main.cc 72 18 2180  main.cc 72 19 2181
-  calls $std::_List_iterator<_Tp>::operator*()$ main.cc 73 20 2218  main.cc 73 21 2219
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const std::unordered_map::key_type &)$ main.cc 74 25 2279  main.cc 74 55 2309
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const std::unordered_map::key_type &)$ main.cc 75 25 2335  main.cc 75 55 2365
-  calls $std::__detail::operator==(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ main.cc 76 11 2377  main.cc 76 44 2410
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ main.cc 76 25 2391  main.cc 76 44 2410
-  calls $std::__detail::operator==(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ main.cc 77 11 2424  main.cc 77 44 2457
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ main.cc 77 25 2438  main.cc 77 44 2457
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ main.cc 78 9 2469  main.cc 78 55 2515
-  calls $operator<<(std::ostream &, const EdgeBase &)$ main.cc 78 9 2469  main.cc 78 47 2507
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ main.cc 78 9 2469  main.cc 78 38 2498
-  calls $draw_edge(const NodeViewData &, const NodeViewData &, CContext)$ main.cc 80 7 2531  main.cc 80 59 2583
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ main.cc 80 17 2541  main.cc 80 27 2551
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ main.cc 80 37 2561  main.cc 80 47 2571
-$contains_point(const NodeViewData &, double, double, const DrawingArea_ZoomDrag &)$ main.cc 86 1 2614  main.cc 94 2 3097
-  calls $std::complex<double>::complex(const std::complex<double> &)$ main.cc 88 10 2769  main.cc 88 32 2791
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator*()$ main.cc 88 10 2769  main.cc 88 32 2791
-  calls $std::operator+(const complex<_Tp> &, const complex<_Tp> &)$ main.cc 89 10 2802  main.cc 89 60 2852
-  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator*()$ main.cc 89 10 2802  main.cc 89 32 2824
-  calls $DrawingArea_ZoomDrag::user_to_image(const C &)$ main.cc 90 13 2866  main.cc 90 56 2909
-  calls $std::complex<double>::complex(double, double)$ main.cc 90 48 2901  main.cc 90 55 2908
-  calls $std::complex<double>::real()$ main.cc 92 10 2973  main.cc 92 19 2982
-  calls $std::complex<double>::real()$ main.cc 92 23 2986  main.cc 92 35 2998
-  calls $std::complex<double>::real()$ main.cc 92 39 3002  main.cc 92 51 3014
-  calls $std::complex<double>::real()$ main.cc 92 55 3018  main.cc 92 64 3027
-  calls $std::complex<double>::imag()$ main.cc 93 10 3040  main.cc 93 19 3049
-  calls $std::complex<double>::imag()$ main.cc 93 23 3053  main.cc 93 35 3065
-  calls $std::complex<double>::imag()$ main.cc 93 39 3069  main.cc 93 51 3081
-  calls $std::complex<double>::imag()$ main.cc 93 55 3085  main.cc 93 64 3094
-$usage()$ main.cc 96 1 3099  main.cc 101 2 3267
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ main.cc 97 3 3115  main.cc 97 46 3158
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ main.cc 97 3 3115  main.cc 97 38 3150
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ main.cc 98 3 3162  main.cc 99 15 3252
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ main.cc 98 3 3162  main.cc 98 78 3237
-$main(int, char **)$ main.cc 103 1 3269  main.cc 143 2 4469
-  calls $usage()$ main.cc 105 12 3333  main.cc 105 19 3340
-  calls $parseCallGraphFromFile(const std::string &)$ main.cc 107 17 3362  main.cc 107 48 3393
-  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ main.cc 107 40 3385  main.cc 107 47 3392
-  calls $dump_call_graph(const Graph &, std::ostream &)$ main.cc 108 3 3397  main.cc 108 25 3419
-  calls $View::View(std::unordered_map<Fullname, NodeBase *> *)$ main.cc 110 8 3429  main.cc 110 33 3454
-  calls $Gtk::Application::create(const Glib::ustring &, Gio::ApplicationFlags)$ main.cc 112 40 3496  main.cc 112 66 3522
-  calls $Gtk::Window::Window(Gtk::WindowType)$ main.cc 113 15 3538  main.cc 113 21 3544
-  calls $DrawingArea_ZoomDrag::DrawingArea_ZoomDrag()$ main.cc 114 24 3569  main.cc 114 44 3589
-  calls $Gtk::Container::add(Gtk::Widget &)$ main.cc 115 3 3593  main.cc 115 35 3625
-  calls $Pango::Layout::create(const Glib::RefPtr<Context> &)$ main.cc 117 7 3652  main.cc 117 70 3715
-  calls $Gtk::Widget::get_pango_context()$ main.cc 117 29 3674  main.cc 117 69 3714
-  calls $initialize_view(const Graph &, View &, PLayout &)$ main.cc 119 3 3720  main.cc 119 39 3756
-  calls $prune_isolated_nodes(View &)$ main.cc 120 3 3760  main.cc 120 29 3786
-  calls $get_initialViewFullGraph(View &)$ main.cc 121 3 3790  main.cc 121 33 3820
-  calls $std::function<bool (const Cairo::RefPtr<Cairo::Context> &)>::operator=(_Functor &&)$ main.cc 122 3 3824  main.cc 124 4 3931
-  calls $draw_view(View &, CContext, PLayout)$ main.cc 123 12 3900  main.cc 123 38 3926
-  calls $Glib::RefPtr<T_CppObject>::RefPtr<T_CppObject>(const RefPtr<T_CppObject> &)$ main.cc 123 31 3919  main.cc 123 37 3925
-  calls $std::function<std::shared_ptr<std::complex<double> > (_GdkEventButton *)>::operator=(_Functor &&)$ main.cc 126 3 3936  main.cc 137 4 4386
-  calls $std::find_if(_InputIterator, _InputIterator, _Predicate)$ main.cc 128 18 4060  main.cc 132 11 4278
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::begin()$ main.cc 129 9 4077  main.cc 129 30 4098
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ main.cc 129 32 4100  main.cc 129 51 4119
-  calls $contains_point(const NodeViewData &, double, double, const DrawingArea_ZoomDrag &)$ main.cc 131 18 4207  main.cc 131 77 4266
-  calls $std::__detail::operator!=(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ main.cc 133 9 4288  main.cc 133 37 4316
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ main.cc 133 18 4297  main.cc 133 37 4316
-  calls $std::shared_ptr<_Tp>::shared_ptr<_Tp>(const shared_ptr<_Tp> &)$ main.cc 134 14 4333  main.cc 134 36 4355
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ main.cc 134 14 4333  main.cc 134 19 4338
-  calls $std::shared_ptr<_Tp>::shared_ptr<_Tp>(std::nullptr_t)$ main.cc 136 12 4374  main.cc 136 19 4381
-  calls $Gtk::Window::set_default_size(int, int)$ main.cc 139 3 4391  main.cc 139 36 4424
-  calls $Gtk::Widget::show_all()$ main.cc 140 3 4428  main.cc 140 20 4445
-  calls $Gtk::Application::run(Gtk::Window &)$ main.cc 142 3 4450  main.cc 142 19 4466
-  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 142 3 4450  main.cc 142 6 4453
-calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 28 37 559  ./node_base.h 28 65 587
-calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 29 38 628  ./node_base.h 29 66 656
-calls $NodeBase::in_degree()$ ./node_base.h 30 34 693  ./node_base.h 30 45 704
-calls $NodeBase::out_degree()$ ./node_base.h 30 48 707  ./node_base.h 30 60 719
-calls $NodeBase::degree()$ ./node_base.h 31 35 757  ./node_base.h 31 43 765
+$get_view_box(const DrawingArea_ZoomDrag &)$ main.cc 21 1 356  main.cc 26 2 602
+  calls $Rectangle::Rectangle(const Point &, const Extent &)$ main.cc 22 13 443  main.cc 23 68 532
+  calls $Point::Point(double, double)$ main.cc 22 22 452  main.cc 22 33 463
+  calls $Point::Point(Point &&)$ main.cc 23 22 486  main.cc 23 67 531
+  calls $std::move(_Tp &&)$ main.cc 23 28 492  main.cc 23 66 530
+  calls $get_extent(const Gtk::Widget &)$ main.cc 23 33 497  main.cc 23 65 529
+  calls $DrawingArea_ZoomDrag::user_to_image(Rectangle &)$ main.cc 24 3 536  main.cc 24 47 580
+$main(int, char **)$ main.cc 28 1 604  main.cc 126 2 4055
+  calls $usage()$ main.cc 30 12 668  main.cc 30 19 675
+  calls $parseCallGraphFromFile(const std::string &)$ main.cc 36 17 812  main.cc 36 48 843
+  calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const _CharT *, const _Alloc &)$ main.cc 36 40 835  main.cc 36 47 842
+  calls $dump_call_graph(const Graph &, std::ostream &)$ main.cc 37 3 847  main.cc 37 31 875
+  calls $View::View(std::unordered_map<Fullname, NodeBase *> *)$ main.cc 54 8 1602  main.cc 54 33 1627
+  calls $MyState::MyState()$ main.cc 56 11 1640  main.cc 56 18 1647
+  calls $Gtk::Application::create(const Glib::ustring &, Gio::ApplicationFlags)$ main.cc 57 40 1688  main.cc 57 66 1714
+  calls $Gtk::Window::Window(Gtk::WindowType)$ main.cc 58 15 1730  main.cc 58 21 1736
+  calls $DrawingArea_ZoomDrag::DrawingArea_ZoomDrag()$ main.cc 59 24 1761  main.cc 59 44 1781
+  calls $Gtk::Container::add(Gtk::Widget &)$ main.cc 60 3 1785  main.cc 60 35 1817
+  calls $Pango::Layout::create(const Glib::RefPtr<Context> &)$ main.cc 62 7 1844  main.cc 62 70 1907
+  calls $Gtk::Widget::get_pango_context()$ main.cc 62 29 1866  main.cc 62 69 1906
+  calls $initialize_view(const Graph &, View &, PLayout &)$ main.cc 64 3 1912  main.cc 64 39 1948
+  calls $prune_isolated_nodes(View &)$ main.cc 65 3 1952  main.cc 65 29 1978
+  calls $get_initialViewFullGraph(View &)$ main.cc 66 3 1982  main.cc 66 33 2012
+  calls $std::function<bool (const Cairo::RefPtr<Cairo::Context> &)>::operator=(_Functor &&)$ main.cc 68 3 2017  main.cc 84 4 2667
+  calls $get_view_box(const DrawingArea_ZoomDrag &)$ main.cc 76 26 2365  main.cc 76 60 2399
+  calls $ViewAnimation::operator bool()$ main.cc 78 9 2434  main.cc 78 32 2457
+  calls $ViewAnimation::operator++()$ main.cc 78 9 2434  main.cc 78 32 2457
+  calls $check_physicalSubView(View &, Rectangle)$ main.cc 82 5 2582  main.cc 82 44 2621
+  calls $Rectangle::Rectangle(const Rectangle &)$ main.cc 82 35 2612  main.cc 82 43 2620
+  calls $draw_view(const View &, CContext, PLayout)$ main.cc 83 12 2634  main.cc 83 40 2662
+  calls $Glib::RefPtr<T_CppObject>::RefPtr<T_CppObject>(const RefPtr<T_CppObject> &)$ main.cc 83 33 2655  main.cc 83 39 2661
+  calls $Glib::SignalProxy<R, T>::connect(Glib::SignalProxy::SlotType &&, bool)$ main.cc 86 3 2672  main.cc 109 13 3637
+  calls $Gtk::Widget::signal_button_press_event()$ main.cc 86 3 2672  main.cc 86 51 2720
+  calls $sigc::slot<bool, _GdkEventButton *, sigc::nil, sigc::nil, sigc::nil, sigc::nil, sigc::nil, sigc::nil>::slot(const T_functor &)$ main.cc 87 7 2736  main.cc 108 8 3623
+  calls $Point::Point(double, double)$ main.cc 89 15 2830  main.cc 89 32 2847
+  calls $DrawingArea_ZoomDrag::user_to_image(Point &)$ main.cc 90 9 2857  main.cc 90 50 2898
+  calls $find_node(const View &, const Point &)$ main.cc 91 22 2921  main.cc 91 44 2943
+  calls $MyState::handle_event_click(Node *, GdkEventButton *)$ main.cc 92 9 2953  main.cc 92 44 2988
+  calls $NodeClickInfo::operator bool()$ main.cc 93 13 3002  main.cc 93 31 3020
+  calls $expand_node(View &, NodeBase *)$ main.cc 94 11 3066  main.cc 94 53 3108
+  calls $set_physicalView(View &, const Rectangle &)$ main.cc 95 11 3120  main.cc 95 69 3178
+  calls $get_view_box(const DrawingArea_ZoomDrag &)$ main.cc 95 34 3143  main.cc 95 68 3177
+  calls $ViewAnimation::init(View &&)$ main.cc 96 11 3190  main.cc 96 49 3228
+  calls $std::move(_Tp &&)$ main.cc 96 38 3217  main.cc 96 48 3227
+  calls $Glib::SignalTimeout::connect(const sigc::slot<bool> &, unsigned int, int)$ main.cc 97 11 3240  main.cc 105 18 3582
+  calls $Glib::signal_timeout()$ main.cc 97 11 3240  main.cc 97 33 3262
+  calls $sigc::slot<bool, sigc::nil, sigc::nil, sigc::nil, sigc::nil, sigc::nil, sigc::nil, sigc::nil>::slot(const T_functor &)$ main.cc 98 15 3286  main.cc 104 16 3563
+  calls $Gtk::Widget::queue_draw()$ main.cc 99 17 3310  main.cc 99 50 3343
+  calls $ViewAnimation::is_finished()$ main.cc 100 21 3365  main.cc 100 56 3400
+  calls $View::operator=(View &&)$ main.cc 101 19 3422  main.cc 101 64 3467
+  calls $std::move(_Tp &&)$ main.cc 101 26 3429  main.cc 101 64 3467
+  calls $ViewAnimation::is_finished()$ main.cc 103 25 3511  main.cc 103 60 3546
+  calls $Glib::SignalProxy<R, T>::connect(Glib::SignalProxy::SlotType &&, bool)$ main.cc 111 3 3642  main.cc 120 13 3972
+  calls $Gtk::Widget::signal_motion_notify_event()$ main.cc 111 3 3642  main.cc 111 52 3691
+  calls $sigc::slot<bool, _GdkEventMotion *, sigc::nil, sigc::nil, sigc::nil, sigc::nil, sigc::nil, sigc::nil>::slot(const T_functor &)$ main.cc 112 7 3707  main.cc 119 8 3958
+  calls $NodeClickInfo::operator bool()$ main.cc 114 13 3793  main.cc 114 30 3810
+  calls $DrawingArea_ZoomDrag::set_dragTarget(DragTarget)$ main.cc 115 11 3824  main.cc 116 57 3917
+  calls $std::shared_ptr<_Tp>::shared_ptr<_Tp>(const shared_ptr<_Tp> &)$ main.cc 116 15 3875  main.cc 116 56 3916
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](std::unordered_map::key_type &&)$ main.cc 116 15 3875  main.cc 116 52 3912
+  calls $Gtk::Window::set_default_size(int, int)$ main.cc 122 3 3977  main.cc 122 36 4010
+  calls $Gtk::Widget::show_all()$ main.cc 123 3 4014  main.cc 123 20 4031
+  calls $Gtk::Application::run(Gtk::Window &)$ main.cc 125 3 4036  main.cc 125 19 4052
+  calls $Glib::RefPtr<T_CppObject>::operator->()$ main.cc 125 3 4036  main.cc 125 6 4039
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 32 37 644  ./node_base.h 32 65 672
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 33 38 713  ./node_base.h 33 66 741
+calls $NodeBase::in_degree()$ ./node_base.h 34 34 778  ./node_base.h 34 45 789
+calls $NodeBase::out_degree()$ ./node_base.h 34 48 792  ./node_base.h 34 60 804
+calls $NodeBase::degree()$ ./node_base.h 35 38 845  ./node_base.h 35 46 853
+calls $std::basic_ostream<_CharT, _Traits>::operator<<(const void *)$ ./node_base.h 49 10 1207  ./node_base.h 49 42 1239
+calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ ./node_base.h 49 10 1207  ./node_base.h 49 32 1229
+calls $std::basic_ostream<_CharT, _Traits>::operator<<(const void *)$ ./node_base.h 49 10 1207  ./node_base.h 49 21 1218
 calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 19 9 349  ./node.h 19 27 367
 calls $std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::basic_string<_CharT, _Traits, _Alloc>(const basic_string<_CharT, _Traits, _Alloc> &)$ ./node.h 31 29 599  ./node.h 31 47 617
 calls $EdgeBase::EdgeBase(NodeBase *, NodeBase *)$ ./node.h 38 34 731  ./node.h 38 54 751
-$operator<<(std::ostream &, const SourceLocation &)$ node.cc 7 1 61  node.cc 11 2 276
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(unsigned long)$ node.cc 8 3 135  node.cc 9 61 261
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 8 3 135  node.cc 9 36 236
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(unsigned long)$ node.cc 8 3 135  node.cc 9 29 229
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 8 3 135  node.cc 8 68 200
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(unsigned long)$ node.cc 8 3 135  node.cc 8 61 193
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 8 3 135  node.cc 8 38 170
-  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ node.cc 8 3 135  node.cc 8 31 163
-$operator<<(std::ostream &, const SourceRange &)$ node.cc 13 1 278  node.cc 16 2 409
-  calls $operator<<(std::ostream &, const SourceLocation &)$ node.cc 14 3 346  node.cc 14 51 394
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 14 3 346  node.cc 14 32 375
-  calls $operator<<(std::ostream &, const SourceLocation &)$ node.cc 14 3 346  node.cc 14 25 368
-$operator<<(std::ostream &, const NodeBase &)$ node.cc 18 1 411  node.cc 22 2 585
-  calls $operator<<(std::ostream &, const SourceRange &)$ node.cc 20 3 531  node.cc 20 42 570
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 20 3 531  node.cc 20 28 556
-  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ node.cc 20 3 531  node.cc 20 21 549
-$operator<<(std::ostream &, const EdgeBase &)$ node.cc 24 1 587  node.cc 30 2 884
-  calls $operator<<(std::ostream &, const SourceRange &)$ node.cc 28 3 801  node.cc 28 71 869
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 28 3 801  node.cc 28 57 855
-  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ node.cc 28 3 801  node.cc 28 50 848
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 28 3 801  node.cc 28 32 830
-  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ node.cc 28 3 801  node.cc 28 22 820
-calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 28 37 559  ./node_base.h 28 65 587
-calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 29 38 628  ./node_base.h 29 66 656
-calls $NodeBase::in_degree()$ ./node_base.h 30 34 693  ./node_base.h 30 45 704
-calls $NodeBase::out_degree()$ ./node_base.h 30 48 707  ./node_base.h 30 60 719
-calls $NodeBase::degree()$ ./node_base.h 31 35 757  ./node_base.h 31 43 765
-$init_stack(stack<NodeBase *> &, const View &, GridMap &)$ graph_layout_algorithms.cc 22 1 358  graph_layout_algorithms.cc 34 2 859
-  calls $std::find_if(_InputIterator, _InputIterator, _Predicate)$ graph_layout_algorithms.cc 24 13 471  graph_layout_algorithms.cc 27 9 684
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::begin()$ graph_layout_algorithms.cc 24 21 479  graph_layout_algorithms.cc 24 47 505
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ graph_layout_algorithms.cc 24 49 507  graph_layout_algorithms.cc 24 73 531
-  calls $std::operator==(const basic_string<_CharT, _Traits, _Alloc> &, const _CharT *)$ graph_layout_algorithms.cc 26 16 618  graph_layout_algorithms.cc 26 36 638
-  calls $std::operator==(const basic_string<_CharT, _Traits, _Alloc> &, const _CharT *)$ graph_layout_algorithms.cc 26 40 642  graph_layout_algorithms.cc 26 72 674
-  calls $std::__detail::operator==(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ graph_layout_algorithms.cc 28 7 692  graph_layout_algorithms.cc 28 37 722
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ graph_layout_algorithms.cc 28 13 698  graph_layout_algorithms.cc 28 37 722
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph_layout_algorithms.cc 29 5 730  graph_layout_algorithms.cc 29 48 773
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 29 5 730  graph_layout_algorithms.cc 29 40 765
-  calls $std::stack<_Tp, _Sequence>::push(const std::stack::value_type &)$ graph_layout_algorithms.cc 32 3 793  graph_layout_algorithms.cc 32 30 820
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ graph_layout_algorithms.cc 32 19 809  graph_layout_algorithms.cc 32 21 811
-  calls $std::complex<double>::operator=(std::complex<double> &&)$ graph_layout_algorithms.cc 33 3 824  graph_layout_algorithms.cc 33 35 856
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 33 3 824  graph_layout_algorithms.cc 33 22 843
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ graph_layout_algorithms.cc 33 11 832  graph_layout_algorithms.cc 33 13 834
-  calls $std::complex<double>::complex(double, double)$ graph_layout_algorithms.cc 33 25 846  graph_layout_algorithms.cc 33 35 856
-$refresh_stack(stack<NodeBase *> &, const View &, GridMap &, int &)$ graph_layout_algorithms.cc 39 1 916  graph_layout_algorithms.cc 51 2 1331
-  calls $std::__detail::_Node_const_iterator<_Value, __constant_iterators, __cache>::operator*()$ graph_layout_algorithms.cc 41 18 1054  graph_layout_algorithms.cc 41 19 1055
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 42 15 1087  graph_layout_algorithms.cc 42 37 1109
-  calls $std::__detail::operator==(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ graph_layout_algorithms.cc 44 9 1157  graph_layout_algorithms.cc 44 28 1176
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ graph_layout_algorithms.cc 44 15 1163  graph_layout_algorithms.cc 44 28 1176
-  calls $NodeBase::out_degree()$ graph_layout_algorithms.cc 44 32 1180  graph_layout_algorithms.cc 44 54 1202
-  calls $std::stack<_Tp, _Sequence>::push(const std::stack::value_type &)$ graph_layout_algorithms.cc 45 7 1212  graph_layout_algorithms.cc 45 32 1237
-  calls $std::complex<double>::operator=(std::complex<double> &&)$ graph_layout_algorithms.cc 46 7 1245  graph_layout_algorithms.cc 46 45 1283
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 46 7 1245  graph_layout_algorithms.cc 46 24 1262
-  calls $std::complex<double>::complex(double, double)$ graph_layout_algorithms.cc 46 27 1265  graph_layout_algorithms.cc 46 45 1283
-$set_grid_dfs(const View &, GridMap &)$ graph_layout_algorithms.cc 57 1 1454  graph_layout_algorithms.cc 86 2 2471
-  calls $std::stack<NodeBase *, std::deque<NodeBase *, std::allocator<NodeBase *> > >::stack()$ graph_layout_algorithms.cc 59 21 1602  graph_layout_algorithms.cc 59 31 1612
-  calls $init_stack(stack<NodeBase *> &, const View &, GridMap &)$ graph_layout_algorithms.cc 63 3 1658  graph_layout_algorithms.cc 63 40 1695
-  calls $std::stack<_Tp, _Sequence>::empty()$ graph_layout_algorithms.cc 65 11 1708  graph_layout_algorithms.cc 65 29 1726
-  calls $refresh_stack(stack<NodeBase *> &, const View &, GridMap &, int &)$ graph_layout_algorithms.cc 66 10 1739  graph_layout_algorithms.cc 66 59 1788
-  calls $std::stack<_Tp, _Sequence>::top()$ graph_layout_algorithms.cc 67 28 1819  graph_layout_algorithms.cc 67 44 1835
-  calls $std::complex<double>::imag()$ graph_layout_algorithms.cc 68 23 1882  graph_layout_algorithms.cc 68 55 1914
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 68 23 1882  graph_layout_algorithms.cc 68 48 1907
-  calls $std::stack<_Tp, _Sequence>::top()$ graph_layout_algorithms.cc 68 31 1890  graph_layout_algorithms.cc 68 47 1906
-  calls $std::find_if(_InputIterator, _InputIterator, _Predicate)$ graph_layout_algorithms.cc 70 9 1944  graph_layout_algorithms.cc 73 11 2139
-  calls $std::__cxx11::list<_Tp, _Alloc>::begin()$ graph_layout_algorithms.cc 70 17 1952  graph_layout_algorithms.cc 70 33 1968
-  calls $std::__cxx11::list<_Tp, _Alloc>::end()$ graph_layout_algorithms.cc 70 35 1970  graph_layout_algorithms.cc 70 49 1984
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::count(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 72 19 2102  graph_layout_algorithms.cc 72 44 2127
-  calls $std::_List_const_iterator<_Tp>::operator==(const std::_List_const_iterator::_Self &)$ graph_layout_algorithms.cc 74 9 2149  graph_layout_algorithms.cc 74 31 2171
-  calls $std::__cxx11::list<_Tp, _Alloc>::end()$ graph_layout_algorithms.cc 74 17 2157  graph_layout_algorithms.cc 74 31 2171
-  calls $std::stack<_Tp, _Sequence>::pop()$ graph_layout_algorithms.cc 75 7 2181  graph_layout_algorithms.cc 75 23 2197
-  calls $std::_List_const_iterator<_Tp>::operator!=(const std::_List_const_iterator::_Self &)$ graph_layout_algorithms.cc 77 11 2222  graph_layout_algorithms.cc 77 35 2246
-  calls $std::__cxx11::list<_Tp, _Alloc>::begin()$ graph_layout_algorithms.cc 77 19 2230  graph_layout_algorithms.cc 77 35 2246
-  calls $std::stack<_Tp, _Sequence>::push(const std::stack::value_type &)$ graph_layout_algorithms.cc 80 7 2283  graph_layout_algorithms.cc 80 37 2313
-  calls $std::_List_const_iterator<_Tp>::operator*()$ graph_layout_algorithms.cc 80 24 2300  graph_layout_algorithms.cc 80 29 2305
-  calls $std::complex<double>::operator=(std::complex<double> &&)$ graph_layout_algorithms.cc 81 7 2321  graph_layout_algorithms.cc 81 58 2372
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 81 7 2321  graph_layout_algorithms.cc 81 29 2343
-  calls $std::_List_const_iterator<_Tp>::operator*()$ graph_layout_algorithms.cc 81 16 2330  graph_layout_algorithms.cc 81 21 2335
-  calls $std::complex<double>::complex(double, double)$ graph_layout_algorithms.cc 81 32 2346  graph_layout_algorithms.cc 81 58 2372
-  calls $std::max(const _Tp &, const _Tp &)$ graph_layout_algorithms.cc 82 20 2393  graph_layout_algorithms.cc 82 53 2426
-  calls $std::pair<int, int>::pair(_U1 &&, _U2 &&)$ graph_layout_algorithms.cc 85 10 2447  graph_layout_algorithms.cc 85 31 2468
-$get_row_column_dimensions(const View &, const GridMap &, vector<double> &, vector<double> &)$ graph_layout_algorithms.cc 91 1 2519  graph_layout_algorithms.cc 103 2 3168
-  calls $std::__detail::_Node_const_iterator<_Value, __constant_iterators, __cache>::operator*()$ graph_layout_algorithms.cc 94 18 2731  graph_layout_algorithms.cc 94 19 2732
-  calls $std::complex<double>::imag()$ graph_layout_algorithms.cc 96 33 2808  graph_layout_algorithms.cc 96 62 2837
-  calls $std::complex<double>::real()$ graph_layout_algorithms.cc 97 32 2870  graph_layout_algorithms.cc 97 61 2899
-  calls $std::complex<double>::real()$ graph_layout_algorithms.cc 98 22 2922  graph_layout_algorithms.cc 98 59 2959
-  calls $std::__detail::_Node_const_iterator<_Value, __constant_iterators, __cache>::operator->()$ graph_layout_algorithms.cc 98 22 2922  graph_layout_algorithms.cc 98 44 2944
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 98 22 2922  graph_layout_algorithms.cc 98 44 2944
-  calls $std::complex<double>::imag()$ graph_layout_algorithms.cc 99 25 2985  graph_layout_algorithms.cc 99 62 3022
-  calls $std::__detail::_Node_const_iterator<_Value, __constant_iterators, __cache>::operator->()$ graph_layout_algorithms.cc 99 25 2985  graph_layout_algorithms.cc 99 47 3007
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 99 25 2985  graph_layout_algorithms.cc 99 47 3007
-  calls $std::vector<_Tp, _Alloc>::operator[](std::vector::size_type)$ graph_layout_algorithms.cc 100 5 3028  graph_layout_algorithms.cc 100 20 3043
-  calls $std::max(const _Tp &, const _Tp &)$ graph_layout_algorithms.cc 100 23 3046  graph_layout_algorithms.cc 100 64 3087
-  calls $std::vector<_Tp, _Alloc>::operator[](std::vector::size_type)$ graph_layout_algorithms.cc 100 35 3058  graph_layout_algorithms.cc 100 50 3073
-  calls $std::vector<_Tp, _Alloc>::operator[](std::vector::size_type)$ graph_layout_algorithms.cc 101 5 3093  graph_layout_algorithms.cc 101 25 3113
-  calls $std::max(const _Tp &, const _Tp &)$ graph_layout_algorithms.cc 101 28 3116  graph_layout_algorithms.cc 101 73 3161
-  calls $std::vector<_Tp, _Alloc>::operator[](std::vector::size_type)$ graph_layout_algorithms.cc 101 40 3128  graph_layout_algorithms.cc 101 60 3148
-$set_initial_positions(View &, const GridMap &, const vector<double> &, const vector<double> &)$ graph_layout_algorithms.cc 108 1 3249  graph_layout_algorithms.cc 135 2 4449
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator*()$ graph_layout_algorithms.cc 111 17 3454  graph_layout_algorithms.cc 111 18 3455
-  calls $std::complex<double>::real()$ graph_layout_algorithms.cc 112 22 3494  graph_layout_algorithms.cc 112 59 3531
-  calls $std::__detail::_Node_const_iterator<_Value, __constant_iterators, __cache>::operator->()$ graph_layout_algorithms.cc 112 22 3494  graph_layout_algorithms.cc 112 44 3516
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 112 22 3494  graph_layout_algorithms.cc 112 44 3516
-  calls $std::complex<double>::imag()$ graph_layout_algorithms.cc 113 25 3557  graph_layout_algorithms.cc 113 62 3594
-  calls $std::__detail::_Node_const_iterator<_Value, __constant_iterators, __cache>::operator->()$ graph_layout_algorithms.cc 113 25 3557  graph_layout_algorithms.cc 113 47 3579
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::find(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 113 25 3557  graph_layout_algorithms.cc 113 47 3579
-  calls $std::accumulate(_InputIterator, _InputIterator, _Tp)$ graph_layout_algorithms.cc 117 17 3683  graph_layout_algorithms.cc 118 63 3776
-  calls $std::vector<_Tp, _Alloc>::begin()$ graph_layout_algorithms.cc 117 28 3694  graph_layout_algorithms.cc 117 46 3712
-  calls $std::next(_ForwardIterator, typename iterator_traits<_ForwardIterator>::difference_type)$ graph_layout_algorithms.cc 118 28 3741  graph_layout_algorithms.cc 118 57 3770
-  calls $std::vector<_Tp, _Alloc>::begin()$ graph_layout_algorithms.cc 118 33 3746  graph_layout_algorithms.cc 118 51 3764
-  calls $std::accumulate(_InputIterator, _InputIterator, _Tp)$ graph_layout_algorithms.cc 122 20 3867  graph_layout_algorithms.cc 123 71 3970
-  calls $std::vector<_Tp, _Alloc>::begin()$ graph_layout_algorithms.cc 122 31 3878  graph_layout_algorithms.cc 122 51 3898
-  calls $std::next(_ForwardIterator, typename iterator_traits<_ForwardIterator>::difference_type)$ graph_layout_algorithms.cc 123 31 3930  graph_layout_algorithms.cc 123 65 3964
-  calls $std::vector<_Tp, _Alloc>::begin()$ graph_layout_algorithms.cc 123 36 3935  graph_layout_algorithms.cc 123 56 3955
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph_layout_algorithms.cc 125 7 4028  graph_layout_algorithms.cc 126 53 4129
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(double)$ graph_layout_algorithms.cc 125 7 4028  graph_layout_algorithms.cc 126 45 4121
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 125 7 4028  graph_layout_algorithms.cc 126 31 4107
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(int)$ graph_layout_algorithms.cc 125 7 4028  graph_layout_algorithms.cc 125 55 4076
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 125 7 4028  graph_layout_algorithms.cc 125 45 4066
-  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ graph_layout_algorithms.cc 125 7 4028  graph_layout_algorithms.cc 125 29 4050
-  calls $std::shared_ptr<_Tp>::operator=(shared_ptr<_Tp> &&)$ graph_layout_algorithms.cc 133 5 4386  graph_layout_algorithms.cc 133 61 4442
-  calls $std::make_shared(_Args &&...)$ graph_layout_algorithms.cc 133 26 4407  graph_layout_algorithms.cc 133 61 4442
-$get_initialViewFullGraph(View &)$ graph_layout_algorithms.cc 140 1 4539  graph_layout_algorithms.cc 150 2 5057
-  calls $std::vector<_Tp, _Alloc>::vector<_Tp, _Alloc>()$ graph_layout_algorithms.cc 141 18 4600  graph_layout_algorithms.cc 141 28 4610
-  calls $std::vector<_Tp, _Alloc>::vector<_Tp, _Alloc>()$ graph_layout_algorithms.cc 142 18 4629  graph_layout_algorithms.cc 142 30 4641
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>()$ graph_layout_algorithms.cc 143 35 4677  graph_layout_algorithms.cc 143 42 4684
-  calls $set_grid_dfs(const View &, GridMap &)$ graph_layout_algorithms.cc 145 35 4794  graph_layout_algorithms.cc 145 62 4821
-  calls $std::vector<_Tp, _Alloc>::resize(std::vector::size_type)$ graph_layout_algorithms.cc 146 3 4825  graph_layout_algorithms.cc 146 46 4868
-  calls $std::vector<_Tp, _Alloc>::resize(std::vector::size_type)$ graph_layout_algorithms.cc 147 3 4872  graph_layout_algorithms.cc 147 49 4918
-  calls $get_row_column_dimensions(const View &, const GridMap &, vector<double> &, vector<double> &)$ graph_layout_algorithms.cc 148 3 4922  graph_layout_algorithms.cc 148 69 4988
-  calls $set_initial_positions(View &, const GridMap &, const vector<double> &, const vector<double> &)$ graph_layout_algorithms.cc 149 3 4992  graph_layout_algorithms.cc 149 65 5054
+$operator<<(std::ostream &, const SourceLocation &)$ node.cc 7 1 62  node.cc 10 2 279
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(unsigned long)$ node.cc 8 10 143  node.cc 9 68 276
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 8 10 143  node.cc 9 43 251
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(unsigned long)$ node.cc 8 10 143  node.cc 9 36 244
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 8 10 143  node.cc 8 75 208
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(unsigned long)$ node.cc 8 10 143  node.cc 8 68 201
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 8 10 143  node.cc 8 45 178
+  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ node.cc 8 10 143  node.cc 8 38 171
+$operator<<(std::ostream &, const SourceRange &)$ node.cc 12 1 281  node.cc 14 2 407
+  calls $operator<<(std::ostream &, const SourceLocation &)$ node.cc 13 10 356  node.cc 13 58 404
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 13 10 356  node.cc 13 39 385
+  calls $operator<<(std::ostream &, const SourceLocation &)$ node.cc 13 10 356  node.cc 13 32 378
+$operator<<(std::ostream &, const Node &)$ node.cc 16 1 409  node.cc 21 2 660
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base &(*)(std::ios_base &))$ node.cc 17 3 463  node.cc 17 17 477
+  calls $operator<<(std::ostream &, const SourceRange &)$ node.cc 18 10 488  node.cc 19 47 603
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(bool)$ node.cc 18 10 488  node.cc 19 33 589
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 18 10 488  node.cc 18 78 556
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(unsigned long)$ node.cc 18 10 488  node.cc 18 70 548
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 18 10 488  node.cc 18 53 531
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(const void *)$ node.cc 18 10 488  node.cc 18 45 523
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 18 10 488  node.cc 18 36 514
+  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ node.cc 18 10 488  node.cc 18 28 506
+  calls $NodeBase::degree()$ node.cc 18 57 535  node.cc 18 70 548
+  calls $NodeBase::is_isolated()$ node.cc 19 15 571  node.cc 19 33 589
+$operator<<(std::ostream &, const Edge &)$ node.cc 23 1 662  node.cc 27 2 890
+  calls $operator<<(std::ostream &, const SourceRange &)$ node.cc 26 10 819  node.cc 26 78 887
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 26 10 819  node.cc 26 64 873
+  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ node.cc 26 10 819  node.cc 26 57 866
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ node.cc 26 10 819  node.cc 26 39 848
+  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ node.cc 26 10 819  node.cc 26 29 838
+calls $operator==(const Point &, const Point &)$ ./geometry.h 36 67 794  ./geometry.h 36 73 800
+calls $Point::Point(const Point &)$ ./geometry.h 37 58 862  ./geometry.h 37 64 868
+calls $Point::operator+=(const Point &)$ ./geometry.h 37 58 862  ./geometry.h 37 64 868
+calls $Point::Point(const Point &)$ ./geometry.h 38 58 929  ./geometry.h 38 64 935
+calls $Point::operator-=(const Point &)$ ./geometry.h 38 58 929  ./geometry.h 38 64 935
+calls $Point::Point(const Point &)$ ./geometry.h 39 52 990  ./geometry.h 39 58 996
+calls $Point::operator*=(double)$ ./geometry.h 39 52 990  ./geometry.h 39 58 996
+calls $Point::Point(const Point &)$ ./geometry.h 40 52 1051  ./geometry.h 40 58 1057
+calls $Point::operator/=(double)$ ./geometry.h 40 52 1051  ./geometry.h 40 58 1057
+calls $Point::Point(const Point &)$ ./geometry.h 55 9 1407  ./geometry.h 55 21 1419
+calls $Point::Point(const Point &)$ ./geometry.h 55 23 1421  ./geometry.h 55 43 1441
+calls $Point::Point(const Point &)$ ./geometry.h 76 49 2054  ./geometry.h 76 53 2058
+calls $Point::Point(const Point &)$ ./geometry.h 76 55 2060  ./geometry.h 76 59 2064
+calls $Line::Line(const Point &, const Direction &)$ ./geometry.h 81 43 2306  ./geometry.h 81 57 2320
+calls $operator-(Point, const Point &)$ ./geometry.h 81 51 2314  ./geometry.h 81 56 2319
+calls $Point::Point(const Point &)$ ./geometry.h 81 51 2314  ./geometry.h 81 52 2315
+calls $Point::Point(const Point &)$ ./geometry.h 99 60 2861  ./geometry.h 99 78 2879
+calls $Point::Point(const Point &)$ ./geometry.h 99 80 2881  ./geometry.h 99 94 2895
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 32 37 644  ./node_base.h 32 65 672
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 33 38 713  ./node_base.h 33 66 741
+calls $NodeBase::in_degree()$ ./node_base.h 34 34 778  ./node_base.h 34 45 789
+calls $NodeBase::out_degree()$ ./node_base.h 34 48 792  ./node_base.h 34 60 804
+calls $NodeBase::degree()$ ./node_base.h 35 38 845  ./node_base.h 35 46 853
+calls $std::basic_ostream<_CharT, _Traits>::operator<<(const void *)$ ./node_base.h 49 10 1207  ./node_base.h 49 42 1239
+calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ ./node_base.h 49 10 1207  ./node_base.h 49 32 1229
+calls $std::basic_ostream<_CharT, _Traits>::operator<<(const void *)$ ./node_base.h 49 10 1207  ./node_base.h 49 21 1218
+$Grid::Grid(int, int)$ graph_layout_algorithms.cc 19 3 276  graph_layout_algorithms.cc 19 58 331
+$Grid::Grid()$ graph_layout_algorithms.cc 20 3 334  graph_layout_algorithms.cc 20 32 363
+$init_stack(stack<NodeBase *> &, const View &, GridMap &)$ graph_layout_algorithms.cc 30 1 507  graph_layout_algorithms.cc 43 2 1038
+  calls $std::find_if(_InputIterator, _InputIterator, _Predicate)$ graph_layout_algorithms.cc 33 7 626  graph_layout_algorithms.cc 36 17 863
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::begin()$ graph_layout_algorithms.cc 33 15 634  graph_layout_algorithms.cc 33 41 660
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ graph_layout_algorithms.cc 33 43 662  graph_layout_algorithms.cc 33 67 686
+  calls $std::operator==(const basic_string<_CharT, _Traits, _Alloc> &, const _CharT *)$ graph_layout_algorithms.cc 35 24 789  graph_layout_algorithms.cc 35 44 809
+  calls $std::operator==(const basic_string<_CharT, _Traits, _Alloc> &, const _CharT *)$ graph_layout_algorithms.cc 35 48 813  graph_layout_algorithms.cc 35 80 845
+  calls $std::__detail::operator==(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ graph_layout_algorithms.cc 37 7 871  graph_layout_algorithms.cc 37 37 901
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ graph_layout_algorithms.cc 37 13 877  graph_layout_algorithms.cc 37 37 901
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph_layout_algorithms.cc 38 5 909  graph_layout_algorithms.cc 38 48 952
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 38 5 909  graph_layout_algorithms.cc 38 40 944
+  calls $std::stack<_Tp, _Sequence>::push(const std::stack::value_type &)$ graph_layout_algorithms.cc 41 3 972  graph_layout_algorithms.cc 41 30 999
+  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ graph_layout_algorithms.cc 41 19 988  graph_layout_algorithms.cc 41 21 990
+  calls $Grid::operator=(Grid &&)$ graph_layout_algorithms.cc 42 3 1003  graph_layout_algorithms.cc 42 35 1035
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 42 3 1003  graph_layout_algorithms.cc 42 22 1022
+  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ graph_layout_algorithms.cc 42 11 1011  graph_layout_algorithms.cc 42 13 1013
+  calls $Grid::Grid(int, int)$ graph_layout_algorithms.cc 42 25 1025  graph_layout_algorithms.cc 42 35 1035
+$refresh_stack(stack<NodeBase *> &, const View &, GridMap &, int &)$ graph_layout_algorithms.cc 48 1 1095  graph_layout_algorithms.cc 60 2 1496
+  calls $__gnu_cxx::__normal_iterator<_Iterator, _Container>::operator*()$ graph_layout_algorithms.cc 50 20 1235  graph_layout_algorithms.cc 50 21 1236
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::count(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 52 10 1279  graph_layout_algorithms.cc 52 29 1298
+  calls $std::stack<_Tp, _Sequence>::push(const std::stack::value_type &)$ graph_layout_algorithms.cc 53 7 1308  graph_layout_algorithms.cc 53 28 1329
+  calls $Grid::operator=(Grid &&)$ graph_layout_algorithms.cc 54 7 1337  graph_layout_algorithms.cc 54 41 1371
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 54 7 1337  graph_layout_algorithms.cc 54 20 1350
+  calls $Grid::Grid(int, int)$ graph_layout_algorithms.cc 54 23 1353  graph_layout_algorithms.cc 54 41 1371
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph_layout_algorithms.cc 55 7 1379  graph_layout_algorithms.cc 55 76 1448
+  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ graph_layout_algorithms.cc 55 7 1379  graph_layout_algorithms.cc 55 68 1440
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 55 7 1379  graph_layout_algorithms.cc 55 37 1409
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 55 7 1379  graph_layout_algorithms.cc 55 17 1389
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(int)$ graph_layout_algorithms.cc 55 7 1379  graph_layout_algorithms.cc 55 17 1389
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 55 7 1379  graph_layout_algorithms.cc 55 17 1389
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 55 7 1379  graph_layout_algorithms.cc 55 17 1389
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 55 41 1413  graph_layout_algorithms.cc 55 63 1435
+$set_grid_dfs(const View &, GridMap &)$ graph_layout_algorithms.cc 66 1 1619  graph_layout_algorithms.cc 97 2 2813
+  calls $std::stack<NodeBase *, std::deque<NodeBase *, std::allocator<NodeBase *> > >::stack()$ graph_layout_algorithms.cc 68 21 1767  graph_layout_algorithms.cc 68 31 1777
+  calls $std::stack<_Tp, _Sequence>::empty()$ graph_layout_algorithms.cc 74 11 1876  graph_layout_algorithms.cc 74 29 1894
+  calls $refresh_stack(stack<NodeBase *> &, const View &, GridMap &, int &)$ graph_layout_algorithms.cc 75 10 1907  graph_layout_algorithms.cc 75 59 1956
+  calls $std::stack<_Tp, _Sequence>::top()$ graph_layout_algorithms.cc 76 28 1987  graph_layout_algorithms.cc 76 44 2003
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 77 23 2050  graph_layout_algorithms.cc 77 48 2075
+  calls $std::stack<_Tp, _Sequence>::top()$ graph_layout_algorithms.cc 77 31 2058  graph_layout_algorithms.cc 77 47 2074
+  calls $std::find_if(_InputIterator, _InputIterator, _Predicate)$ graph_layout_algorithms.cc 78 17 2104  graph_layout_algorithms.cc 84 27 2481
+  calls $std::__cxx11::list<_Tp, _Alloc>::begin()$ graph_layout_algorithms.cc 78 25 2112  graph_layout_algorithms.cc 78 41 2128
+  calls $std::__cxx11::list<_Tp, _Alloc>::end()$ graph_layout_algorithms.cc 78 43 2130  graph_layout_algorithms.cc 78 57 2144
+  calls $std::unordered_set<_Value, _Hash, _Pred, _Alloc>::count(const std::unordered_set::key_type &)$ graph_layout_algorithms.cc 82 34 2353  graph_layout_algorithms.cc 82 71 2390
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::count(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 83 35 2428  graph_layout_algorithms.cc 83 60 2453
+  calls $std::_List_const_iterator<_Tp>::operator==(const std::_List_const_iterator::_Self &)$ graph_layout_algorithms.cc 85 9 2491  graph_layout_algorithms.cc 85 31 2513
+  calls $std::__cxx11::list<_Tp, _Alloc>::end()$ graph_layout_algorithms.cc 85 17 2499  graph_layout_algorithms.cc 85 31 2513
+  calls $std::stack<_Tp, _Sequence>::pop()$ graph_layout_algorithms.cc 86 7 2523  graph_layout_algorithms.cc 86 23 2539
+  calls $std::_List_const_iterator<_Tp>::operator!=(const std::_List_const_iterator::_Self &)$ graph_layout_algorithms.cc 88 11 2564  graph_layout_algorithms.cc 88 35 2588
+  calls $std::__cxx11::list<_Tp, _Alloc>::begin()$ graph_layout_algorithms.cc 88 19 2572  graph_layout_algorithms.cc 88 35 2588
+  calls $std::stack<_Tp, _Sequence>::push(const std::stack::value_type &)$ graph_layout_algorithms.cc 91 7 2625  graph_layout_algorithms.cc 91 37 2655
+  calls $std::_List_const_iterator<_Tp>::operator*()$ graph_layout_algorithms.cc 91 24 2642  graph_layout_algorithms.cc 91 29 2647
+  calls $Grid::operator=(Grid &&)$ graph_layout_algorithms.cc 92 7 2663  graph_layout_algorithms.cc 92 58 2714
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 92 7 2663  graph_layout_algorithms.cc 92 29 2685
+  calls $std::_List_const_iterator<_Tp>::operator*()$ graph_layout_algorithms.cc 92 16 2672  graph_layout_algorithms.cc 92 21 2677
+  calls $Grid::Grid(int, int)$ graph_layout_algorithms.cc 92 32 2688  graph_layout_algorithms.cc 92 58 2714
+  calls $std::max(const _Tp &, const _Tp &)$ graph_layout_algorithms.cc 93 20 2735  graph_layout_algorithms.cc 93 53 2768
+  calls $std::pair<int, int>::pair(_U1 &&, _U2 &&)$ graph_layout_algorithms.cc 96 10 2789  graph_layout_algorithms.cc 96 31 2810
+$get_row_column_dimensions(const View &, const GridMap &, vector<double> &, vector<double> &)$ graph_layout_algorithms.cc 102 1 2861  graph_layout_algorithms.cc 114 2 3501
+  calls $std::__detail::_Node_const_iterator<_Value, __constant_iterators, __cache>::operator*()$ graph_layout_algorithms.cc 105 20 3075  graph_layout_algorithms.cc 105 21 3076
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ graph_layout_algorithms.cc 107 33 3158  graph_layout_algorithms.cc 107 59 3184
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 107 33 3158  graph_layout_algorithms.cc 107 55 3180
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ graph_layout_algorithms.cc 108 32 3227  graph_layout_algorithms.cc 108 58 3253
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 108 32 3227  graph_layout_algorithms.cc 108 54 3249
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 109 22 3286  graph_layout_algorithms.cc 109 38 3302
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 110 25 3332  graph_layout_algorithms.cc 110 41 3348
+  calls $std::vector<_Tp, _Alloc>::operator[](std::vector::size_type)$ graph_layout_algorithms.cc 111 5 3361  graph_layout_algorithms.cc 111 20 3376
+  calls $std::max(const _Tp &, const _Tp &)$ graph_layout_algorithms.cc 111 23 3379  graph_layout_algorithms.cc 111 64 3420
+  calls $std::vector<_Tp, _Alloc>::operator[](std::vector::size_type)$ graph_layout_algorithms.cc 111 35 3391  graph_layout_algorithms.cc 111 50 3406
+  calls $std::vector<_Tp, _Alloc>::operator[](std::vector::size_type)$ graph_layout_algorithms.cc 112 5 3426  graph_layout_algorithms.cc 112 25 3446
+  calls $std::max(const _Tp &, const _Tp &)$ graph_layout_algorithms.cc 112 28 3449  graph_layout_algorithms.cc 112 73 3494
+  calls $std::vector<_Tp, _Alloc>::operator[](std::vector::size_type)$ graph_layout_algorithms.cc 112 40 3461  graph_layout_algorithms.cc 112 60 3481
+$set_initial_positions(View &, const GridMap &, const vector<double> &, const vector<double> &)$ graph_layout_algorithms.cc 119 1 3582  graph_layout_algorithms.cc 148 2 4881
+  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator*()$ graph_layout_algorithms.cc 122 19 3789  graph_layout_algorithms.cc 122 20 3790
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 123 22 3835  graph_layout_algorithms.cc 123 38 3851
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 124 25 3881  graph_layout_algorithms.cc 124 41 3897
+  calls $std::accumulate(_InputIterator, _InputIterator, _Tp)$ graph_layout_algorithms.cc 129 11 4003  graph_layout_algorithms.cc 129 77 4069
+  calls $std::vector<_Tp, _Alloc>::begin()$ graph_layout_algorithms.cc 129 22 4014  graph_layout_algorithms.cc 129 40 4032
+  calls $std::next(_ForwardIterator, typename iterator_traits<_ForwardIterator>::difference_type)$ graph_layout_algorithms.cc 129 42 4034  graph_layout_algorithms.cc 129 71 4063
+  calls $std::vector<_Tp, _Alloc>::begin()$ graph_layout_algorithms.cc 129 47 4039  graph_layout_algorithms.cc 129 65 4057
+  calls $std::accumulate(_InputIterator, _InputIterator, _Tp)$ graph_layout_algorithms.cc 133 20 4160  graph_layout_algorithms.cc 134 71 4263
+  calls $std::vector<_Tp, _Alloc>::begin()$ graph_layout_algorithms.cc 133 31 4171  graph_layout_algorithms.cc 133 51 4191
+  calls $std::next(_ForwardIterator, typename iterator_traits<_ForwardIterator>::difference_type)$ graph_layout_algorithms.cc 134 31 4223  graph_layout_algorithms.cc 134 65 4257
+  calls $std::vector<_Tp, _Alloc>::begin()$ graph_layout_algorithms.cc 134 36 4228  graph_layout_algorithms.cc 134 56 4248
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph_layout_algorithms.cc 136 7 4321  graph_layout_algorithms.cc 138 59 4512
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(double)$ graph_layout_algorithms.cc 136 7 4321  graph_layout_algorithms.cc 138 51 4504
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 136 7 4321  graph_layout_algorithms.cc 138 37 4490
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(int)$ graph_layout_algorithms.cc 136 7 4321  graph_layout_algorithms.cc 137 71 4453
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 136 7 4321  graph_layout_algorithms.cc 137 61 4443
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(double)$ graph_layout_algorithms.cc 136 7 4321  graph_layout_algorithms.cc 137 45 4427
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 136 7 4321  graph_layout_algorithms.cc 137 34 4416
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(int)$ graph_layout_algorithms.cc 136 7 4321  graph_layout_algorithms.cc 136 68 4382
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 136 7 4321  graph_layout_algorithms.cc 136 61 4375
+  calls $std::operator<<(basic_ostream<_CharT, _Traits> &, const basic_string<_CharT, _Traits, _Alloc> &)$ graph_layout_algorithms.cc 136 7 4321  graph_layout_algorithms.cc 136 48 4362
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 136 7 4321  graph_layout_algorithms.cc 136 17 4331
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(int)$ graph_layout_algorithms.cc 136 7 4321  graph_layout_algorithms.cc 136 17 4331
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 136 7 4321  graph_layout_algorithms.cc 136 17 4331
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 136 7 4321  graph_layout_algorithms.cc 136 17 4331
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 136 21 4335  graph_layout_algorithms.cc 136 43 4357
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ graph_layout_algorithms.cc 145 5 4769  graph_layout_algorithms.cc 145 31 4795
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 145 5 4769  graph_layout_algorithms.cc 145 27 4791
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ graph_layout_algorithms.cc 146 5 4826  graph_layout_algorithms.cc 146 31 4852
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 146 5 4826  graph_layout_algorithms.cc 146 27 4848
+$get_initialViewFullGraph(View &)$ graph_layout_algorithms.cc 153 1 4971  graph_layout_algorithms.cc 163 2 5489
+  calls $std::vector<_Tp, _Alloc>::vector<_Tp, _Alloc>()$ graph_layout_algorithms.cc 154 18 5032  graph_layout_algorithms.cc 154 28 5042
+  calls $std::vector<_Tp, _Alloc>::vector<_Tp, _Alloc>()$ graph_layout_algorithms.cc 155 18 5061  graph_layout_algorithms.cc 155 30 5073
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>()$ graph_layout_algorithms.cc 156 35 5109  graph_layout_algorithms.cc 156 42 5116
+  calls $set_grid_dfs(const View &, GridMap &)$ graph_layout_algorithms.cc 158 35 5226  graph_layout_algorithms.cc 158 62 5253
+  calls $std::vector<_Tp, _Alloc>::resize(std::vector::size_type)$ graph_layout_algorithms.cc 159 3 5257  graph_layout_algorithms.cc 159 46 5300
+  calls $std::vector<_Tp, _Alloc>::resize(std::vector::size_type)$ graph_layout_algorithms.cc 160 3 5304  graph_layout_algorithms.cc 160 49 5350
+  calls $get_row_column_dimensions(const View &, const GridMap &, vector<double> &, vector<double> &)$ graph_layout_algorithms.cc 161 3 5354  graph_layout_algorithms.cc 161 69 5420
+  calls $set_initial_positions(View &, const GridMap &, const vector<double> &, const vector<double> &)$ graph_layout_algorithms.cc 162 3 5424  graph_layout_algorithms.cc 162 65 5486
+$expand_node(View &, NodeBase *)$ graph_layout_algorithms.cc 169 1 5590  graph_layout_algorithms.cc 177 2 5909
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ graph_layout_algorithms.cc 170 3 5639  graph_layout_algorithms.cc 170 52 5688
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(const void *)$ graph_layout_algorithms.cc 170 3 5639  graph_layout_algorithms.cc 170 44 5680
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 170 3 5639  graph_layout_algorithms.cc 170 35 5671
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 170 3 5639  graph_layout_algorithms.cc 170 13 5649
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(int)$ graph_layout_algorithms.cc 170 3 5639  graph_layout_algorithms.cc 170 13 5649
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 170 3 5639  graph_layout_algorithms.cc 170 13 5649
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ graph_layout_algorithms.cc 170 3 5639  graph_layout_algorithms.cc 170 13 5649
+  calls $Rectangle::Rectangle(const Rectangle &)$ graph_layout_algorithms.cc 171 14 5703  graph_layout_algorithms.cc 171 41 5730
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator*()$ graph_layout_algorithms.cc 171 14 5703  graph_layout_algorithms.cc 171 41 5730
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 171 15 5704  graph_layout_algorithms.cc 171 37 5726
+  calls $std::_List_iterator<_Tp>::operator*()$ graph_layout_algorithms.cc 172 18 5749  graph_layout_algorithms.cc 172 19 5750
+  calls $std::unordered_set<_Value, _Hash, _Pred, _Alloc>::insert(const std::unordered_set::value_type &)$ graph_layout_algorithms.cc 173 5 5786  graph_layout_algorithms.cc 173 43 5824
+  calls $Point::operator=(const Point &)$ graph_layout_algorithms.cc 174 5 5830  graph_layout_algorithms.cc 174 62 5887
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ graph_layout_algorithms.cc 174 5 5830  graph_layout_algorithms.cc 174 37 5862
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const std::unordered_map::key_type &)$ graph_layout_algorithms.cc 174 5 5830  graph_layout_algorithms.cc 174 33 5858
+  calls $View::View(const View &)$ graph_layout_algorithms.cc 176 10 5902  graph_layout_algorithms.cc 176 14 5906
+calls $operator==(const Point &, const Point &)$ ./geometry.h 36 67 794  ./geometry.h 36 73 800
+calls $Point::Point(const Point &)$ ./geometry.h 37 58 862  ./geometry.h 37 64 868
+calls $Point::operator+=(const Point &)$ ./geometry.h 37 58 862  ./geometry.h 37 64 868
+calls $Point::Point(const Point &)$ ./geometry.h 38 58 929  ./geometry.h 38 64 935
+calls $Point::operator-=(const Point &)$ ./geometry.h 38 58 929  ./geometry.h 38 64 935
+calls $Point::Point(const Point &)$ ./geometry.h 39 52 990  ./geometry.h 39 58 996
+calls $Point::operator*=(double)$ ./geometry.h 39 52 990  ./geometry.h 39 58 996
+calls $Point::Point(const Point &)$ ./geometry.h 40 52 1051  ./geometry.h 40 58 1057
+calls $Point::operator/=(double)$ ./geometry.h 40 52 1051  ./geometry.h 40 58 1057
+calls $Point::Point(const Point &)$ ./geometry.h 55 9 1407  ./geometry.h 55 21 1419
+calls $Point::Point(const Point &)$ ./geometry.h 55 23 1421  ./geometry.h 55 43 1441
+calls $Point::Point(const Point &)$ ./geometry.h 76 49 2054  ./geometry.h 76 53 2058
+calls $Point::Point(const Point &)$ ./geometry.h 76 55 2060  ./geometry.h 76 59 2064
+calls $Line::Line(const Point &, const Direction &)$ ./geometry.h 81 43 2306  ./geometry.h 81 57 2320
+calls $operator-(Point, const Point &)$ ./geometry.h 81 51 2314  ./geometry.h 81 56 2319
+calls $Point::Point(const Point &)$ ./geometry.h 81 51 2314  ./geometry.h 81 52 2315
+calls $Point::Point(const Point &)$ ./geometry.h 99 60 2861  ./geometry.h 99 78 2879
+calls $Point::Point(const Point &)$ ./geometry.h 99 80 2881  ./geometry.h 99 94 2895
 $get_scale_from_matrix(const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 12 1 195  drawingarea_zoom_drag.cc 17 2 337
   calls $Cairo::Matrix::transform_distance(double &, double &)$ drawingarea_zoom_drag.cc 15 3 289  drawingarea_zoom_drag.cc 15 34 320
-$get_matrix_transform(const Cairo::Matrix &, double, double)$ drawingarea_zoom_drag.cc 19 1 339  drawingarea_zoom_drag.cc 22 2 454
-  calls $Cairo::Matrix::transform_point(double &, double &)$ drawingarea_zoom_drag.cc 20 3 410  drawingarea_zoom_drag.cc 20 26 433
-  calls $std::complex<double>::complex(double, double)$ drawingarea_zoom_drag.cc 21 10 444  drawingarea_zoom_drag.cc 21 17 451
-$operator<<(std::ostream &, const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 24 1 456  drawingarea_zoom_drag.cc 32 2 809
-  calls $get_matrix_transform(const Cairo::Matrix &, double, double)$ drawingarea_zoom_drag.cc 25 14 527  drawingarea_zoom_drag.cc 25 43 556
-  calls $get_matrix_transform(const Cairo::Matrix &, double, double)$ drawingarea_zoom_drag.cc 26 10 567  drawingarea_zoom_drag.cc 26 39 596
-  calls $get_matrix_transform(const Cairo::Matrix &, double, double)$ drawingarea_zoom_drag.cc 27 10 607  drawingarea_zoom_drag.cc 27 39 636
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ drawingarea_zoom_drag.cc 28 3 640  drawingarea_zoom_drag.cc 28 49 686
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(double)$ drawingarea_zoom_drag.cc 28 3 640  drawingarea_zoom_drag.cc 28 41 678
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ drawingarea_zoom_drag.cc 28 3 640  drawingarea_zoom_drag.cc 28 28 665
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(double)$ drawingarea_zoom_drag.cc 28 3 640  drawingarea_zoom_drag.cc 28 20 657
-  calls $std::complex<double>::real()$ drawingarea_zoom_drag.cc 28 11 648  drawingarea_zoom_drag.cc 28 20 657
-  calls $std::complex<double>::real()$ drawingarea_zoom_drag.cc 28 32 669  drawingarea_zoom_drag.cc 28 41 678
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ drawingarea_zoom_drag.cc 29 3 690  drawingarea_zoom_drag.cc 29 49 736
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(double)$ drawingarea_zoom_drag.cc 29 3 690  drawingarea_zoom_drag.cc 29 41 728
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ drawingarea_zoom_drag.cc 29 3 690  drawingarea_zoom_drag.cc 29 28 715
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(double)$ drawingarea_zoom_drag.cc 29 3 690  drawingarea_zoom_drag.cc 29 20 707
-  calls $std::complex<double>::imag()$ drawingarea_zoom_drag.cc 29 11 698  drawingarea_zoom_drag.cc 29 20 707
-  calls $std::complex<double>::imag()$ drawingarea_zoom_drag.cc 29 32 719  drawingarea_zoom_drag.cc 29 41 728
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ drawingarea_zoom_drag.cc 30 3 740  drawingarea_zoom_drag.cc 30 57 794
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(double)$ drawingarea_zoom_drag.cc 30 3 740  drawingarea_zoom_drag.cc 30 49 786
-  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ drawingarea_zoom_drag.cc 30 3 740  drawingarea_zoom_drag.cc 30 32 769
-  calls $std::basic_ostream<_CharT, _Traits>::operator<<(double)$ drawingarea_zoom_drag.cc 30 3 740  drawingarea_zoom_drag.cc 30 24 761
-  calls $std::complex<double>::real()$ drawingarea_zoom_drag.cc 30 11 748  drawingarea_zoom_drag.cc 30 24 761
-  calls $std::complex<double>::imag()$ drawingarea_zoom_drag.cc 30 36 773  drawingarea_zoom_drag.cc 30 49 786
-$DrawingArea_ZoomDrag::DrawingArea_ZoomDrag()$ drawingarea_zoom_drag.cc 34 1 811  drawingarea_zoom_drag.cc 40 2 1190
-  calls $Cairo::identity_matrix()$ drawingarea_zoom_drag.cc 35 9 864  drawingarea_zoom_drag.cc 35 33 888
-  calls $std::complex<double>::complex(double, double)$ drawingarea_zoom_drag.cc 35 50 905  drawingarea_zoom_drag.cc 35 65 920
-  calls $std::shared_ptr<_Tp>::shared_ptr<_Tp>(std::nullptr_t)$ drawingarea_zoom_drag.cc 36 7 928  drawingarea_zoom_drag.cc 36 29 950
-  calls $std::function<bool (const Cairo::RefPtr<Cairo::Context> &)>::function(_Functor)$ drawingarea_zoom_drag.cc 36 31 952  drawingarea_zoom_drag.cc 36 74 995
-  calls $std::function<std::shared_ptr<std::complex<double> > (_GdkEventButton *)>::function(_Functor)$ drawingarea_zoom_drag.cc 37 7 1003  drawingarea_zoom_drag.cc 37 66 1062
-  calls $std::make_shared(_Args &&...)$ drawingarea_zoom_drag.cc 37 46 1042  drawingarea_zoom_drag.cc 37 62 1058
-  calls $Gtk::Widget::add_events(Gdk::EventMask)$ drawingarea_zoom_drag.cc 38 3 1067  drawingarea_zoom_drag.cc 39 66 1187
-  calls $Gdk::operator|(Gdk::EventMask, Gdk::EventMask)$ drawingarea_zoom_drag.cc 38 14 1078  drawingarea_zoom_drag.cc 39 65 1186
-  calls $Gdk::operator|(Gdk::EventMask, Gdk::EventMask)$ drawingarea_zoom_drag.cc 38 14 1078  drawingarea_zoom_drag.cc 39 38 1159
-  calls $Gdk::operator|(Gdk::EventMask, Gdk::EventMask)$ drawingarea_zoom_drag.cc 38 14 1078  drawingarea_zoom_drag.cc 38 55 1119
-$DrawingArea_ZoomDrag::DrawingArea_ZoomDrag(std::function<bool (CContext)>, std::function<shared_ptr<C> (GdkEventButton *)>)$ drawingarea_zoom_drag.cc 42 1 1192  drawingarea_zoom_drag.cc 49 2 1612
-  calls $Cairo::identity_matrix()$ drawingarea_zoom_drag.cc 45 9 1352  drawingarea_zoom_drag.cc 45 33 1376
-  calls $std::complex<double>::complex(double, double)$ drawingarea_zoom_drag.cc 45 50 1393  drawingarea_zoom_drag.cc 45 65 1408
-  calls $std::shared_ptr<_Tp>::shared_ptr<_Tp>(std::nullptr_t)$ drawingarea_zoom_drag.cc 46 7 1416  drawingarea_zoom_drag.cc 46 29 1438
-  calls $std::function<_Res (_ArgTypes...)>::function<type-parameter-0-0 (type-parameter-0-1...)>(const function<type-parameter-0-0 (type-parameter-0-1...)> &)$ drawingarea_zoom_drag.cc 46 31 1440  drawingarea_zoom_drag.cc 46 55 1464
-  calls $std::function<_Res (_ArgTypes...)>::function<type-parameter-0-0 (type-parameter-0-1...)>(const function<type-parameter-0-0 (type-parameter-0-1...)> &)$ drawingarea_zoom_drag.cc 46 57 1466  drawingarea_zoom_drag.cc 46 75 1484
-  calls $Gtk::Widget::add_events(Gdk::EventMask)$ drawingarea_zoom_drag.cc 47 3 1489  drawingarea_zoom_drag.cc 48 66 1609
-  calls $Gdk::operator|(Gdk::EventMask, Gdk::EventMask)$ drawingarea_zoom_drag.cc 47 14 1500  drawingarea_zoom_drag.cc 48 65 1608
-  calls $Gdk::operator|(Gdk::EventMask, Gdk::EventMask)$ drawingarea_zoom_drag.cc 47 14 1500  drawingarea_zoom_drag.cc 48 38 1581
-  calls $Gdk::operator|(Gdk::EventMask, Gdk::EventMask)$ drawingarea_zoom_drag.cc 47 14 1500  drawingarea_zoom_drag.cc 47 55 1541
-$DrawingArea_ZoomDrag::on_button_press_event(GdkEventButton *)$ drawingarea_zoom_drag.cc 51 1 1614  drawingarea_zoom_drag.cc 62 2 2009
-  calls $std::shared_ptr<_Tp>::operator=(shared_ptr<_Tp> &&)$ drawingarea_zoom_drag.cc 56 5 1847  drawingarea_zoom_drag.cc 56 32 1874
-  calls $std::function<_Res (_ArgTypes...)>::operator()(_ArgTypes...)$ drawingarea_zoom_drag.cc 56 21 1863  drawingarea_zoom_drag.cc 56 32 1874
-  calls $std::complex<double>::operator=(std::complex<double> &&)$ drawingarea_zoom_drag.cc 57 5 1880  drawingarea_zoom_drag.cc 57 30 1905
-  calls $std::complex<double>::complex(double, double)$ drawingarea_zoom_drag.cc 57 17 1892  drawingarea_zoom_drag.cc 57 30 1905
-  calls $Cairo::Matrix::operator=(Cairo::Matrix &&)$ drawingarea_zoom_drag.cc 59 5 1958  drawingarea_zoom_drag.cc 59 33 1986
-  calls $Cairo::identity_matrix()$ drawingarea_zoom_drag.cc 59 9 1962  drawingarea_zoom_drag.cc 59 33 1986
-$DrawingArea_ZoomDrag::on_button_release_event(GdkEventButton *)$ drawingarea_zoom_drag.cc 64 1 2011  drawingarea_zoom_drag.cc 70 2 2188
-  calls $std::__shared_ptr<_Tp, _Lp>::reset()$ drawingarea_zoom_drag.cc 67 5 2144  drawingarea_zoom_drag.cc 67 26 2165
-$DrawingArea_ZoomDrag::on_motion_notify_event(GdkEventMotion *)$ drawingarea_zoom_drag.cc 72 1 2190  drawingarea_zoom_drag.cc 86 2 2542
-  calls $std::complex<double>::complex(double, double)$ drawingarea_zoom_drag.cc 76 5 2303  drawingarea_zoom_drag.cc 76 24 2322
-  calls $std::operator-(const complex<_Tp> &, const complex<_Tp> &)$ drawingarea_zoom_drag.cc 77 18 2341  drawingarea_zoom_drag.cc 77 37 2360
-  calls $std::__shared_ptr<_Tp, _Lp>::operator bool()$ drawingarea_zoom_drag.cc 78 7 2369  drawingarea_zoom_drag.cc 78 20 2382
-  calls $DrawingArea_ZoomDrag::translate_item(C *, C)$ drawingarea_zoom_drag.cc 79 5 2390  drawingarea_zoom_drag.cc 79 51 2436
-  calls $std::__shared_ptr<_Tp, _Lp>::get()$ drawingarea_zoom_drag.cc 79 20 2405  drawingarea_zoom_drag.cc 79 39 2424
-  calls $std::complex<double>::complex(const std::complex<double> &)$ drawingarea_zoom_drag.cc 79 41 2426  drawingarea_zoom_drag.cc 79 50 2435
-  calls $DrawingArea_ZoomDrag::translate_matrix(C)$ drawingarea_zoom_drag.cc 81 5 2453  drawingarea_zoom_drag.cc 81 32 2480
-  calls $std::complex<double>::complex(const std::complex<double> &)$ drawingarea_zoom_drag.cc 81 22 2470  drawingarea_zoom_drag.cc 81 31 2479
-  calls $std::complex<double>::operator=(const std::complex<double> &)$ drawingarea_zoom_drag.cc 83 3 2488  drawingarea_zoom_drag.cc 83 22 2507
-  calls $Gtk::Widget::queue_draw()$ drawingarea_zoom_drag.cc 84 3 2511  drawingarea_zoom_drag.cc 84 15 2523
-$DrawingArea_ZoomDrag::on_draw(CContext)$ drawingarea_zoom_drag.cc 88 1 2544  drawingarea_zoom_drag.cc 91 2 2657
-  calls $Cairo::Context::set_matrix(const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 89 3 2595  drawingarea_zoom_drag.cc 89 37 2629
-  calls $Cairo::RefPtr<T_CppObject>::operator->()$ drawingarea_zoom_drag.cc 89 3 2595  drawingarea_zoom_drag.cc 89 4 2596
-  calls $Cairo::operator*(const Cairo::Matrix &, const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 89 17 2609  drawingarea_zoom_drag.cc 89 36 2628
-  calls $Cairo::Context::get_matrix()$ drawingarea_zoom_drag.cc 89 21 2613  drawingarea_zoom_drag.cc 89 36 2628
-  calls $Cairo::RefPtr<T_CppObject>::operator->()$ drawingarea_zoom_drag.cc 89 21 2613  drawingarea_zoom_drag.cc 89 22 2614
-  calls $std::function<_Res (_ArgTypes...)>::operator()(_ArgTypes...)$ drawingarea_zoom_drag.cc 90 10 2640  drawingarea_zoom_drag.cc 90 24 2654
-$DrawingArea_ZoomDrag::on_scroll_event(GdkEventScroll *)$ drawingarea_zoom_drag.cc 93 1 2659  drawingarea_zoom_drag.cc 113 2 3274
-  calls $get_scale_from_matrix(const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 103 22 2968  drawingarea_zoom_drag.cc 103 46 2992
-  calls $std::complex<double>::complex(double, double)$ drawingarea_zoom_drag.cc 105 5 3049  drawingarea_zoom_drag.cc 105 22 3066
-  calls $std::operator-(const complex<_Tp> &, const complex<_Tp> &)$ drawingarea_zoom_drag.cc 108 7 3088  drawingarea_zoom_drag.cc 108 78 3159
-  calls $std::operator*(const _Tp &, const complex<_Tp> &)$ drawingarea_zoom_drag.cc 108 15 3096  drawingarea_zoom_drag.cc 108 78 3159
-  calls $std::operator-(const complex<_Tp> &, const complex<_Tp> &)$ drawingarea_zoom_drag.cc 108 40 3121  drawingarea_zoom_drag.cc 108 77 3158
-  calls $get_matrix_transform(const Cairo::Matrix &, double, double)$ drawingarea_zoom_drag.cc 108 48 3129  drawingarea_zoom_drag.cc 108 77 3158
-  calls $Cairo::Matrix::operator=(Cairo::Matrix &&)$ drawingarea_zoom_drag.cc 109 3 3163  drawingarea_zoom_drag.cc 109 78 3238
-  calls $Cairo::Matrix::Matrix(double, double, double, double, double, double)$ drawingarea_zoom_drag.cc 109 7 3167  drawingarea_zoom_drag.cc 109 78 3238
-  calls $std::complex<double>::real()$ drawingarea_zoom_drag.cc 109 49 3209  drawingarea_zoom_drag.cc 109 62 3222
-  calls $std::complex<double>::imag()$ drawingarea_zoom_drag.cc 109 64 3224  drawingarea_zoom_drag.cc 109 77 3237
-  calls $Gtk::Widget::queue_draw()$ drawingarea_zoom_drag.cc 111 3 3243  drawingarea_zoom_drag.cc 111 15 3255
-$DrawingArea_ZoomDrag::user_to_image(const C &)$ drawingarea_zoom_drag.cc 115 1 3276  drawingarea_zoom_drag.cc 122 2 3468
-  calls $std::complex<double>::real()$ drawingarea_zoom_drag.cc 116 14 3347  drawingarea_zoom_drag.cc 116 22 3355
-  calls $std::complex<double>::imag()$ drawingarea_zoom_drag.cc 117 14 3370  drawingarea_zoom_drag.cc 117 22 3378
-  calls $Cairo::Matrix::Matrix(const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 118 23 3402  drawingarea_zoom_drag.cc 118 24 3403
-  calls $Cairo::Matrix::invert()$ drawingarea_zoom_drag.cc 119 3 3407  drawingarea_zoom_drag.cc 119 15 3419
-  calls $Cairo::Matrix::transform_point(double &, double &)$ drawingarea_zoom_drag.cc 120 3 3423  drawingarea_zoom_drag.cc 120 28 3448
-  calls $std::complex<double>::complex(double, double)$ drawingarea_zoom_drag.cc 121 10 3459  drawingarea_zoom_drag.cc 121 16 3465
-$DrawingArea_ZoomDrag::translate_item(C *, C)$ drawingarea_zoom_drag.cc 124 1 3470  drawingarea_zoom_drag.cc 127 2 3600
-  calls $std::complex<double>::operator/=(double)$ drawingarea_zoom_drag.cc 125 3 3538  drawingarea_zoom_drag.cc 125 40 3575
-  calls $get_scale_from_matrix(const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 125 16 3551  drawingarea_zoom_drag.cc 125 40 3575
-  calls $std::complex<double>::operator+=(const complex<_Tp> &)$ drawingarea_zoom_drag.cc 126 3 3579  drawingarea_zoom_drag.cc 126 21 3597
-$DrawingArea_ZoomDrag::translate_matrix(C)$ drawingarea_zoom_drag.cc 129 1 3602  drawingarea_zoom_drag.cc 132 2 3722
-  calls $std::complex<double>::operator/=(double)$ drawingarea_zoom_drag.cc 130 3 3655  drawingarea_zoom_drag.cc 130 32 3684
-  calls $get_scale_from_matrix(const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 130 8 3660  drawingarea_zoom_drag.cc 130 32 3684
-  calls $Cairo::Matrix::translate(double, double)$ drawingarea_zoom_drag.cc 131 3 3688  drawingarea_zoom_drag.cc 131 34 3719
-  calls $std::complex<double>::real()$ drawingarea_zoom_drag.cc 131 15 3700  drawingarea_zoom_drag.cc 131 23 3708
-  calls $std::complex<double>::imag()$ drawingarea_zoom_drag.cc 131 25 3710  drawingarea_zoom_drag.cc 131 33 3718
-calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 28 37 559  ./node_base.h 28 65 587
-calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 29 38 628  ./node_base.h 29 66 656
-calls $NodeBase::in_degree()$ ./node_base.h 30 34 693  ./node_base.h 30 45 704
-calls $NodeBase::out_degree()$ ./node_base.h 30 48 707  ./node_base.h 30 60 719
-calls $NodeBase::degree()$ ./node_base.h 31 35 757  ./node_base.h 31 43 765
-$prune_isolated_nodes(View &)$ view_filters.cc 5 1 46  view_filters.cc 14 2 326
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::begin()$ view_filters.cc 6 18 103  view_filters.cc 6 39 124
-  calls $std::__detail::operator!=(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ view_filters.cc 6 41 126  view_filters.cc 6 66 151
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ view_filters.cc 6 47 132  view_filters.cc 6 66 151
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator++()$ view_filters.cc 6 68 153  view_filters.cc 6 72 157
-  calls $std::__detail::operator!=(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ view_filters.cc 7 12 172  view_filters.cc 7 37 197
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ view_filters.cc 7 18 178  view_filters.cc 7 37 197
-  calls $NodeBase::isolated()$ view_filters.cc 7 41 201  view_filters.cc 7 62 222
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ view_filters.cc 7 41 201  view_filters.cc 7 43 203
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::erase(std::unordered_map::iterator)$ view_filters.cc 8 7 232  view_filters.cc 8 32 257
-  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator++(int)$ view_filters.cc 8 27 252  view_filters.cc 8 31 256
-  calls $std::__detail::operator==(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ view_filters.cc 10 9 273  view_filters.cc 10 34 298
-  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ view_filters.cc 10 15 279  view_filters.cc 10 34 298
+$get_matrix_transform(const Cairo::Matrix &, double, double)$ drawingarea_zoom_drag.cc 19 1 339  drawingarea_zoom_drag.cc 22 2 462
+  calls $Cairo::Matrix::transform_point(double &, double &)$ drawingarea_zoom_drag.cc 20 3 414  drawingarea_zoom_drag.cc 20 26 437
+  calls $Point::Point(double, double)$ drawingarea_zoom_drag.cc 21 10 448  drawingarea_zoom_drag.cc 21 21 459
+$operator<<(std::ostream &, const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 24 1 464  drawingarea_zoom_drag.cc 32 2 790
+  calls $get_matrix_transform(const Cairo::Matrix &, double, double)$ drawingarea_zoom_drag.cc 25 18 539  drawingarea_zoom_drag.cc 25 47 568
+  calls $get_matrix_transform(const Cairo::Matrix &, double, double)$ drawingarea_zoom_drag.cc 26 14 583  drawingarea_zoom_drag.cc 26 43 612
+  calls $get_matrix_transform(const Cairo::Matrix &, double, double)$ drawingarea_zoom_drag.cc 27 14 627  drawingarea_zoom_drag.cc 27 43 656
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ drawingarea_zoom_drag.cc 28 3 660  drawingarea_zoom_drag.cc 28 36 693
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(double)$ drawingarea_zoom_drag.cc 28 3 660  drawingarea_zoom_drag.cc 28 28 685
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ drawingarea_zoom_drag.cc 28 3 660  drawingarea_zoom_drag.cc 28 20 677
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(double)$ drawingarea_zoom_drag.cc 28 3 660  drawingarea_zoom_drag.cc 28 12 669
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ drawingarea_zoom_drag.cc 29 3 697  drawingarea_zoom_drag.cc 29 36 730
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(double)$ drawingarea_zoom_drag.cc 29 3 697  drawingarea_zoom_drag.cc 29 28 722
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ drawingarea_zoom_drag.cc 29 3 697  drawingarea_zoom_drag.cc 29 20 714
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(double)$ drawingarea_zoom_drag.cc 29 3 697  drawingarea_zoom_drag.cc 29 12 706
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ drawingarea_zoom_drag.cc 30 3 734  drawingarea_zoom_drag.cc 30 44 775
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(double)$ drawingarea_zoom_drag.cc 30 3 734  drawingarea_zoom_drag.cc 30 36 767
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ drawingarea_zoom_drag.cc 30 3 734  drawingarea_zoom_drag.cc 30 24 755
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(double)$ drawingarea_zoom_drag.cc 30 3 734  drawingarea_zoom_drag.cc 30 16 747
+$DrawingArea_ZoomDrag::DrawingArea_ZoomDrag()$ drawingarea_zoom_drag.cc 34 1 792  drawingarea_zoom_drag.cc 40 2 1141
+  calls $Cairo::identity_matrix()$ drawingarea_zoom_drag.cc 35 9 845  drawingarea_zoom_drag.cc 35 33 869
+  calls $Point::Point(double, double)$ drawingarea_zoom_drag.cc 36 7 923  drawingarea_zoom_drag.cc 36 22 938
+  calls $std::shared_ptr<_Tp>::shared_ptr<_Tp>(std::nullptr_t)$ drawingarea_zoom_drag.cc 37 7 946  drawingarea_zoom_drag.cc 37 29 968
+  calls $std::function<bool (const Cairo::RefPtr<Cairo::Context> &)>::function(_Functor)$ drawingarea_zoom_drag.cc 37 31 970  drawingarea_zoom_drag.cc 37 74 1013
+  calls $Gtk::Widget::add_events(Gdk::EventMask)$ drawingarea_zoom_drag.cc 38 3 1018  drawingarea_zoom_drag.cc 39 66 1138
+  calls $Gdk::operator|(Gdk::EventMask, Gdk::EventMask)$ drawingarea_zoom_drag.cc 38 14 1029  drawingarea_zoom_drag.cc 39 65 1137
+  calls $Gdk::operator|(Gdk::EventMask, Gdk::EventMask)$ drawingarea_zoom_drag.cc 38 14 1029  drawingarea_zoom_drag.cc 39 38 1110
+  calls $Gdk::operator|(Gdk::EventMask, Gdk::EventMask)$ drawingarea_zoom_drag.cc 38 14 1029  drawingarea_zoom_drag.cc 38 55 1070
+$DrawingArea_ZoomDrag::DrawingArea_ZoomDrag(std::function<bool (CContext)>)$ drawingarea_zoom_drag.cc 42 1 1143  drawingarea_zoom_drag.cc 48 2 1513
+  calls $Cairo::identity_matrix()$ drawingarea_zoom_drag.cc 44 9 1242  drawingarea_zoom_drag.cc 44 33 1266
+  calls $Point::Point(double, double)$ drawingarea_zoom_drag.cc 45 7 1320  drawingarea_zoom_drag.cc 45 22 1335
+  calls $std::shared_ptr<_Tp>::shared_ptr<_Tp>(std::nullptr_t)$ drawingarea_zoom_drag.cc 45 24 1337  drawingarea_zoom_drag.cc 45 46 1359
+  calls $std::function<_Res (_ArgTypes...)>::function<type-parameter-0-0 (type-parameter-0-1...)>(const function<type-parameter-0-0 (type-parameter-0-1...)> &)$ drawingarea_zoom_drag.cc 45 48 1361  drawingarea_zoom_drag.cc 45 72 1385
+  calls $Gtk::Widget::add_events(Gdk::EventMask)$ drawingarea_zoom_drag.cc 46 3 1390  drawingarea_zoom_drag.cc 47 66 1510
+  calls $Gdk::operator|(Gdk::EventMask, Gdk::EventMask)$ drawingarea_zoom_drag.cc 46 14 1401  drawingarea_zoom_drag.cc 47 65 1509
+  calls $Gdk::operator|(Gdk::EventMask, Gdk::EventMask)$ drawingarea_zoom_drag.cc 46 14 1401  drawingarea_zoom_drag.cc 47 38 1482
+  calls $Gdk::operator|(Gdk::EventMask, Gdk::EventMask)$ drawingarea_zoom_drag.cc 46 14 1401  drawingarea_zoom_drag.cc 46 55 1442
+$DrawingArea_ZoomDrag::on_button_press_event(GdkEventButton *)$ drawingarea_zoom_drag.cc 50 1 1515  drawingarea_zoom_drag.cc 60 2 1877
+  calls $Point::operator=(Point &&)$ drawingarea_zoom_drag.cc 55 5 1744  drawingarea_zoom_drag.cc 55 34 1773
+  calls $Point::Point(double, double)$ drawingarea_zoom_drag.cc 55 17 1756  drawingarea_zoom_drag.cc 55 34 1773
+  calls $Cairo::Matrix::operator=(Cairo::Matrix &&)$ drawingarea_zoom_drag.cc 57 5 1826  drawingarea_zoom_drag.cc 57 33 1854
+  calls $Cairo::identity_matrix()$ drawingarea_zoom_drag.cc 57 9 1830  drawingarea_zoom_drag.cc 57 33 1854
+$DrawingArea_ZoomDrag::on_button_release_event(GdkEventButton *)$ drawingarea_zoom_drag.cc 62 1 1879  drawingarea_zoom_drag.cc 68 2 2056
+  calls $std::__shared_ptr<_Tp, _Lp>::reset()$ drawingarea_zoom_drag.cc 65 5 2012  drawingarea_zoom_drag.cc 65 26 2033
+$DrawingArea_ZoomDrag::on_motion_notify_event(GdkEventMotion *)$ drawingarea_zoom_drag.cc 70 1 2058  drawingarea_zoom_drag.cc 85 2 2441
+  calls $Point::Point(double, double)$ drawingarea_zoom_drag.cc 74 9 2175  drawingarea_zoom_drag.cc 74 28 2194
+  calls $operator-(Point, const Point &)$ drawingarea_zoom_drag.cc 75 22 2217  drawingarea_zoom_drag.cc 75 41 2236
+  calls $Point::Point(const Point &)$ drawingarea_zoom_drag.cc 75 22 2217  drawingarea_zoom_drag.cc 75 29 2224
+  calls $std::__shared_ptr<_Tp, _Lp>::operator bool()$ drawingarea_zoom_drag.cc 76 7 2245  drawingarea_zoom_drag.cc 76 20 2258
+  calls $DrawingArea_ZoomDrag::translate_item(Point &, Point)$ drawingarea_zoom_drag.cc 77 5 2266  drawingarea_zoom_drag.cc 77 55 2316
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ drawingarea_zoom_drag.cc 77 20 2281  drawingarea_zoom_drag.cc 77 33 2294
+  calls $Point::Point(const Point &)$ drawingarea_zoom_drag.cc 77 45 2306  drawingarea_zoom_drag.cc 77 54 2315
+  calls $DrawingArea_ZoomDrag::translate_matrix(Point)$ drawingarea_zoom_drag.cc 79 5 2333  drawingarea_zoom_drag.cc 79 32 2360
+  calls $Point::Point(const Point &)$ drawingarea_zoom_drag.cc 79 22 2350  drawingarea_zoom_drag.cc 79 31 2359
+  calls $DrawingArea_ZoomDrag::set_changed()$ drawingarea_zoom_drag.cc 80 5 2366  drawingarea_zoom_drag.cc 80 18 2379
+  calls $Point::operator=(const Point &)$ drawingarea_zoom_drag.cc 82 3 2387  drawingarea_zoom_drag.cc 82 22 2406
+  calls $Gtk::Widget::queue_draw()$ drawingarea_zoom_drag.cc 83 3 2410  drawingarea_zoom_drag.cc 83 15 2422
+$DrawingArea_ZoomDrag::on_draw(CContext)$ drawingarea_zoom_drag.cc 87 1 2443  drawingarea_zoom_drag.cc 92 2 2599
+  calls $Cairo::Context::set_matrix(const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 88 3 2494  drawingarea_zoom_drag.cc 88 37 2528
+  calls $Cairo::RefPtr<T_CppObject>::operator->()$ drawingarea_zoom_drag.cc 88 3 2494  drawingarea_zoom_drag.cc 88 4 2495
+  calls $Cairo::operator*(const Cairo::Matrix &, const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 88 17 2508  drawingarea_zoom_drag.cc 88 36 2527
+  calls $Cairo::Context::get_matrix()$ drawingarea_zoom_drag.cc 88 21 2512  drawingarea_zoom_drag.cc 88 36 2527
+  calls $Cairo::RefPtr<T_CppObject>::operator->()$ drawingarea_zoom_drag.cc 88 21 2512  drawingarea_zoom_drag.cc 88 22 2513
+  calls $std::function<_Res (_ArgTypes...)>::operator()(_ArgTypes...)$ drawingarea_zoom_drag.cc 89 17 2546  drawingarea_zoom_drag.cc 89 31 2560
+  calls $DrawingArea_ZoomDrag::unset_changed()$ drawingarea_zoom_drag.cc 90 3 2564  drawingarea_zoom_drag.cc 90 18 2579
+$DrawingArea_ZoomDrag::on_scroll_event(GdkEventScroll *)$ drawingarea_zoom_drag.cc 94 1 2601  drawingarea_zoom_drag.cc 116 2 3252
+  calls $DrawingArea_ZoomDrag::set_changed()$ drawingarea_zoom_drag.cc 97 5 2735  drawingarea_zoom_drag.cc 97 18 2748
+  calls $DrawingArea_ZoomDrag::set_changed()$ drawingarea_zoom_drag.cc 100 5 2838  drawingarea_zoom_drag.cc 100 18 2851
+  calls $get_scale_from_matrix(const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 106 22 2948  drawingarea_zoom_drag.cc 106 46 2972
+  calls $Point::Point(double, double)$ drawingarea_zoom_drag.cc 108 9 3033  drawingarea_zoom_drag.cc 108 26 3050
+  calls $operator-(Point, const Point &)$ drawingarea_zoom_drag.cc 111 7 3076  drawingarea_zoom_drag.cc 111 78 3147
+  calls $Point::Point(const Point &)$ drawingarea_zoom_drag.cc 111 7 3076  drawingarea_zoom_drag.cc 111 12 3081
+  calls $operator*(double, Point)$ drawingarea_zoom_drag.cc 111 15 3084  drawingarea_zoom_drag.cc 111 78 3147
+  calls $operator-(Point, const Point &)$ drawingarea_zoom_drag.cc 111 40 3109  drawingarea_zoom_drag.cc 111 77 3146
+  calls $Point::Point(const Point &)$ drawingarea_zoom_drag.cc 111 40 3109  drawingarea_zoom_drag.cc 111 45 3114
+  calls $get_matrix_transform(const Cairo::Matrix &, double, double)$ drawingarea_zoom_drag.cc 111 48 3117  drawingarea_zoom_drag.cc 111 77 3146
+  calls $Cairo::Matrix::operator=(Cairo::Matrix &&)$ drawingarea_zoom_drag.cc 112 3 3151  drawingarea_zoom_drag.cc 112 68 3216
+  calls $Cairo::Matrix::Matrix(double, double, double, double, double, double)$ drawingarea_zoom_drag.cc 112 7 3155  drawingarea_zoom_drag.cc 112 68 3216
+  calls $Gtk::Widget::queue_draw()$ drawingarea_zoom_drag.cc 114 3 3221  drawingarea_zoom_drag.cc 114 15 3233
+$DrawingArea_ZoomDrag::set_dragTarget(DragTarget)$ drawingarea_zoom_drag.cc 118 1 3254  drawingarea_zoom_drag.cc 120 2 3352
+  calls $std::shared_ptr<_Tp>::operator=(const shared_ptr<_Tp> &)$ drawingarea_zoom_drag.cc 119 3 3323  drawingarea_zoom_drag.cc 119 29 3349
+$DrawingArea_ZoomDrag::clear_dragTarget()$ drawingarea_zoom_drag.cc 122 1 3354  drawingarea_zoom_drag.cc 122 73 3426
+  calls $std::__shared_ptr<_Tp, _Lp>::reset()$ drawingarea_zoom_drag.cc 122 49 3402  drawingarea_zoom_drag.cc 122 70 3423
+$DrawingArea_ZoomDrag::user_to_image(Point &)$ drawingarea_zoom_drag.cc 124 1 3428  drawingarea_zoom_drag.cc 128 2 3562
+  calls $Cairo::Matrix::Matrix(const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 125 23 3509  drawingarea_zoom_drag.cc 125 24 3510
+  calls $Cairo::Matrix::invert()$ drawingarea_zoom_drag.cc 126 3 3514  drawingarea_zoom_drag.cc 126 15 3526
+  calls $Cairo::Matrix::transform_point(double &, double &)$ drawingarea_zoom_drag.cc 127 3 3530  drawingarea_zoom_drag.cc 127 32 3559
+$DrawingArea_ZoomDrag::user_to_image_scale(Extent &)$ drawingarea_zoom_drag.cc 130 1 3564  drawingarea_zoom_drag.cc 133 2 3692
+  calls $get_scale_from_matrix(const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 131 22 3651  drawingarea_zoom_drag.cc 131 46 3675
+  calls $Point::operator*=(double)$ drawingarea_zoom_drag.cc 132 3 3679  drawingarea_zoom_drag.cc 132 13 3689
+$DrawingArea_ZoomDrag::user_to_image(Rectangle &)$ drawingarea_zoom_drag.cc 135 1 3694  drawingarea_zoom_drag.cc 138 2 3844
+  calls $DrawingArea_ZoomDrag::user_to_image(Point &)$ drawingarea_zoom_drag.cc 136 3 3767  drawingarea_zoom_drag.cc 136 36 3800
+  calls $DrawingArea_ZoomDrag::user_to_image_scale(Extent &)$ drawingarea_zoom_drag.cc 137 3 3804  drawingarea_zoom_drag.cc 137 40 3841
+$DrawingArea_ZoomDrag::changed()$ drawingarea_zoom_drag.cc 140 1 3846  drawingarea_zoom_drag.cc 140 79 3924
+$DrawingArea_ZoomDrag::translate_item(Point &, Point)$ drawingarea_zoom_drag.cc 142 1 3926  drawingarea_zoom_drag.cc 145 2 4063
+  calls $Point::operator/=(double)$ drawingarea_zoom_drag.cc 143 3 4002  drawingarea_zoom_drag.cc 143 40 4039
+  calls $get_scale_from_matrix(const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 143 16 4015  drawingarea_zoom_drag.cc 143 40 4039
+  calls $Point::operator+=(const Point &)$ drawingarea_zoom_drag.cc 144 3 4043  drawingarea_zoom_drag.cc 144 20 4060
+$DrawingArea_ZoomDrag::translate_matrix(Point)$ drawingarea_zoom_drag.cc 147 1 4065  drawingarea_zoom_drag.cc 150 2 4179
+  calls $Point::operator/=(double)$ drawingarea_zoom_drag.cc 148 3 4122  drawingarea_zoom_drag.cc 148 32 4151
+  calls $get_scale_from_matrix(const Cairo::Matrix &)$ drawingarea_zoom_drag.cc 148 8 4127  drawingarea_zoom_drag.cc 148 32 4151
+  calls $Cairo::Matrix::translate(double, double)$ drawingarea_zoom_drag.cc 149 3 4155  drawingarea_zoom_drag.cc 149 24 4176
+calls $operator==(const Point &, const Point &)$ ./geometry.h 36 67 794  ./geometry.h 36 73 800
+calls $Point::Point(const Point &)$ ./geometry.h 37 58 862  ./geometry.h 37 64 868
+calls $Point::operator+=(const Point &)$ ./geometry.h 37 58 862  ./geometry.h 37 64 868
+calls $Point::Point(const Point &)$ ./geometry.h 38 58 929  ./geometry.h 38 64 935
+calls $Point::operator-=(const Point &)$ ./geometry.h 38 58 929  ./geometry.h 38 64 935
+calls $Point::Point(const Point &)$ ./geometry.h 39 52 990  ./geometry.h 39 58 996
+calls $Point::operator*=(double)$ ./geometry.h 39 52 990  ./geometry.h 39 58 996
+calls $Point::Point(const Point &)$ ./geometry.h 40 52 1051  ./geometry.h 40 58 1057
+calls $Point::operator/=(double)$ ./geometry.h 40 52 1051  ./geometry.h 40 58 1057
+calls $Point::Point(const Point &)$ ./geometry.h 55 9 1407  ./geometry.h 55 21 1419
+calls $Point::Point(const Point &)$ ./geometry.h 55 23 1421  ./geometry.h 55 43 1441
+calls $Point::Point(const Point &)$ ./geometry.h 76 49 2054  ./geometry.h 76 53 2058
+calls $Point::Point(const Point &)$ ./geometry.h 76 55 2060  ./geometry.h 76 59 2064
+calls $Line::Line(const Point &, const Direction &)$ ./geometry.h 81 43 2306  ./geometry.h 81 57 2320
+calls $operator-(Point, const Point &)$ ./geometry.h 81 51 2314  ./geometry.h 81 56 2319
+calls $Point::Point(const Point &)$ ./geometry.h 81 51 2314  ./geometry.h 81 52 2315
+calls $Point::Point(const Point &)$ ./geometry.h 99 60 2861  ./geometry.h 99 78 2879
+calls $Point::Point(const Point &)$ ./geometry.h 99 80 2881  ./geometry.h 99 94 2895
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 32 37 644  ./node_base.h 32 65 672
+calls $std::__cxx11::list<_Tp, _Alloc>::size()$ ./node_base.h 33 38 713  ./node_base.h 33 66 741
+calls $NodeBase::in_degree()$ ./node_base.h 34 34 778  ./node_base.h 34 45 789
+calls $NodeBase::out_degree()$ ./node_base.h 34 48 792  ./node_base.h 34 60 804
+calls $NodeBase::degree()$ ./node_base.h 35 38 845  ./node_base.h 35 46 853
+calls $std::basic_ostream<_CharT, _Traits>::operator<<(const void *)$ ./node_base.h 49 10 1207  ./node_base.h 49 42 1239
+calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ ./node_base.h 49 10 1207  ./node_base.h 49 32 1229
+calls $std::basic_ostream<_CharT, _Traits>::operator<<(const void *)$ ./node_base.h 49 10 1207  ./node_base.h 49 21 1218
+$PhysicalEdge(const View &, const EdgeBase &)$ view_filters.cc 8 1 91  view_filters.cc 17 2 465
+  calls $LineSegment::LineSegment(const Point &, const Point &)$ view_filters.cc 10 12 177  view_filters.cc 11 75 316
+  calls $LineSegment::MidPoint()$ view_filters.cc 10 24 189  view_filters.cc 10 75 240
+  calls $Rectangle::Right()$ view_filters.cc 10 24 189  view_filters.cc 10 64 229
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ view_filters.cc 10 24 189  view_filters.cc 10 55 220
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const std::unordered_map::key_type &)$ view_filters.cc 10 24 189  view_filters.cc 10 51 216
+  calls $LineSegment::MidPoint()$ view_filters.cc 11 24 265  view_filters.cc 11 74 315
+  calls $Rectangle::Left()$ view_filters.cc 11 24 265  view_filters.cc 11 63 304
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator->()$ view_filters.cc 11 24 265  view_filters.cc 11 55 296
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const std::unordered_map::key_type &)$ view_filters.cc 11 24 265  view_filters.cc 11 51 292
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ view_filters.cc 13 5 352  view_filters.cc 13 74 421
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(const void *)$ view_filters.cc 13 5 352  view_filters.cc 13 66 413
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ view_filters.cc 13 5 352  view_filters.cc 13 53 400
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(const void *)$ view_filters.cc 13 5 352  view_filters.cc 13 43 390
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ view_filters.cc 13 5 352  view_filters.cc 13 30 377
+  calls $std::out_of_range::out_of_range(const std::out_of_range &)$ view_filters.cc 14 11 433  view_filters.cc 14 12 434
+  calls $LineSegment::LineSegment()$ view_filters.cc 16 10 449  view_filters.cc 16 23 462
+$node_in_view(const View &, const NodeBase *)$ view_filters.cc 19 1 467  view_filters.cc 22 2 666
+  calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, const _CharT *)$ view_filters.cc 20 10 538  view_filters.cc 21 80 663
+  calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, const _CharT *)$ view_filters.cc 20 10 538  view_filters.cc 20 53 581
+  calls $std::__cxx11::to_string(unsigned long long)$ view_filters.cc 20 10 538  view_filters.cc 20 45 573
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::count(const std::unordered_map::key_type &)$ view_filters.cc 21 11 594  view_filters.cc 21 60 643
+$edge_in_view(const View &, const EdgeBase *)$ view_filters.cc 24 1 668  view_filters.cc 27 2 824
+  calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, basic_string<_CharT, _Traits, _Alloc> &&)$ view_filters.cc 25 10 739  view_filters.cc 26 40 821
+  calls $std::operator+(basic_string<_CharT, _Traits, _Alloc> &&, const _CharT *)$ view_filters.cc 25 10 739  view_filters.cc 25 50 779
+  calls $node_in_view(const View &, const NodeBase *)$ view_filters.cc 25 10 739  view_filters.cc 25 40 769
+  calls $node_in_view(const View &, const NodeBase *)$ view_filters.cc 26 10 791  view_filters.cc 26 40 821
+$PhysicalNeighborhood(const View &, const NodeBase &)$ view_filters.cc 29 1 826  view_filters.cc 46 2 1640
+  calls $std::vector<_Tp, _Alloc>::vector<_Tp, _Alloc>()$ view_filters.cc 31 23 972  view_filters.cc 31 29 978
+  calls $std::vector<_Tp, _Alloc>::vector<_Tp, _Alloc>()$ view_filters.cc 32 22 1001  view_filters.cc 32 34 1013
+  calls $std::copy_if(_InputIterator, _InputIterator, _OutputIterator, _Predicate)$ view_filters.cc 33 3 1017  view_filters.cc 36 13 1236
+  calls $std::__cxx11::list<_Tp, _Alloc>::begin()$ view_filters.cc 33 11 1025  view_filters.cc 33 45 1059
+  calls $std::__cxx11::list<_Tp, _Alloc>::end()$ view_filters.cc 33 47 1061  view_filters.cc 33 79 1093
+  calls $std::back_inserter(_Container &)$ view_filters.cc 34 11 1105  view_filters.cc 34 38 1132
+  calls $std::unordered_set<_Value, _Hash, _Pred, _Alloc>::count(const std::unordered_set::key_type &)$ view_filters.cc 35 20 1185  view_filters.cc 35 57 1222
+  calls $std::copy_if(_InputIterator, _InputIterator, _OutputIterator, _Predicate)$ view_filters.cc 37 3 1240  view_filters.cc 40 13 1459
+  calls $std::__cxx11::list<_Tp, _Alloc>::begin()$ view_filters.cc 37 11 1248  view_filters.cc 37 45 1282
+  calls $std::__cxx11::list<_Tp, _Alloc>::end()$ view_filters.cc 37 47 1284  view_filters.cc 37 79 1316
+  calls $std::back_inserter(_Container &)$ view_filters.cc 38 11 1328  view_filters.cc 38 38 1355
+  calls $std::unordered_set<_Value, _Hash, _Pred, _Alloc>::count(const std::unordered_set::key_type &)$ view_filters.cc 39 20 1408  view_filters.cc 39 57 1445
+  calls $std::transform(_InputIterator, _InputIterator, _OutputIterator, _UnaryOperation)$ view_filters.cc 42 3 1464  view_filters.cc 44 75 1620
+  calls $std::vector<_Tp, _Alloc>::begin()$ view_filters.cc 43 7 1481  view_filters.cc 43 27 1501
+  calls $std::vector<_Tp, _Alloc>::end()$ view_filters.cc 43 29 1503  view_filters.cc 43 47 1521
+  calls $std::back_inserter(_Container &)$ view_filters.cc 43 49 1523  view_filters.cc 43 70 1544
+  calls $PhysicalEdge(const View &, const EdgeBase &)$ view_filters.cc 44 46 1591  view_filters.cc 44 71 1616
+$prune_isolated_nodes(View &)$ view_filters.cc 48 1 1642  view_filters.cc 60 2 2105
+  calls $NodeBase::is_isolated()$ view_filters.cc 50 12 1758  view_filters.cc 50 35 1781
+  calls $std::find_if(_InputIterator, _InputIterator, _Predicate)$ view_filters.cc 52 18 1805  view_filters.cc 53 45 1901
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::begin()$ view_filters.cc 52 26 1813  view_filters.cc 52 47 1834
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ view_filters.cc 52 49 1836  view_filters.cc 52 68 1855
+  calls $std::__detail::operator!=(const _Node_iterator_base<_Value, _Cache_hash_code> &, const _Node_iterator_base<_Value, _Cache_hash_code> &)$ view_filters.cc 54 8 1910  view_filters.cc 54 33 1935
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ view_filters.cc 54 14 1916  view_filters.cc 54 33 1935
+  calls $std::__detail::_Node_iterator<std::pair<NodeBase *const, NodeViewData>, false, false>::operator=(std::__detail::_Node_iterator<std::pair<NodeBase *const, NodeViewData>, false, false> &&)$ view_filters.cc 55 8 1944  view_filters.cc 55 65 2001
+  calls $std::find_if(_InputIterator, _InputIterator, _Predicate)$ view_filters.cc 55 13 1949  view_filters.cc 55 65 2001
+  calls $std::__detail::_Node_iterator<std::pair<NodeBase *const, NodeViewData>, false, false>::_Node_iterator(const std::__detail::_Node_iterator<std::pair<NodeBase *const, NodeViewData>, false, false> &)$ view_filters.cc 55 21 1957  view_filters.cc 55 23 1959
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::end()$ view_filters.cc 55 25 1961  view_filters.cc 55 44 1980
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream::__ostream_type &(*)(std::basic_ostream::__ostream_type &))$ view_filters.cc 56 5 2009  view_filters.cc 56 51 2055
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(const void *)$ view_filters.cc 56 5 2009  view_filters.cc 56 43 2047
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ view_filters.cc 56 5 2009  view_filters.cc 56 30 2034
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ view_filters.cc 56 5 2009  view_filters.cc 56 15 2019
+  calls $std::basic_ostream<_CharT, _Traits>::operator<<(int)$ view_filters.cc 56 5 2009  view_filters.cc 56 15 2019
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ view_filters.cc 56 5 2009  view_filters.cc 56 15 2019
+  calls $std::operator<<(basic_ostream<char, _Traits> &, const char *)$ view_filters.cc 56 5 2009  view_filters.cc 56 15 2019
+  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator->()$ view_filters.cc 56 34 2038  view_filters.cc 56 36 2040
+  calls $std::__detail::_Node_iterator<_Value, __constant_iterators, __cache>::operator++(int)$ view_filters.cc 58 5 2094  view_filters.cc 58 9 2098
+$set_logicalView(View &, const std::vector<NodeBase *> &)$ view_filters.cc 62 1 2107  view_filters.cc 66 2 2315
+  calls $std::unordered_set<_Value, _Hash, _Pred, _Alloc>::clear()$ view_filters.cc 63 3 2182  view_filters.cc 63 30 2209
+  calls $std::copy(_IIter, _IIter, _OIter)$ view_filters.cc 64 3 2213  view_filters.cc 65 67 2312
+  calls $std::vector<_Tp, _Alloc>::begin()$ view_filters.cc 64 8 2218  view_filters.cc 64 21 2231
+  calls $std::vector<_Tp, _Alloc>::end()$ view_filters.cc 64 23 2233  view_filters.cc 64 34 2244
+  calls $std::inserter(_Container &, _Iterator)$ view_filters.cc 65 8 2253  view_filters.cc 65 66 2311
+  calls $std::unordered_set<_Value, _Hash, _Pred, _Alloc>::begin()$ view_filters.cc 65 38 2283  view_filters.cc 65 65 2310
+$set_physicalView(View &, const Rectangle &)$ view_filters.cc 68 1 2317  view_filters.cc 82 2 3032
+  calls $std::unordered_set<_Value, _Hash, _Pred, _Alloc>::clear()$ view_filters.cc 69 3 2382  view_filters.cc 69 37 2416
+  calls $std::copy_if(_InputIterator, _InputIterator, _OutputIterator, _Predicate)$ view_filters.cc 70 3 2420  view_filters.cc 81 9 3029
+  calls $std::unordered_set<_Value, _Hash, _Pred, _Alloc>::begin()$ view_filters.cc 71 7 2435  view_filters.cc 71 34 2462
+  calls $std::unordered_set<_Value, _Hash, _Pred, _Alloc>::end()$ view_filters.cc 71 36 2464  view_filters.cc 71 61 2489
+  calls $std::inserter(_Container &, _Iterator)$ view_filters.cc 72 7 2497  view_filters.cc 72 79 2569
+  calls $std::unordered_set<_Value, _Hash, _Pred, _Alloc>::begin()$ view_filters.cc 72 44 2534  view_filters.cc 72 78 2568
+  calls $PhysicalNeighborhood(const View &, const NodeBase &)$ view_filters.cc 74 29 2648  view_filters.cc 74 62 2681
+  calls $std::any_of(_InputIterator, _InputIterator, _Predicate)$ view_filters.cc 75 16 2698  view_filters.cc 78 25 2908
+  calls $std::vector<_Tp, _Alloc>::begin()$ view_filters.cc 75 23 2705  view_filters.cc 75 43 2725
+  calls $std::vector<_Tp, _Alloc>::end()$ view_filters.cc 75 45 2727  view_filters.cc 75 63 2745
+  calls $Rectangle::Intersects(const LineSegment &)$ view_filters.cc 77 32 2848  view_filters.cc 77 66 2882
+  calls $Rectangle::Intersects(const Rectangle &)$ view_filters.cc 79 16 2927  view_filters.cc 80 72 3019
+  calls $std::__shared_ptr_access<_Tp, _Lp, bool, bool>::operator*()$ view_filters.cc 80 20 2967  view_filters.cc 80 71 3018
+  calls $std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::at(const std::unordered_map::key_type &)$ view_filters.cc 80 21 2968  view_filters.cc 80 67 3014

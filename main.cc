@@ -17,6 +17,14 @@
 #include <unordered_set>
 
 using namespace std;
+
+Rectangle get_view_box(const DrawingArea_ZoomDrag &drawingArea_ZoomDrag) {
+  Rectangle view_box(Point(0, 0),
+                     Point(move(get_extent(drawingArea_ZoomDrag))));
+  drawingArea_ZoomDrag.user_to_image(view_box);
+  return view_box;
+}
+
 int main(int argc, char *argv[]) {
   if (argc < 2) {
     return usage();
@@ -26,7 +34,7 @@ int main(int argc, char *argv[]) {
    * TODO Persistance and multiple views (view views in a view tree)
    */
   Graph graph = parseCallGraphFromFile(argv[1]);
-  // dump_call_graph(graph); //Useful for debug type of stuff...
+  dump_call_graph(graph, cerr); //Useful for debug type of stuff...
 
   /*
    * The view holds the information necessary to display the graph as the user
@@ -57,27 +65,52 @@ int main(int argc, char *argv[]) {
   prune_isolated_nodes(view);
   get_initialViewFullGraph(view);
 
-  drawingArea_ZoomDrag.zoomed_draw = [&view, &layout,
+  drawingArea_ZoomDrag.zoomed_draw = [&view, &layout, &myState,
                                       &drawingArea_ZoomDrag](CContext c) {
-    Rectangle view_box(Point(0, 0),
-                       Point(move(get_extent(drawingArea_ZoomDrag))));
-    drawingArea_ZoomDrag.user_to_image(view_box);
+    /*
+Rectangle view_box(Point(0, 0),
+Point(move(get_extent(drawingArea_ZoomDrag))));
+drawingArea_ZoomDrag.user_to_image(view_box);
+*/
+    //DIAGNOSTIC << "zoomed_draw lambda" << endl;
+    Rectangle view_box = get_view_box(drawingArea_ZoomDrag);
+    View *rview = &view;
+    if (++myState.viewAnimation) {
+      rview = &myState.viewAnimation.current_view;
+    }
     // check that our physical view covers the drawing area
-    check_physicalSubView(view, view_box);
-    return draw_view(view, c, layout);
+    check_physicalSubView(*rview, view_box);
+    return draw_view(*rview, c, layout);
   };
 
   drawingArea_ZoomDrag.signal_button_press_event().connect(
       [&](GdkEventButton *e) {
+        //DIAGNOSTIC << "button_press lambda" << endl;
         Point click(e->x, e->y);
         drawingArea_ZoomDrag.user_to_image(click);
         Node *node = find_node(view, click);
-        return myState.handle_event_click(node, e);
+        myState.handle_event_click(node, e);
+        if (myState.node2Click && e->type == GDK_2BUTTON_PRESS) {
+          expand_node(view, myState.node2Click.node);
+          set_physicalView(view, get_view_box(drawingArea_ZoomDrag));
+          myState.viewAnimation.init(move(view));
+          Glib::signal_timeout().connect(
+              [&]() {
+                drawingArea_ZoomDrag.queue_draw();
+                if (myState.viewAnimation.is_finished()) {
+                  view = move(myState.viewAnimation.final_view);
+                }
+                return !myState.viewAnimation.is_finished();
+              },
+              20);
+        }
+        return false;
       },
       false);
 
   drawingArea_ZoomDrag.signal_motion_notify_event().connect(
       [&](GdkEventMotion *e) {
+        //DIAGNOSTIC << "motion lambda" << endl;
         if (myState.nodeClick) {
           drawingArea_ZoomDrag.set_dragTarget(
               view.viewData[myState.nodeClick.node].box);
