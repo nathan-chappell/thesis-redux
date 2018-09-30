@@ -1,3 +1,5 @@
+Note: main is intended to run on call graph files made from running get_call_graph in a directory with a compilation database.
+
 In order to get a simple (somewhat interactive) call graph of main:
 	make
 	./main main.call_graph
