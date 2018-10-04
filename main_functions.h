@@ -16,6 +16,8 @@
 #include <regex>
 #include <string>
 
+using ViewTransform = std::function<void(View&)>;
+
 using Milliseconds = double;
 
 struct NodeClickInfo {
@@ -49,12 +51,15 @@ struct ViewAnimation {
   ViewAnimation &operator=(const ViewAnimation &) = delete;
   ViewAnimation &operator=(ViewAnimation &&) = default;
 
-  void init(View &&view);
+  void init(Gtk::DrawingArea &, View &, ViewTransform,
+            ViewTransform cleanup = [](View &) {});
+  void set_default_timing();
+  void invalidate();
 
   bool is_valid() const;
   bool is_finished() const;
   explicit operator bool() const;
-  ViewAnimation& operator++();
+  ViewAnimation &operator++();
 };
 
 struct MyState {
@@ -70,6 +75,8 @@ int usage();
 std::string remove_qualifiers(const Fullname &fullname);
 
 void initialize_view(const Graph &graph, View &view, PLayout &layout);
+void expand_node_transform(View &);
+void contract_node_transform(View &);
 
 void draw_node(const View &view, const NodeBase *node, CContext c,
                PLayout layout);

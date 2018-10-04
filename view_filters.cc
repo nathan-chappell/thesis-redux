@@ -79,6 +79,7 @@ void set_physicalView(View &view, const Rectangle &view_box) {
                view_box.Intersects(
                    *view.viewData.at(const_cast<NodeBase *>(node)).box);
       });
+  view.physicalSubView.force_recalculate = false;
 }
 
 /*

@@ -1,13 +1,12 @@
 // graph_layout_algorithms.cc
 
-#include "myassert.h"
 #include "graph_layout_algorithms.h"
+#include "myassert.h"
 
 #include <algorithm>
 #include <numeric>
 #include <stack>
 #include <unordered_map>
-#include <vector>
 
 #include <iostream>
 
@@ -150,7 +149,7 @@ void set_initial_positions(View &view, const GridMap &gridMap,
 /*
  * Create a view of the entire graph with nodes assigned grid locations DFS wise
  */
-void get_initialViewFullGraph(View &view) {
+void dfs_grid_layout(View &view) {
   vector<double> row_height;
   vector<double> column_width;
   unordered_map<NodeBase *, Grid> gridMap;
@@ -166,12 +165,55 @@ void get_initialViewFullGraph(View &view) {
  * Add node's children to graph and return the new view (new view created for
  * animation)
  */
-View expand_node(View &view, NodeBase *node) {
-  DIAGNOSTIC << "expanding node: " << &node << endl;
+void expand_node(View &view, NodeBase *node) {
+  DIAGNOSTIC << "expanding node: " << node << endl;
+  DIAGNOSTIC << "view size: " << view.viewData.size() << endl;
+  DIAGNOSTIC << "node exists?: " << boolalpha << (bool)view.viewData.count(node)
+             << endl;
   auto box = *view.viewData.at(node).box;
   for (auto edge : node->neighborhood.outgoing) {
     view.logicalSubView.insert(edge->head);
+    DIAGNOSTIC << "accessing node: " << edge->head << endl;
     view.viewData.at(edge->head).box->position = box.position;
   }
-  return view;
+  view.viewData.at(node).expanded = true;
+}
+
+/*
+ * gets all nodes whose only expanded parent is node
+ */
+vector<NodeBase *> get_nodes_to_collapse(const View &view, NodeBase *node) {
+  vector<NodeBase *> result;
+  for (auto edge : node->neighborhood.outgoing) {
+    const auto &incoming = edge->head->neighborhood.incoming;
+    if (!view.viewData.at(edge->head).expanded &&
+        all_of(incoming.begin(), incoming.end(),
+               [&view, node](EdgeBase *parent) {
+                 return parent->tail == node ||
+                        !view.viewData.at(parent->tail).expanded; //TODO causes AT error...
+               })) {
+      result.push_back(edge->head);
+    }
+  }
+  return result;
+}
+
+/*
+ * Do the opposite of above.  Note that if a child has another parent that is
+ * expanded, then it will remain visible.
+ */
+void collapse_node(View &view, NodeBase *node) {
+  DIAGNOSTIC << "collapsing node: " << &node << endl;
+  auto nodes_to_collapse = get_nodes_to_collapse(view, node);
+  //calculate the layout like the collapsed nodes aren't there...
+  for (auto node : nodes_to_collapse) {
+    view.logicalSubView.erase(node);
+  }
+  dfs_grid_layout(view);
+  auto box = *view.viewData.at(node).box;
+  for (auto node : nodes_to_collapse) {
+    view.viewData.at(node).box->position = box.position;
+    view.logicalSubView.insert(node);
+  }
+  view.viewData.at(node).expanded = false;
 }

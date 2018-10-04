@@ -15,16 +15,19 @@
 struct NodeViewData;
 
 using ViewData = std::unordered_map<NodeBase *, NodeViewData>;
-using LogicalSubView = std::unordered_set<NodeBase*>;
+using LogicalSubView = std::unordered_set<NodeBase *>;
 
+// SEE initialize_view
 struct NodeViewData {
   std::shared_ptr<Rectangle> box;
   std::string text;
+  bool expanded;
 };
 
 struct PhysicalSubView {
   LogicalSubView nodes;
   Rectangle box;
+  bool force_recalculate;
 };
 
 struct View {
@@ -45,4 +48,15 @@ struct View {
   View(std::unordered_map<Fullname, NodeBase *> *name_to_node)
       : name_to_node(name_to_node), node_margin{10.0}, row_spacing{30.0},
         column_spacing{30.0} {}
+
+  /*
+   * Use this after copying a view to make the node boxes independent of one
+   * another.  Useful for animations.
+   */
+  void detach_node_boxes() {
+    for (auto node : logicalSubView) {
+      viewData.at(node).box =
+          std::make_shared<Rectangle>(*viewData.at(node).box);
+    }
+  }
 };
